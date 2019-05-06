@@ -25,4 +25,4 @@ const server = http.createServer((request, response) => {
 server.listen(3001)
 
 console.log('\n  Server running on http://localhost:3001')
-console.log('\n  Try this: http://localhost:3001/?per_page=25&page=1&q=harriet\n')
+console.log('\n  Try this: http://localhost:3001/?per_page=25&page=1&q=nicolas\n')
