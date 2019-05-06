@@ -3,13 +3,19 @@ const url = require('url')
 const names = require('./names.js')
 const {generatePayload, getMatches, getPage} = require('./utility.js')
 
+const employees = names.sort().map(name => ({
+  name,
+  nameParts: name.toLowerCase().split(' '),
+  department: ['Human Resources', 'Research & Development', 'Sales', 'Marketing', 'Support', 'Legal'][Math.floor(Math.random() * 6)]
+}))
+
 const server = http.createServer((request, response) => {
   const {query: {per_page: pageLength, page: pageNumber, q: query}} = url.parse(request.url, true)
   if (pageLength && pageNumber && query) {
     response.writeHead(200, {'Content-Type': 'text/json'})
-    const matches = getMatches({names, query})
+    const matches = getMatches({employees, query})
     const payload = generatePayload({
-      names: getPage({elements: matches, pageLength, pageNumber}),
+      employees: getPage({elements: matches, pageLength, pageNumber}),
       total: matches.length,
       pageLength,
       pageNumber,

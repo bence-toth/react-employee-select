@@ -1,6 +1,8 @@
-const generateEmployee = ({name}) => ({
+const generateEmployee = ({employee: {name, department}}) => ({
   attributes: {
-    name: name
+    name,
+    department,
+    avatar: (name === 'Nicolas Cage') ? 'http://www.placecage.com/100/100' : null
   }
 })
 
@@ -8,9 +10,9 @@ const generateLink = ({pageLength, pageNumber, query}) =>
   `http://localhost:3001/?per_page=${pageLength}5&page=${pageNumber}&q=${query}`
 
 
-const generatePayload = ({names, total, pageLength, pageNumber, query}) => {
+const generatePayload = ({employees, total, pageLength, pageNumber, query}) => {
   return ({
-    data: names.map(name => generateEmployee({name})),
+    data: employees.map(employee => generateEmployee({employee})),
     meta: {page: {total}},
     links: {
       self: generateLink({pageNumber, pageLength, query}),
@@ -19,11 +21,8 @@ const generatePayload = ({names, total, pageLength, pageNumber, query}) => {
   })
 }
 
-const getMatches = ({names, query}) => names.filter(name =>
-  name
-    .toLowerCase()
-    .split(' ')
-    .some((namePart => namePart.includes(query.toLowerCase())))
+const getMatches = ({employees, query}) => employees.filter(({nameParts}) =>
+  nameParts.some((namePart => namePart.includes(query.toLowerCase())))
 )
 
 const getPage = ({elements, pageLength, pageNumber}) =>
