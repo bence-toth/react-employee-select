@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .eslintignore ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,5 +28,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@agillic/eslint-config": "0.0.4"
   }
 }
