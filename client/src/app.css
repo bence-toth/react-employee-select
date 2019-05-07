@@ -4,6 +4,7 @@ main {
   align-items: center;
   height: 100%;
   min-height: min-content;
+  padding: 20px;
 }
 
 hr { /* TODO: Remove me */
