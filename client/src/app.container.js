@@ -4,6 +4,7 @@ import fetchEmployees from './app.consumer'
 import {clearSuggestions, updateQuery} from './app.actionsCreators'
 import {reducer, initialState} from './app.reducer'
 import {receiveEmployeeData} from './app.actionsCreators.async'
+import Presenter from './app.presenter'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -20,36 +21,14 @@ const App = () => {
   }
 
   return (
-    <>
-      <div>
-        Query is:
-        {state.query}
-
-        Suggestions (
-        {state.suggestions.length}
-        /
-        {state.totalSuggestionsForQuery}
-        ):
-        <ul>
-          {state.suggestions.map(({attributes: {name}}) => name).map(name => (
-            <li>{name}</li>
-          ))}
-        </ul>
-        Next URL:
-        {state.nextPageURL}
-      </div>
-      <input
-        type='text'
-        onChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
-      />
-      <button
-        type='button'
-        onClick={() => fetchNextPage()}
-      >
-        Fetch next page
-      </button>
-      {/* <AppPresenter /> */}
-    </>
+    <Presenter
+      query={state.query}
+      suggestions={state.suggestions}
+      totalSuggestionsForQuery={state.totalSuggestionsForQuery}
+      onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
+      onFetchNext={() => fetchNextPage()}
+      nextPageURL={state.nextPageURL}
+    />
   )
 }
 
