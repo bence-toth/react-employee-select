@@ -10,35 +10,37 @@ const App = ({
   onFetchNext = (() => {}),
   nextPageURL = (() => {})
 }) => (
-  <>
+  <main>
     <div>
-      Query is:
-      {query}
+      <div>
+        Query is:
+        {query}
 
-      Suggestions (
-      {suggestions.length}
-      /
-      {totalSuggestionsForQuery}
-      ):
-      <ul>
-        {suggestions.map(({attributes: {name}}) => name).map(name => (
-          <li>{name}</li>
-        ))}
-      </ul>
-      Next URL:
-      {nextPageURL}
+        Suggestions (
+        {suggestions.length}
+        /
+        {totalSuggestionsForQuery}
+        ):
+        <ul>
+          {suggestions.map(({attributes: {name}}) => name).map(name => (
+            <li>{name}</li>
+          ))}
+        </ul>
+        Next URL:
+        {nextPageURL}
+      </div>
+      <input
+        type='text'
+        onChange={onQueryChange}
+      />
+      <button
+        type='button'
+        onClick={onFetchNext}
+      >
+        Fetch next page
+      </button>
     </div>
-    <input
-      type='text'
-      onChange={onQueryChange}
-    />
-    <button
-      type='button'
-      onClick={onFetchNext}
-    >
-      Fetch next page
-    </button>
-  </>
+  </main>
 )
 
 App.propTypes = {
@@ -48,6 +50,6 @@ App.propTypes = {
   totalSuggestionsForQuery: number,
   onQueryChange: func.isRequired,
   onFetchNext: func.isRequired
-};
+}
 
 export default App
