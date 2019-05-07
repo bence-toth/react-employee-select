@@ -21,10 +21,14 @@ const generatePayload = ({employees, total, pageLength, pageNumber, query}) => {
   })
 }
 
-const getMatches = ({employees, query}) => employees.filter(({nameParts}) =>
-  (query.length === 0)
-    || nameParts.some((namePart => namePart.includes(query.toLowerCase())))
-)
+const getMatches = ({employees, queries}) => employees.filter(({nameParts}) => (
+  (queries[0].length === 0) ||
+    queries
+      .filter(query => (query.length > 0))
+      .every(query => nameParts.some(
+        namePart => namePart.includes(query.toLowerCase())
+      ))
+))
 
 const getPage = ({elements, pageLength, pageNumber}) =>
   [...elements].splice((pageNumber - 1) * pageLength, pageLength)
