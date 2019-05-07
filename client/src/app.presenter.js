@@ -36,6 +36,28 @@ const App = ({
             alt=''
           />
         </div>
+        {suggestions && (
+          <div className='suggestionsWrapper'>
+            <ul>
+              {suggestions.map(({attributes: {avatar, department, name}}) => (
+                <li>
+                  <button className='suggestion' type='button'>
+                    <div className='avatar'>
+                      {avatar && (
+                        <img src={avatar} alt={name} />
+                      )}
+                      <div className='monogram'>MD</div>
+                    </div>
+                    <div>
+                      <div className='name'>{name}</div>
+                      <div className='department'>{department}</div>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <hr />
       <div>
