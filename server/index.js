@@ -1,12 +1,12 @@
 const http = require('http')
 const url = require('url')
 const names = require('./names.js')
-const {generatePayload, getMatches, getPage} = require('./utility.js')
+const {generatePayload, getMatches, getPage, generateEmail} = require('./utility.js')
 
 const employees = names.sort().map(name => ({
   name,
   nameParts: name.toLowerCase().split(' '),
-  department: ['Human Resources', 'Research & Development', 'Sales', 'Marketing', 'Support', 'Legal'][Math.floor(Math.random() * 6)]
+  email: generateEmail({name})
 }))
 
 const server = http.createServer((request, response) => {

@@ -1,7 +1,7 @@
-const generateEmployee = ({employee: {name, department}}) => ({
+const generateEmployee = ({employee: {name, email}}) => ({
   attributes: {
     name,
-    department,
+    email,
     avatar: (name === 'Nicolas Cage') ? 'http://www.placecage.com/100/100' : null
   }
 })
@@ -33,4 +33,9 @@ const getMatches = ({employees, queries}) => employees.filter(({nameParts}) => (
 const getPage = ({elements, pageLength, pageNumber}) =>
   [...elements].splice((pageNumber - 1) * pageLength, pageLength)
 
-module.exports = {generatePayload, getMatches, getPage}
+const generateEmail = ({name}) => {
+  const [firstName, lastName] = name.toLowerCase().split(' ')
+  return `${firstName}.${lastName}@peakon.com`
+}
+
+module.exports = {generatePayload, getMatches, getPage, generateEmail}
