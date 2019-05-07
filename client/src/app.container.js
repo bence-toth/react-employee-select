@@ -1,6 +1,5 @@
 import React, {useReducer, useEffect} from 'react'
 import fetchEmployees from './app.consumer'
-// import AppPresenter from './app.presenter'
 import {clearSuggestions, updateQuery} from './app.actionsCreators'
 import {reducer, initialState} from './app.reducer'
 import {receiveEmployeeData} from './app.actionsCreators.async'
