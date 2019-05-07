@@ -1,5 +1,4 @@
 /* Found some cool font that looks similar to the one on the screenshot... :) */
-
 @font-face {
   font-family: CalibreWeb;
   src: url(https://peakon.com/wp-content/themes/peakon/assets/fonts/CalibreWeb-Light.woff2);
@@ -23,7 +22,8 @@
   padding: 0;
   box-sizing: border-box;
   /* ...and I stole this stunning list of fonts from your website without hesitation. :P */
-  font-family: CalibreWeb, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-family: CalibreWeb, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
 html, body, #root {
@@ -32,4 +32,20 @@ html, body, #root {
 
 body {
   background-color: hsl(0, 0%, 97.5%);
+}
+
+/* These behave weird with hsla */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 6px;
 }
