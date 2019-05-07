@@ -40,7 +40,7 @@ const App = ({
           <div className='suggestionsWrapper' tabIndex={-1}>
             <ul>
               {suggestions.map(({attributes: {avatar, department, name}}) => (
-                <li>
+                <li key={name /* TODO: Must be id */}>
                   <button className='suggestion' type='button'>
                     <div className='avatar'>
                       {avatar && (
@@ -72,7 +72,7 @@ const App = ({
         {suggestions && (
           <ul>
             {suggestions.map(({attributes: {name}}) => name).map(name => (
-              <li>{name}</li>
+              <li key={name}>{name}</li>
             ))}
           </ul>
         )}
