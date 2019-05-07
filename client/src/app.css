@@ -46,3 +46,7 @@ hr { /* TODO: Remove me */
   top: 50%;
   transform: translateY(-50%);
 }
+
+.employeeSelect .caret.upsideDown {
+  transform: translateY(-50%) scaleY(-1);
+}

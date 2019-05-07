@@ -27,7 +27,14 @@ const App = ({
               {showsPlaceholder: query.length === 0}
             )}
           />
-          <img src={caret} className='caret' alt='' />
+          <img
+            src={caret}
+            className={classNames(
+              'caret',
+              {upsideDown: suggestions !== null}
+            )}
+            alt=''
+          />
         </div>
       </div>
       <hr />
@@ -36,15 +43,17 @@ const App = ({
         {query}
 
         Suggestions (
-        {suggestions.length}
+        {suggestions ? suggestions.length : 0}
         /
-        {totalSuggestionsForQuery}
+        {totalSuggestionsForQuery || 0}
         ):
-        <ul>
-          {suggestions.map(({attributes: {name}}) => name).map(name => (
-            <li>{name}</li>
-          ))}
-        </ul>
+        {suggestions && (
+          <ul>
+            {suggestions.map(({attributes: {name}}) => name).map(name => (
+              <li>{name}</li>
+            ))}
+          </ul>
+        )}
         Next URL:
         {nextPageURL}
       </div>

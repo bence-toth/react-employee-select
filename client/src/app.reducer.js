@@ -2,7 +2,7 @@ import actions from './app.actions'
 
 const initialState = {
   query: '',
-  suggestions: [],
+  suggestions: null,
   nextPageURL: null,
   totalSuggestionsForQuery: null,
   selectedEmployee: null,
@@ -19,14 +19,14 @@ const reducer = (state, action) => {
     case actions.addSuggestions:
       return {
         ...state,
-        suggestions: [...state.suggestions, ...action.suggestions],
+        suggestions: [...(state.suggestions || []), ...action.suggestions],
         nextPageURL: action.nextPageURL,
         totalSuggestionsForQuery: action.totalSuggestionsForQuery
       }
     case actions.clearSuggestions:
       return {
         ...state,
-        suggestions: [],
+        suggestions: null,
         nextPageURL: null,
         totalSuggestionsForQuery: null
       }
