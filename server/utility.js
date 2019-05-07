@@ -7,7 +7,7 @@ const generateEmployee = ({employee: {name, department}}) => ({
 })
 
 const generateLink = ({pageLength, pageNumber, query}) =>
-  `http://localhost:3001/?per_page=${pageLength}5&page=${pageNumber}&q=${query}`
+  `http://localhost:3001/?per_page=${pageLength}&page=${pageNumber}&q=${query}`
 
 
 const generatePayload = ({employees, total, pageLength, pageNumber, query}) => {
