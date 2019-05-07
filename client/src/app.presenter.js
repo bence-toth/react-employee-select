@@ -37,7 +37,7 @@ const App = ({
           />
         </div>
         {suggestions && (
-          <div className='suggestionsWrapper'>
+          <div className='suggestionsWrapper' tabIndex={-1}>
             <ul>
               {suggestions.map(({attributes: {avatar, department, name}}) => (
                 <li>
