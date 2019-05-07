@@ -6,9 +6,6 @@ main {
   min-height: min-content;
 }
 
-.employeeSelect {
-}
-
 hr { /* TODO: Remove me */
   margin-top: 100px;
 }
@@ -33,10 +30,13 @@ hr { /* TODO: Remove me */
   padding: 0 10px;
   opacity: 1;
   outline: none; /* We can do better #a11y TODO: */
+  font-weight: 400;
+  color: hsl(0, 0%, 25%);
 }
 
 .employeeSelect .queryInput.showsPlaceholder {
-  opacity: 0.5;
+  opacity: 0.85;
+  font-weight: 300;
 }
 
 .employeeSelect .caret {
