@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(clearSuggestions())
-    fetchEmployees({pageLength: 30, pageNumber: 1, query: state.query})
+    fetchEmployees({pageLength: 6, pageNumber: 1, query: state.query})
       .then(receiveEmployeeData(dispatch))
   }, [state.query])
 
