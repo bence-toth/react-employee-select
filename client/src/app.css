@@ -5,3 +5,44 @@ main {
   height: 100%;
   min-height: min-content;
 }
+
+.employeeSelect {
+}
+
+hr { /* TODO: Remove me */
+  margin-top: 100px;
+}
+
+.employeeSelect .queryInputWrapper {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 hsl(0, 0%, 90%);
+  height: 42px;
+  position: relative;
+  width: 335px;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.employeeSelect .queryInput {
+  border-width: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: calc(100% - 12.5px - 10px);
+  height: 100%;
+  background-color: transparent;
+  padding: 0 10px;
+  opacity: 1;
+  outline: none; /* We can do better #a11y TODO: */
+}
+
+.employeeSelect .queryInput.showsPlaceholder {
+  opacity: 0.5;
+}
+
+.employeeSelect .caret {
+  height: 12.5px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

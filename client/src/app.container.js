@@ -1,8 +1,9 @@
 import React, {useReducer, useEffect} from 'react'
-import fetchEmployees from './app.consumer'
-import {clearSuggestions, updateQuery} from './app.actionsCreators'
+
 import {reducer, initialState} from './app.reducer'
+import {clearSuggestions, updateQuery} from './app.actionsCreators'
 import {receiveEmployeeData} from './app.actionsCreators.async'
+import fetchEmployees from './app.consumer'
 import Presenter from './app.presenter'
 
 const App = () => {

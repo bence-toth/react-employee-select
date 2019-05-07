@@ -1,6 +1,9 @@
 import React from 'react'
 import {string, func, number, arrayOf, shape} from 'prop-types'
+import classNames from 'classnames'
+
 import './app.css'
+import caret from './caret-down.svg'
 
 const App = ({
   query = '',
@@ -12,6 +15,22 @@ const App = ({
 }) => (
   <main>
     <div>
+      <div className='employeeSelect'>
+        <div className='queryInputWrapper'>
+          <input
+            type='text'
+            value={query}
+            onChange={onQueryChange}
+            placeholder='Choose Manager'
+            className={classNames(
+              'queryInput',
+              {showsPlaceholder: query.length === 0}
+            )}
+          />
+          <img src={caret} className='caret' alt='' />
+        </div>
+      </div>
+      <hr />
       <div>
         Query is:
         {query}
