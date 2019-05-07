@@ -1,5 +1,6 @@
-const generateEmployee = ({employee: {name, email}}) => ({
+const generateEmployee = ({employee: {id, name, email}}) => ({
   attributes: {
+    id,
     name,
     email,
     avatar: (name === 'Nicolas Cage') ? 'http://www.placecage.com/100/100' : null

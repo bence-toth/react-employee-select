@@ -3,10 +3,11 @@ const url = require('url')
 const names = require('./names.js')
 const {generatePayload, getMatches, getPage, generateEmail} = require('./utility.js')
 
-const employees = names.sort().map(name => ({
+const employees = names.sort().map((name, index) => ({
   name,
   nameParts: name.toLowerCase().split(' '),
-  email: generateEmail({name})
+  email: generateEmail({name}),
+  id: `${index}`
 }))
 
 const server = http.createServer((request, response) => {
