@@ -85,6 +85,7 @@ hr { /* TODO: Remove me */
   display: flex;
   align-items: center;
   transition: background-color 0.15s;
+  cursor: pointer;
 }
 
 .employeeSelect .suggestion:focus {
