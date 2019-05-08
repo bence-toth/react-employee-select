@@ -1,13 +1,10 @@
 import React from 'react'
 import {string, func, bool} from 'prop-types'
-import classNames from 'classnames'
 
-import Avatar from '../../avatar/avatar.presenter'
-import {onKeyDown} from './suggestion.eventHandlers'
+import Selection from './selection/selection.presenter'
+import Input from './input/input.presenter'
 import {employeeShape} from '../../app.shapes'
 import './queryInput.css'
-import caret from './caret-down.svg'
-import cross from './cross.svg'
 
 const QueryInput = ({
   query,
@@ -21,61 +18,20 @@ const QueryInput = ({
   <div className='queryInputWrapper'>
     {selectedEmployee
       ? (
-        <div className='selection'>
-          <Avatar
-            name={selectedEmployee.name}
-            avatarURL={selectedEmployee.avatar}
-          />
-          <div className='nameWrapper'>
-            <div className='name'>{selectedEmployee.name}</div>
-            <address className='email'>{selectedEmployee.email}</address>
-          </div>
-          {!isDisabled && (
-            <button
-              className='removeSelection'
-              type='button'
-              onClick={onRemoveSelection}
-              disabled={isDisabled}
-            >
-              <img
-                className={classNames(
-                  'cross',
-                  {upsideDown: isCaretUpsideDown}
-                )}
-                src={cross}
-                alt='Remove selection'
-                title='Remove selection'
-              />
-            </button>
-          )}
-        </div>
+        <Selection
+          selectedEmployee={selectedEmployee}
+          isDisabled={isDisabled}
+          onRemoveSelection={onRemoveSelection}
+        />
       )
       : (
-        <>
-          <input
-            id={uniqueID}
-            data-role='queryInput'
-            className={classNames(
-              'queryInput',
-              {showsPlaceholder: query.length === 0}
-            )}
-            type='text'
-            value={query}
-            placeholder='Choose Manager'
-            onChange={onQueryChange}
-            onKeyDown={onKeyDown}
-            disabled={isDisabled}
-            autoComplete='off'
-          />
-          <img
-            className={classNames(
-              'caret',
-              {upsideDown: isCaretUpsideDown}
-            )}
-            src={caret}
-            alt=''
-          />
-        </>
+        <Input
+          query={query}
+          isCaretUpsideDown={isCaretUpsideDown}
+          isDisabled={isDisabled}
+          uniqueID={uniqueID}
+          onQueryChange={onQueryChange}
+        />
       )
     }
   </div>

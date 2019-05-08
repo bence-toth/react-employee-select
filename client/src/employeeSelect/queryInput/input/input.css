@@ -1,0 +1,35 @@
+.employeeSelect .queryInput {
+  border-width: 0;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: calc(100% - 12.5px - 10px);
+  height: 100%;
+  background-color: transparent;
+  padding: 0 10px;
+  opacity: 1;
+  outline: none; /* We can do better #a11y TODO: */
+  font-weight: 400;
+  color: hsl(0, 0%, 25%);
+}
+
+.employeeSelect .queryInput:placeholder-shown {
+  opacity: 0.85;
+  font-weight: 300;
+}
+
+.queryInput:disabled,
+.queryInput:disabled:placeholder-shown {
+  opacity: 0.5;
+}
+
+.employeeSelect .caret {
+  height: 12.5px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.employeeSelect .caret.upsideDown {
+  transform: translateY(-50%) scaleY(-1);
+}
