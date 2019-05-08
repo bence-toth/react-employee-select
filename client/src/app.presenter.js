@@ -67,7 +67,7 @@ const App = ({
           </div>
         )}
       </div>
-      <hr />
+      {/* <hr />
       <div>
         Query is:
         {query}
@@ -96,7 +96,7 @@ const App = ({
         onClick={onFetchNext}
       >
         Fetch next page
-      </button>
+      </button> */}
     </div>
   </main>
 )
