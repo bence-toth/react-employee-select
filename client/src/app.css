@@ -77,9 +77,51 @@ hr { /* TODO: Remove me */
 }
 
 .employeeSelect .suggestion {
-  height: 42px;
+  height: 64px;
   border-width: 0;
   background-color: hsl(0, 0%, 100%);
   width: 100%;
   border-bottom: 1px solid hsl(0, 0%, 90%);
+  display: flex;
+  align-items: center;
+  /* padding: 20px 16px; */
+}
+
+.employeeSelect .suggestion .avatarWrapper {
+  width: 30px;
+  height: 64px;
+  margin: 0 10px 0 16px;
+  position: relative;  /* Trigger stacking context for monogram or profile picture */
+}
+
+.employeeSelect .suggestion .monogram {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+  line-height: 30px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+}
+
+
+.employeeSelect .suggestion .nameWrapper {
+  width: calc(100% - 16px - 30px - 10px);
+  text-align: left;
+}
+
+.employeeSelect .suggestion .name {
+  color: hsl(0, 0%, 25%);
+  font-size: 14px;
+}
+
+.employeeSelect .suggestion .email {
+  margin-top: 3px;
+  font-style: normal;
+  color: hsl(0, 0%, 50%);
+  font-size: 12px;
 }

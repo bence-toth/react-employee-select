@@ -2,6 +2,7 @@ import React from 'react'
 import {string, func, number, arrayOf, shape} from 'prop-types'
 import classNames from 'classnames'
 
+import {generateMonogram, generateBackgroundColor} from './app.utilitiy'
 import './app.css'
 import caret from './caret-down.svg'
 
@@ -42,15 +43,22 @@ const App = ({
               {suggestions.map(({attributes: {id, name, email, avatar}}) => (
                 <li key={id}>
                   <button className='suggestion' type='button'>
-                    <div className='avatar'>
-                      {avatar && (
-                        <img src={avatar} alt={name} />
-                      )}
-                      <div className='monogram'>MD</div>
+                    <div className='avatarWrapper'>
+                      <div className='avatar'>
+                        {avatar && (
+                          <img src={avatar} alt={name} />
+                        )}
+                        <div
+                          className='monogram'
+                          style={{backgroundColor: generateBackgroundColor({name})}}
+                        >
+                          {generateMonogram({name})}
+                        </div>
+                      </div>
                     </div>
-                    <div>
+                    <div className='nameWrapper'>
                       <div className='name'>{name}</div>
-                      <div className='email'>{email}</div>
+                      <address className='email'>{email}</address>
                     </div>
                   </button>
                 </li>
