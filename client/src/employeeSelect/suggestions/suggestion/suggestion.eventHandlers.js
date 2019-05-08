@@ -12,6 +12,7 @@ const onMouseMove = ({target}) => {
   const isWithinViewport = (scrollTop <= elementMiddle)
     && ((scrollTop + containerHeight) >= elementMiddle)
   if (isWithinViewport) {
+    //  (∩｀-´)⊃━☆ﾟ.*･｡ﾟ Hocus pocus, set the focus!
     target.focus()
   }
 }
@@ -19,7 +20,7 @@ const onMouseMove = ({target}) => {
 const onArrowDown = ({target}) => {
   const {suggestion} = roles
   const nextSuggestion = target.closest(suggestion).nextSibling
-  if (nextSuggestion) {
+  if (nextSuggestion) { // Focus the next suggestion
     nextSuggestion.querySelector('button').focus()
   }
 }
@@ -27,10 +28,10 @@ const onArrowDown = ({target}) => {
 const onArrowUp = ({target}) => {
   const {suggestion, employeeSelect, queryInput} = roles
   const previousSuggestion = target.closest(suggestion).previousSibling
-  if (previousSuggestion) {
+  if (previousSuggestion) { // Focus the previous suggestion
     previousSuggestion.querySelector('button').focus()
   }
-  else {
+  else { // Jump back to the query input
     const query = target.closest(employeeSelect).querySelector(queryInput)
     query.focus()
   }
