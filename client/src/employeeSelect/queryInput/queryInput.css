@@ -22,7 +22,8 @@
 }
 
 .employeeSelect .selection .nameWrapper {
-  width: calc(100% - 16px - 30px - 10px - 30px);
+  width: calc(100% - 16px - 30px - 10px);
+  padding-right: 40px;
   text-align: left;
 }
 
@@ -30,6 +31,9 @@
   color: hsl(0, 0%, 25%);
   font-size: 14px;
   transition: color 0.15s;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .employeeSelect .selection:focus .name {
@@ -41,6 +45,9 @@
   font-style: normal;
   color: hsl(0, 0%, 50%);
   font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .employeeSelect .removeSelection {
