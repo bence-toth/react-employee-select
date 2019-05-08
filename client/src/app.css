@@ -84,7 +84,12 @@ hr { /* TODO: Remove me */
   border-bottom: 1px solid hsl(0, 0%, 90%);
   display: flex;
   align-items: center;
-  /* padding: 20px 16px; */
+  transition: background-color 0.15s;
+}
+
+.employeeSelect .suggestion:focus {
+  background: hsl(160, 50%, 98%);
+  outline: 0;
 }
 
 .employeeSelect .suggestion .avatarWrapper {
@@ -92,6 +97,17 @@ hr { /* TODO: Remove me */
   height: 64px;
   margin: 0 10px 0 16px;
   position: relative;  /* Trigger stacking context for monogram or profile picture */
+}
+
+.employeeSelect .suggestion .avatar img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  z-index: 1;
 }
 
 .employeeSelect .suggestion .monogram {
@@ -108,7 +124,6 @@ hr { /* TODO: Remove me */
   font-weight: 500;
 }
 
-
 .employeeSelect .suggestion .nameWrapper {
   width: calc(100% - 16px - 30px - 10px);
   text-align: left;
@@ -117,6 +132,11 @@ hr { /* TODO: Remove me */
 .employeeSelect .suggestion .name {
   color: hsl(0, 0%, 25%);
   font-size: 14px;
+  transition: color 0.15s;
+}
+
+.employeeSelect .suggestion:focus .name {
+  color: #27c07c;
 }
 
 .employeeSelect .suggestion .email {
