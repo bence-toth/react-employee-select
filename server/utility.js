@@ -25,7 +25,6 @@ const generatePayload = ({employees, total, pageLength, pageNumber, query}) => {
 const getMatches = ({employees, queries}) => employees.filter(({nameParts}) => (
   (queries[0].length === 0) ||
     queries
-      .filter(query => (query.length > 0))
       .every(query => nameParts.some(
         namePart => namePart.includes(query.toLowerCase())
       ))

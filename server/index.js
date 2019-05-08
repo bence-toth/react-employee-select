@@ -13,7 +13,7 @@ const employees = names.sort().map((name, index) => ({
 const server = http.createServer((request, response) => {
   const {query: {per_page: pageLength, page: pageNumber, q: query}} = url.parse(request.url, true)
   if (pageLength && pageNumber && (typeof query === 'string')) {
-    queries = query.split(' ')
+    queries = query.trim().split(' ')
     response.writeHead(200, {
       'Content-Type': 'text/json',
       'Access-Control-Allow-Origin': '*'
