@@ -1,14 +1,25 @@
 import React from 'react'
-import {arrayOf, shape} from 'prop-types'
+import {arrayOf, shape, func} from 'prop-types'
 
 import Suggestion from './suggestion/suggestion.presenter'
 import './suggestions.css'
 
-const Suggestions = ({suggestions}) => (
+const Suggestions = ({
+  suggestions,
+  onFetchNextPage
+}) => (
   <div
     data-role='suggestions'
     className='suggestionsWrapper'
     tabIndex={-1}
+    onScroll={({target}) => {
+      const {scrollTop, scrollHeight, offsetHeight} = target
+      const disanceFromBottom = scrollHeight - (scrollTop + offsetHeight)
+      const distanceFromEdgeThreshold = 20
+      if (disanceFromBottom < distanceFromEdgeThreshold) {
+        onFetchNextPage()
+      }
+    }}
   >
     <ul>
       {suggestions.map(({attributes: {id, name, email, avatar}}) => (
@@ -24,7 +35,8 @@ const Suggestions = ({suggestions}) => (
 )
 
 Suggestions.propTypes = {
-  suggestions: arrayOf(shape) // TODO:
+  suggestions: arrayOf(shape), // TODO:
+  onFetchNextPage: func.isRequired
 }
 
 export default Suggestions

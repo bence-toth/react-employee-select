@@ -7,7 +7,8 @@ import './app.css'
 const App = ({
   query,
   suggestions,
-  onQueryChange
+  onQueryChange,
+  onFetchNextPage
 }) => (
   <main>
     <div>
@@ -15,11 +16,8 @@ const App = ({
         query={query}
         suggestions={suggestions}
         onQueryChange={onQueryChange}
+        onFetchNextPage={onFetchNextPage}
       />
-      {/*
-        Next URL: {nextPageURL}
-        onClick={onFetchNext}
-      */}
     </div>
   </main>
 )
@@ -27,8 +25,7 @@ const App = ({
 App.propTypes = {
   query: string.isRequired,
   suggestions: arrayOf(shape), // TODO:
-  // totalSuggestionsForQuery: number,
-  // onFetchNext: func.isRequired,
+  onFetchNextPage: func.isRequired,
   onQueryChange: func.isRequired
 }
 

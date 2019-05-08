@@ -20,14 +20,20 @@ const App = () => {
       .then(receiveEmployeeData(dispatch))
   }
 
+  const fetchNextPageIfNeeded = () => {
+    const {suggestions, totalSuggestionsForQuery} = state
+    const canFetchMore = suggestions.length < totalSuggestionsForQuery
+    if (canFetchMore) {
+      fetchNextPage()
+    }
+  }
+
   return (
     <Presenter
       query={state.query}
       suggestions={state.suggestions}
-      totalSuggestionsForQuery={state.totalSuggestionsForQuery}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
-      onFetchNext={() => fetchNextPage()}
-      nextPageURL={state.nextPageURL}
+      onFetchNextPage={fetchNextPageIfNeeded}
     />
   )
 }
