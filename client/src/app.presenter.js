@@ -7,16 +7,20 @@ import './app.css'
 const App = ({
   query,
   suggestions,
+  selectedEmployee,
   onQueryChange,
-  onFetchNextPage
+  onFetchNextPage,
+  onSelectEmployee
 }) => (
   <main>
     <div>
       <EmployeeSelect
         query={query}
+        selectedEmployee={selectedEmployee}
         suggestions={suggestions}
         onQueryChange={onQueryChange}
         onFetchNextPage={onFetchNextPage}
+        onSelectEmployee={onSelectEmployee}
       />
     </div>
   </main>
@@ -25,8 +29,10 @@ const App = ({
 App.propTypes = {
   query: string.isRequired,
   suggestions: arrayOf(shape), // TODO:
+  selectedEmployee: shape({}), // TODO:
   onFetchNextPage: func.isRequired,
-  onQueryChange: func.isRequired
+  onQueryChange: func.isRequired,
+  onSelectEmployee: func.isRequired
 }
 
 export default App

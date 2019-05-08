@@ -1,17 +1,18 @@
 import React from 'react'
-import {string} from 'prop-types'
+import {string, func} from 'prop-types'
 
 import Avatar from '../../../avatar/avatar.presenter' // ../../...
 import {onMouseMove, onKeyDown} from './suggestion.eventHandlers'
 import './suggestion.css'
 
-const Suggestion = ({name, email, avatar}) => (
+const Suggestion = ({id, name, email, avatar, onSelectEmployee}) => (
   <li data-role='suggestion'>
     <button
       className='suggestion'
       type='button'
       onMouseMove={onMouseMove}
       onKeyDown={onKeyDown}
+      onClick={() => onSelectEmployee({employee: {id, name, email, avatar}})}
     >
       <Avatar
         name={name}
@@ -26,9 +27,11 @@ const Suggestion = ({name, email, avatar}) => (
 )
 
 Suggestion.propTypes = {
+  id: string.isRequired,
   name: string.isRequired,
   email: string.isRequired,
-  avatar: string
+  avatar: string,
+  onSelectEmployee: func.isRequired
 }
 
 export default Suggestion

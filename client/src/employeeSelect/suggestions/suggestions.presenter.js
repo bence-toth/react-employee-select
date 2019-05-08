@@ -6,7 +6,8 @@ import './suggestions.css'
 
 const Suggestions = ({
   suggestions,
-  onFetchNextPage
+  onFetchNextPage,
+  onSelectEmployee
 }) => (
   <div
     data-role='suggestions'
@@ -25,9 +26,11 @@ const Suggestions = ({
       {suggestions.map(({attributes: {id, name, email, avatar}}) => (
         <Suggestion
           key={id}
+          id={id}
           name={name}
           email={email}
           avatar={avatar}
+          onSelectEmployee={onSelectEmployee}
         />
       ))}
     </ul>
@@ -36,7 +39,8 @@ const Suggestions = ({
 
 Suggestions.propTypes = {
   suggestions: arrayOf(shape), // TODO:
-  onFetchNextPage: func.isRequired
+  onFetchNextPage: func.isRequired,
+  onSelectEmployee: func.isRequired
 }
 
 export default Suggestions

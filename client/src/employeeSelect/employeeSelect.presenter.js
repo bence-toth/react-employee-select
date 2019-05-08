@@ -8,8 +8,10 @@ import './employeeSelect.css'
 const EmployeeSelect = ({
   query,
   suggestions,
+  selectedEmployee,
   onQueryChange,
-  onFetchNextPage
+  onFetchNextPage,
+  onSelectEmployee
 }) => (
   <div
     data-role='employeeSelect'
@@ -19,11 +21,13 @@ const EmployeeSelect = ({
       query={query}
       onQueryChange={onQueryChange}
       isCaretUpsideDown={suggestions !== null}
+      selectedEmployee={selectedEmployee}
     />
     {suggestions && (
       <Suggestions
         suggestions={suggestions /* That’s a lot of suggestions... */}
         onFetchNextPage={onFetchNextPage}
+        onSelectEmployee={onSelectEmployee}
       />
     ) }
   </div>
@@ -32,8 +36,10 @@ const EmployeeSelect = ({
 EmployeeSelect.propTypes = {
   query: string.isRequired,
   suggestions: arrayOf(shape), // TODO:
+  selectedEmployee: shape({}), // TODO:
   onQueryChange: func.isRequired,
-  onFetchNextPage: func.isRequired
+  onFetchNextPage: func.isRequired,
+  onSelectEmployee: func.isRequired
 }
 
 export default EmployeeSelect

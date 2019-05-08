@@ -20,3 +20,7 @@ export const updateQuery = ({query}) => ({
   query
 })
 
+export const selectEmployee = ({employee = null}) => ({
+  type: actions.selectEmployee,
+  employee
+})

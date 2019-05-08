@@ -30,7 +30,11 @@ const reducer = (state, action) => {
         nextPageURL: null,
         totalSuggestionsForQuery: null
       }
-    // case actions.selectEmployee:
+    case actions.selectEmployee:
+      return {
+        ...state,
+        selectedEmployee: action.employee
+      }
     // case actions.clearSelection:
     // case actions.highlightSuggestion:
     // case actions.highlightNextSuggestion:

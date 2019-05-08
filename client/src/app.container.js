@@ -1,7 +1,7 @@
 import React, {useReducer, useEffect} from 'react'
 
 import {reducer, initialState} from './app.reducer'
-import {clearSuggestions, updateQuery} from './app.actionsCreators'
+import {clearSuggestions, updateQuery, selectEmployee} from './app.actionsCreators'
 import {receiveEmployeeData} from './app.actionsCreators.async'
 import fetchEmployees from './app.consumer'
 import Presenter from './app.presenter'
@@ -32,8 +32,10 @@ const App = () => {
     <Presenter
       query={state.query}
       suggestions={state.suggestions}
+      selectedEmployee={state.selectedEmployee}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onFetchNextPage={fetchNextPageIfNeeded}
+      onSelectEmployee={employee => dispatch(selectEmployee(employee))}
     />
   )
 }
