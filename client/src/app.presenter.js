@@ -22,9 +22,7 @@ const App = ({
         onQueryChange={onQueryChange}
         onFetchNextPage={onFetchNextPage}
         onSelectEmployee={onSelectEmployee}
-        isDisabled
         uniqueID='mySpecialEmplyeeSelect'
-        label='Nominate manager of the year'
       />
     </div>
   </main>
