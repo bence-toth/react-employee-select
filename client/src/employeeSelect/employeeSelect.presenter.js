@@ -1,9 +1,10 @@
 import React from 'react'
-import {string, func, arrayOf, shape, oneOf, bool, node} from 'prop-types'
+import {string, func, arrayOf, oneOf, bool, node} from 'prop-types'
 import classNames from 'classnames'
 
 import QueryInput from './queryInput/queryInput.presenter'
 import Suggestions from './suggestions/suggestions.presenter'
+import {employeeShape} from '../app.shapes'
 import './employeeSelect.css'
 
 const EmployeeSelect = ({
@@ -63,8 +64,8 @@ const EmployeeSelect = ({
 
 EmployeeSelect.propTypes = {
   query: string.isRequired,
-  suggestions: arrayOf(shape), // TODO:
-  selectedEmployee: shape({}), // TODO:
+  suggestions: arrayOf(employeeShape),
+  selectedEmployee: employeeShape,
   label: node,
   onQueryChange: func.isRequired,
   onFetchNextPage: func.isRequired,

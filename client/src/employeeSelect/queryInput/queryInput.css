@@ -12,11 +12,6 @@
   z-index: 1;
 }
 
-.employeeSelect .selection.focus { /* TODO: Make sure I use this */
-  background: hsl(160, 50%, 98%);
-  outline: 0;
-}
-
 .employeeSelect .selection .avatarWrapper {
   height: 42px;
   margin-left: 10px;

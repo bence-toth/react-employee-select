@@ -6,7 +6,3 @@ main {
   min-height: min-content;
   padding: 20px;
 }
-
-hr { /* TODO: Remove me */
-  margin-top: 100px;
-}

@@ -1,7 +1,8 @@
 import React from 'react'
-import {arrayOf, shape, func} from 'prop-types'
+import {arrayOf, func} from 'prop-types'
 
 import Suggestion from './suggestion/suggestion.presenter'
+import {employeeShape} from '../../app.shapes'
 import './suggestions.css'
 
 const Suggestions = ({
@@ -45,7 +46,7 @@ const Suggestions = ({
 )
 
 Suggestions.propTypes = {
-  suggestions: arrayOf(shape), // TODO:
+  suggestions: arrayOf(employeeShape),
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired
 }

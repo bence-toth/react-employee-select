@@ -1,9 +1,10 @@
 import React from 'react'
-import {string, func, bool, shape} from 'prop-types'
+import {string, func, bool} from 'prop-types'
 import classNames from 'classnames'
 
 import Avatar from '../../avatar/avatar.presenter'
 import {onKeyDown} from './suggestion.eventHandlers'
+import {employeeShape} from '../../app.shapes'
 import './queryInput.css'
 import caret from './caret-down.svg'
 import cross from './cross.svg'
@@ -82,7 +83,7 @@ const QueryInput = ({
 QueryInput.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
-  selectedEmployee: shape({}), // TODO:
+  selectedEmployee: employeeShape,
   isDisabled: bool,
   uniqueID: string,
   onQueryChange: func.isRequired,
