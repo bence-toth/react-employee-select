@@ -3,47 +3,6 @@
   position: relative; /* Trigger stacking context for the suggestions */
 }
 
-.employeeSelect .queryInputWrapper {
-  width: 100%;
-  height: 42px;
-  border: 1px solid hsl(0, 0%, 80%);
-  box-shadow: 0 1px 0 hsl(0, 0%, 90%);
-  border-radius: 6px;
-  background-color: hsl(0, 0%, 100%);
-  position: relative; /* Trigger stacking context for the caret */
-}
-
-.employeeSelect .queryInput {
-  border-width: 0;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  width: calc(100% - 12.5px - 10px);
-  height: 100%;
-  background-color: transparent;
-  padding: 0 10px;
-  opacity: 1;
-  outline: none; /* We can do better #a11y TODO: */
-  font-weight: 400;
-  color: hsl(0, 0%, 25%);
-}
-
-.employeeSelect .queryInput.showsPlaceholder {
-  opacity: 0.85;
-  font-weight: 300;
-}
-
-.employeeSelect .caret {
-  height: 12.5px;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.employeeSelect .caret.upsideDown {
-  transform: translateY(-50%) scaleY(-1);
-}
-
 .employeeSelect .suggestionsWrapper {
   position: absolute;
   top: 100%;

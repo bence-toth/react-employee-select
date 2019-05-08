@@ -1,11 +1,10 @@
 import React from 'react'
 import {string, func, arrayOf, shape} from 'prop-types'
-import classNames from 'classnames'
 
 import {generateMonogram, generateBackgroundColor} from './employeeSelect.utility'
 import {onMouseMove, onKeyDown} from './employeeSelect.eventHandlers'
 import './employeeSelect.css'
-import caret from './caret-down.svg'
+import QueryInput from './queryInput/queryInput.presenter'
 
 const EmployeeSelect = ({
   query,
@@ -16,27 +15,11 @@ const EmployeeSelect = ({
     className='employeeSelect'
     data-role='employeeSelect'
   >
-    <div className='queryInputWrapper'>
-      <input
-        data-role='queryInput'
-        type='text'
-        value={query}
-        onChange={onQueryChange}
-        placeholder='Choose Manager'
-        className={classNames(
-          'queryInput',
-          {showsPlaceholder: query.length === 0}
-        )}
-      />
-      <img
-        src={caret}
-        className={classNames(
-          'caret',
-          {upsideDown: suggestions !== null}
-        )}
-        alt=''
-      />
-    </div>
+    <QueryInput
+      query={query}
+      onQueryChange={onQueryChange}
+      isCaretUpsideDown={suggestions !== null}
+    />
     {suggestions && (
       <div data-role='suggestions' className='suggestionsWrapper' tabIndex={-1}>
         <ul>
