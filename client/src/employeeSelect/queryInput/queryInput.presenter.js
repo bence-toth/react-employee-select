@@ -65,6 +65,7 @@ const QueryInput = ({
             onChange={onQueryChange}
             onKeyDown={onKeyDown}
             disabled={isDisabled}
+            autoComplete='off'
           />
           <img
             className={classNames(
