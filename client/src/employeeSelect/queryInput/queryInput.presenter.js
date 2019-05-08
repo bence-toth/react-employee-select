@@ -1,5 +1,5 @@
 import React from 'react'
-import {string, func, bool, shape, node} from 'prop-types'
+import {string, func, bool, shape} from 'prop-types'
 import classNames from 'classnames'
 
 import Avatar from '../../avatar/avatar.presenter'
@@ -77,7 +77,6 @@ QueryInput.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
   selectedEmployee: shape({}), // TODO:
-  label: node,
   isDisabled: bool,
   uniqueID: string,
   onQueryChange: func.isRequired,

@@ -1,4 +1,4 @@
-import React, {useReducer, useEffect, useState} from 'react'
+import React, {useReducer, useEffect} from 'react'
 
 import {reducer, initialState} from './app.reducer'
 import {clearSuggestions, updateQuery, selectEmployee} from './app.actionsCreators'
