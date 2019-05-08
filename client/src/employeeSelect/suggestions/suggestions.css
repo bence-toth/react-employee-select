@@ -11,6 +11,7 @@
   max-height: calc(5 * 42px);
   overflow: hidden;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .employeeSelect .suggestionsWrapper > ul {
