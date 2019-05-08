@@ -18,58 +18,64 @@ const QueryInput = ({
   onRemoveSelection
 }) => (
   <div className='queryInputWrapper'>
-    {selectedEmployee && (
-      <div className='selection'>
-        <Avatar
-          name={selectedEmployee.name}
-          avatarURL={selectedEmployee.avatar}
-        />
-        <div className='nameWrapper'>
-          <div className='name'>{selectedEmployee.name}</div>
-          <address className='email'>{selectedEmployee.email}</address>
+    {selectedEmployee
+      ? (
+        <div className='selection'>
+          <Avatar
+            name={selectedEmployee.name}
+            avatarURL={selectedEmployee.avatar}
+          />
+          <div className='nameWrapper'>
+            <div className='name'>{selectedEmployee.name}</div>
+            <address className='email'>{selectedEmployee.email}</address>
+          </div>
+          {!isDisabled && (
+            <button
+              className='removeSelection'
+              type='button'
+              onClick={onRemoveSelection}
+              disabled={isDisabled}
+            >
+              <img
+                className={classNames(
+                  'cross',
+                  {upsideDown: isCaretUpsideDown}
+                )}
+                src={cross}
+                alt='Remove selection'
+                title='Remove selection'
+              />
+            </button>
+          )}
         </div>
-        {!isDisabled && (
-          <button
-            className='removeSelection'
-            type='button'
-            onClick={onRemoveSelection}
+      )
+      : (
+        <>
+          <input
+            id={uniqueID}
+            data-role='queryInput'
+            className={classNames(
+              'queryInput',
+              {showsPlaceholder: query.length === 0}
+            )}
+            type='text'
+            value={query}
+            placeholder='Choose Manager'
+            onChange={onQueryChange}
+            onKeyDown={onKeyDown}
             disabled={isDisabled}
-          >
-            <img
-              className={classNames(
-                'cross',
-                {upsideDown: isCaretUpsideDown}
-              )}
-              src={cross}
-              alt='Remove selection'
-              title='Remove selection'
-            />
-          </button>
-        )}
-      </div>
-    )}
-    <input
-      id={uniqueID}
-      data-role='queryInput'
-      className={classNames(
-        'queryInput',
-        {showsPlaceholder: query.length === 0}
-      )}
-      type='text'
-      value={query}
-      placeholder='Choose Manager'
-      onChange={onQueryChange}
-      onKeyDown={onKeyDown}
-      disabled={isDisabled}
-    />
-    <img
-      className={classNames(
-        'caret',
-        {upsideDown: isCaretUpsideDown}
-      )}
-      src={caret}
-      alt=''
-    />
+          />
+          <img
+            className={classNames(
+              'caret',
+              {upsideDown: isCaretUpsideDown}
+            )}
+            src={caret}
+            alt=''
+          />
+        </>
+      )
+    }
   </div>
 )
 
