@@ -9,7 +9,7 @@ const Suggestions = ({suggestions}) => (
     <ul>
       {suggestions.map(({attributes: {id, name, email, avatar}}) => (
         <Suggestion
-          id={id}
+          key={id}
           name={name}
           email={email}
           avatar={avatar}
