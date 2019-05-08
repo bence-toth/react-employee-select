@@ -6,6 +6,53 @@ import {generateMonogram, generateBackgroundColor} from './app.utilitiy'
 import './app.css'
 import caret from './caret-down.svg'
 
+const roles = {
+  suggestion: '[data-role=suggestion]',
+  suggestions: '[data-role=suggestions]',
+  employeeSelect: '[data-role=employeeSelect]',
+  queryInput: '[data-role=queryInput]'
+}
+
+const onMouseMove = ({target}) => {
+  const {scrollTop, offsetHeight: containerHeight} = target.closest(roles.suggestions)
+  const {offsetTop, offsetHeight: elementHeight} = target.closest(roles.suggestion)
+  const elementMiddle = offsetTop + (elementHeight * 0.5)
+  const isWithinViewport = (scrollTop <= elementMiddle)
+    && ((scrollTop + containerHeight) >= elementMiddle)
+  if (isWithinViewport) {
+    target.focus()
+  }
+}
+
+const onArrowDown = ({target}) => {
+  const {suggestion} = roles
+  const nextSuggestion = target.closest(suggestion).nextSibling
+  if (nextSuggestion) {
+    nextSuggestion.querySelector('button').focus()
+  }
+}
+
+const onArrowUp = ({target}) => {
+  const {suggestion, employeeSelect, queryInput} = roles
+  const previousSuggestion = target.closest(suggestion).previousSibling
+  if (previousSuggestion) {
+    previousSuggestion.querySelector('button').focus()
+  }
+  else {
+    const query = target.closest(employeeSelect).querySelector(queryInput)
+    query.focus()
+  }
+}
+
+const onKeyDown = ({target, key}) => {
+  if (key === 'ArrowDown') {
+    onArrowDown({target})
+  }
+  if (key === 'ArrowUp') {
+    onArrowUp({target})
+  }
+}
+
 const App = ({
   query = '',
   suggestions = [],
@@ -16,9 +63,13 @@ const App = ({
 }) => (
   <main>
     <div>
-      <div className='employeeSelect'>
+      <div
+        className='employeeSelect'
+        data-role='employeeSelect'
+      >
         <div className='queryInputWrapper'>
           <input
+            data-role='queryInput'
             type='text'
             value={query}
             onChange={onQueryChange}
@@ -38,11 +89,16 @@ const App = ({
           />
         </div>
         {suggestions && (
-          <div className='suggestionsWrapper' tabIndex={-1}>
+          <div data-role='suggestions' className='suggestionsWrapper' tabIndex={-1}>
             <ul>
               {suggestions.map(({attributes: {id, name, email, avatar}}) => (
-                <li key={id}>
-                  <button className='suggestion' type='button'>
+                <li data-role='suggestion' key={id}>
+                  <button
+                    className='suggestion'
+                    type='button'
+                    onMouseMove={onMouseMove}
+                    onKeyDown={onKeyDown}
+                  >
                     <div className='avatarWrapper'>
                       <div className='avatar'>
                         {avatar && (
