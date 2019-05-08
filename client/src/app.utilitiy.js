@@ -15,7 +15,7 @@ const generateBackgroundColor = ({name}) => {
   const luckyNumber = (randomNumber < (brandColorHueValue - minDistanceFromBrandColor))
     ? randomNumber
     : randomNumber + (2 * minDistanceFromBrandColor)
-  return `hsl(${luckyNumber}, 65%, 65%)` // HSL ❤
+  return `hsl(${luckyNumber}, 45%, 65%)` // HSL ❤
 }
 
 // eslint-disable-next-line import/prefer-default-export
