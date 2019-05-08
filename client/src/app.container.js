@@ -15,14 +15,6 @@ const App = () => {
       .then(receiveEmployeeData(dispatch))
   }, [state.query])
 
-  // TODO: Delete me
-  const [isDisabled, onSetDisabled] = useState(false)
-  useEffect(() => {
-    setInterval(() => {
-      onSetDisabled(!isDisabled)
-    }, 5000)
-  }, [])
-
   const fetchNextPage = () => {
     fetchEmployees({URL: state.nextPageURL})
       .then(receiveEmployeeData(dispatch))
@@ -44,7 +36,6 @@ const App = () => {
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onFetchNextPage={fetchNextPageIfNeeded}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}
-      deleteMeIsDisabled={isDisabled}
     />
   )
 }

@@ -10,8 +10,7 @@ const App = ({
   selectedEmployee,
   onQueryChange,
   onFetchNextPage,
-  onSelectEmployee,
-  deleteMeIsDisabled
+  onSelectEmployee
 }) => (
   <main>
     <div>
@@ -23,7 +22,9 @@ const App = ({
         onQueryChange={onQueryChange}
         onFetchNextPage={onFetchNextPage}
         onSelectEmployee={onSelectEmployee}
-        isDisabled={deleteMeIsDisabled}
+        isDisabled
+        uniqueID='mySpecialEmplyeeSelect'
+        label='Nominate manager of the year'
       />
     </div>
   </main>
@@ -35,8 +36,7 @@ App.propTypes = {
   selectedEmployee: shape({}), // TODO:
   onFetchNextPage: func.isRequired,
   onQueryChange: func.isRequired,
-  onSelectEmployee: func.isRequired,
-  deleteMeIsDisabled: bool // TODO:
+  onSelectEmployee: func.isRequired
 }
 
 export default App

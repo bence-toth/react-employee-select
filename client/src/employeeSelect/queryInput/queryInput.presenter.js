@@ -1,5 +1,5 @@
 import React from 'react'
-import {string, func, bool, shape} from 'prop-types'
+import {string, func, bool, shape, node} from 'prop-types'
 import classNames from 'classnames'
 
 import Avatar from '../../avatar/avatar.presenter'
@@ -13,6 +13,7 @@ const QueryInput = ({
   isCaretUpsideDown,
   selectedEmployee,
   isDisabled,
+  uniqueID,
   onQueryChange,
   onRemoveSelection
 }) => (
@@ -48,6 +49,7 @@ const QueryInput = ({
       </div>
     )}
     <input
+      id={uniqueID}
       data-role='queryInput'
       className={classNames(
         'queryInput',
@@ -75,7 +77,9 @@ QueryInput.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
   selectedEmployee: shape({}), // TODO:
+  label: node,
   isDisabled: bool,
+  uniqueID: string,
   onQueryChange: func.isRequired,
   onRemoveSelection: func.isRequired
 }

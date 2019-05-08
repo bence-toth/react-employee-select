@@ -14,3 +14,15 @@
 .employeeSelect.wide {
   width: 420px;
 }
+
+.employeeSelect .selectLabel {
+  font-size: 14px;
+  margin-left: 10px;
+  font-weight: 400;
+  color: hsl(0, 0%, 50%);
+  cursor: pointer;
+}
+
+.employeeSelect .selectLabel.inputDisabled {
+  cursor: default;
+}

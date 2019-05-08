@@ -1,5 +1,5 @@
 import React from 'react'
-import {string, func, arrayOf, shape, oneOf, bool} from 'prop-types'
+import {string, func, arrayOf, shape, oneOf, bool, node} from 'prop-types'
 import classNames from 'classnames'
 
 import QueryInput from './queryInput/queryInput.presenter'
@@ -12,9 +12,11 @@ const EmployeeSelect = ({
   selectedEmployee,
   width = 'normal',
   isDisabled,
+  label,
   onQueryChange,
   onFetchNextPage,
-  onSelectEmployee
+  onSelectEmployee,
+  uniqueID
 }) => (
   <div
     data-role='employeeSelect'
@@ -27,6 +29,17 @@ const EmployeeSelect = ({
       }
     )}
   >
+    {(label && uniqueID) && (
+      <label
+        className={classNames(
+          'selectLabel',
+          {inputDisabled: isDisabled}
+        )}
+        htmlFor={uniqueID}
+      >
+        {label}
+      </label>
+    )}
     <QueryInput
       query={query}
       isCaretUpsideDown={suggestions !== null}
@@ -34,6 +47,8 @@ const EmployeeSelect = ({
       onQueryChange={onQueryChange}
       onRemoveSelection={() => onSelectEmployee({employee: null})}
       isDisabled={isDisabled}
+      label={label}
+      uniqueID={uniqueID}
     />
     {!isDisabled && (query.length > 0) && !selectedEmployee && suggestions && (
       <Suggestions
@@ -50,11 +65,13 @@ EmployeeSelect.propTypes = {
   query: string.isRequired,
   suggestions: arrayOf(shape), // TODO:
   selectedEmployee: shape({}), // TODO:
+  label: node,
   onQueryChange: func.isRequired,
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired,
   width: oneOf(['narrow', 'normal', 'wide', 'auto']),
-  isDisabled: bool
+  isDisabled: bool,
+  uniqueID: string
 }
 
 export default EmployeeSelect
