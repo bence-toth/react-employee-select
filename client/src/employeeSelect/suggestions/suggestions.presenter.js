@@ -15,7 +15,7 @@ const Suggestions = ({
     onScroll={({target}) => {
       const {scrollTop, scrollHeight, offsetHeight} = target
       const disanceFromBottom = scrollHeight - (scrollTop + offsetHeight)
-      const distanceFromEdgeThreshold = 20
+      const distanceFromEdgeThreshold = 10
       if (disanceFromBottom < distanceFromEdgeThreshold) {
         onFetchNextPage()
       }
