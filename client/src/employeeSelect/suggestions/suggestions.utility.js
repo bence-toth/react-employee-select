@@ -8,14 +8,17 @@ const generateMonogram = ({name}) => {
 }
 
 const generateBackgroundColor = ({name}) => {
+  // This function generates an HSL color based on the name.
+  // It's kinda random, but it's deterministic at the same time.
+  // I have tests to prove the latter (TODO:), and I need you to believe me on the former.
   const brandColorHueValue = 154
-  const minDistanceFromBrandColor = 50
+  const minDistanceFromBrandColor = 50 // Plot twist: Let's not get very close to the brand color
   const intervalLength = 360 - (2 * minDistanceFromBrandColor)
-  const randomNumber = (parseInt(md5(name).slice(0, 4), 16)) % intervalLength
+  const randomNumber = (parseInt(md5(name).slice(0, 4), 16)) % intervalLength // Chebyshev polynomials!
   const luckyNumber = (randomNumber < (brandColorHueValue - minDistanceFromBrandColor))
     ? randomNumber
     : randomNumber + (2 * minDistanceFromBrandColor)
-  return `hsl(${luckyNumber}, 45%, 65%)` // HSL ❤
+  return `hsl(${luckyNumber}, 45%, 65%)` // I ❤ HSL
 }
 
 // eslint-disable-next-line import/prefer-default-export
