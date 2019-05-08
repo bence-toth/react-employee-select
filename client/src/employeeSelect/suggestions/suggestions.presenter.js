@@ -22,6 +22,13 @@ const Suggestions = ({
       }
     }}
   >
+    {(suggestions.length === 0) && (
+      <div className='noResults'>
+        Not sure who you are looking for.
+        <br />
+        Maybe it’s a typo?
+      </div>
+    )}
     <ul>
       {suggestions.map(({attributes: {id, name, email, avatar}}) => (
         <Suggestion
