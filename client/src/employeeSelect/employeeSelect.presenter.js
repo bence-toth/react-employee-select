@@ -19,9 +19,10 @@ const EmployeeSelect = ({
   >
     <QueryInput
       query={query}
-      onQueryChange={onQueryChange}
       isCaretUpsideDown={suggestions !== null}
       selectedEmployee={selectedEmployee}
+      onQueryChange={onQueryChange}
+      onRemoveSelection={() => onSelectEmployee({employee: null})}
     />
     {(query.length > 0) && !selectedEmployee && suggestions && (
       <Suggestions

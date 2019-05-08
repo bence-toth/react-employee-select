@@ -6,12 +6,14 @@ import Avatar from '../../avatar/avatar.presenter'
 import {onKeyDown} from './suggestion.eventHandlers'
 import './queryInput.css'
 import caret from './caret-down.svg'
+import cross from './cross.svg'
 
 const QueryInput = ({
   query,
   isCaretUpsideDown,
   selectedEmployee,
-  onQueryChange
+  onQueryChange,
+  onRemoveSelection
 }) => (
   <div className='queryInputWrapper'>
     {selectedEmployee && (
@@ -24,6 +26,21 @@ const QueryInput = ({
           <div className='name'>{selectedEmployee.name}</div>
           <address className='email'>{selectedEmployee.email}</address>
         </div>
+        <button
+          className='removeSelection'
+          type='button'
+          onClick={onRemoveSelection}
+        >
+          <img
+            className={classNames(
+              'cross',
+              {upsideDown: isCaretUpsideDown}
+            )}
+            src={cross}
+            alt='Remove selection'
+            title='Remove selection'
+          />
+        </button>
       </div>
     )}
     <input
@@ -53,7 +70,8 @@ QueryInput.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
   selectedEmployee: shape({}), // TODO:
-  onQueryChange: func.isRequired
+  onQueryChange: func.isRequired,
+  onRemoveSelection: func.isRequired
 }
 
 export default QueryInput

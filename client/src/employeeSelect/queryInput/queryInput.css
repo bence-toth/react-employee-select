@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   transition: background-color 0.15s;
-  cursor: pointer;
   position: absolute;
   z-index: 1;
 }
@@ -23,7 +22,7 @@
 }
 
 .employeeSelect .selection .nameWrapper {
-  width: calc(100% - 16px - 30px - 10px);
+  width: calc(100% - 16px - 30px - 10px - 30px);
   text-align: left;
 }
 
@@ -42,6 +41,22 @@
   font-style: normal;
   color: hsl(0, 0%, 50%);
   font-size: 12px;
+}
+
+.employeeSelect .removeSelection {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+  padding: 5px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.employeeSelect .removeSelection img {
+  height: 12.5px;
 }
 
 .employeeSelect .queryInputWrapper {
