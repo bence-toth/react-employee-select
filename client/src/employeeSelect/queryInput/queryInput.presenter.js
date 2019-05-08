@@ -26,7 +26,6 @@ const QueryInput = ({
         </div>
       </div>
     )}
-    {JSON.stringify(selectedEmployee)}
     <input
       data-role='queryInput'
       className={classNames(

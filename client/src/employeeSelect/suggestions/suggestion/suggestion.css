@@ -15,38 +15,6 @@
   outline: 0;
 }
 
-.employeeSelect .suggestion .avatarWrapper {
-  width: 30px;
-  height: 64px;
-  margin: 0 10px 0 16px;
-  position: relative;  /* Trigger stacking context for monogram or profile picture */
-}
-
-.employeeSelect .suggestion .avatar img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  z-index: 1;
-}
-
-.employeeSelect .suggestion .monogram {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  text-align: center;
-  line-height: 30px;
-  color: hsl(0, 0%, 100%);
-  font-weight: 500;
-}
-
 .employeeSelect .suggestion .nameWrapper {
   width: calc(100% - 16px - 30px - 10px);
   text-align: left;

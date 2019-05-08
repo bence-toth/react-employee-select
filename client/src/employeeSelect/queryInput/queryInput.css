@@ -1,12 +1,16 @@
 .employeeSelect .selection {
-  height: 64px;
+  height: 40px;
   border-width: 0;
   background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 1px 0 hsl(0, 0%, 90%);
+  border-radius: 6px;
   width: 100%;
   display: flex;
   align-items: center;
   transition: background-color 0.15s;
   cursor: pointer;
+  position: absolute;
+  z-index: 1;
 }
 
 .employeeSelect .selection.focus { /* TODO: Make sure I use this */
@@ -15,35 +19,7 @@
 }
 
 .employeeSelect .selection .avatarWrapper {
-  width: 30px;
-  height: 64px;
-  margin: 0 10px 0 16px;
-  position: relative;  /* Trigger stacking context for monogram or profile picture */
-}
-
-.employeeSelect .selection .avatar img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  z-index: 1;
-}
-
-.employeeSelect .selection .monogram {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  text-align: center;
-  line-height: 30px;
-  color: hsl(0, 0%, 100%);
-  font-weight: 500;
+  height: 42px;
 }
 
 .employeeSelect .selection .nameWrapper {
@@ -62,7 +38,7 @@
 }
 
 .employeeSelect .selection .email {
-  margin-top: 3px;
+  margin-top: -2px;
   font-style: normal;
   color: hsl(0, 0%, 50%);
   font-size: 12px;

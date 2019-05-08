@@ -5,8 +5,8 @@ const initialState = {
   suggestions: null,
   nextPageURL: null,
   totalSuggestionsForQuery: null,
-  selectedEmployee: null,
-  highlightedSuggestionIndex: null
+  highlightedSuggestionIndex: null,
+  selectedEmployee: null
 }
 
 const reducer = (state, action) => {
@@ -32,7 +32,11 @@ const reducer = (state, action) => {
       }
     case actions.selectEmployee:
       return {
-        ...state,
+        query: '',
+        suggestions: null,
+        nextPageURL: null,
+        totalSuggestionsForQuery: null,
+        highlightedSuggestionIndex: null,
         selectedEmployee: action.employee
       }
     // case actions.clearSelection:
