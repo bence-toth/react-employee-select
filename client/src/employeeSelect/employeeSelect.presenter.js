@@ -23,7 +23,7 @@ const EmployeeSelect = ({
       isCaretUpsideDown={suggestions !== null}
       selectedEmployee={selectedEmployee}
     />
-    {!selectedEmployee && suggestions && (
+    {(query.length > 0) && !selectedEmployee && suggestions && (
       <Suggestions
         suggestions={suggestions /* That’s a lot of suggestions... */}
         onFetchNextPage={onFetchNextPage}
