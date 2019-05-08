@@ -18,12 +18,3 @@
 .employeeSelect .suggestionsWrapper > ul {
   list-style-type: none;
 }
-
-.employeeSelect .suggestionsWrapper .noResults {
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1;
-  color: hsl(0, 0%, 20%);
-  background-color: hsl(0, 0%, 92.5%);
-}

@@ -20,7 +20,7 @@ const onKeyDown = event => {
     onArrowDown({target})
   }
   if (key === 'Enter') {
-    // In case somebody would boldly put this in a form
+    // In case somebody would boldly put this component inside a <form>
     event.preventDefault()
   }
 }

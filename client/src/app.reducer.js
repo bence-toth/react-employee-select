@@ -9,7 +9,7 @@ const initialState = {
   selectedEmployee: null
 }
 
-const reducer = (state, action) => {
+const reducer = (state, action) => { // TODO: Switch...
   switch (action.type) {
     case actions.updateQuery:
       return {
@@ -39,10 +39,6 @@ const reducer = (state, action) => {
         highlightedSuggestionIndex: null,
         selectedEmployee: action.employee
       }
-    // case actions.clearSelection:
-    // case actions.highlightSuggestion:
-    // case actions.highlightNextSuggestion:
-    // case actions.highlightPreviousSuggestion:
     default:
       throw new Error(`Unknown action type '${action.type}'`)
   }

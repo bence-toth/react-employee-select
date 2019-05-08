@@ -9,7 +9,7 @@ import Presenter from './app.presenter'
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  useEffect(() => {
+  useEffect(() => { // Fetch data as the user types
     dispatch(clearSuggestions())
     fetchEmployees({pageLength: 6, pageNumber: 1, query: state.query})
       .then(receiveEmployeeData(dispatch))
@@ -33,8 +33,8 @@ const App = () => {
       query={state.query}
       suggestions={state.suggestions}
       selectedEmployee={state.selectedEmployee}
-      onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onFetchNextPage={fetchNextPageIfNeeded}
+      onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}
     />
   )

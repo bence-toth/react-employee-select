@@ -8,11 +8,13 @@ const roles = {
 const onMouseMove = ({target}) => {
   const {scrollTop, offsetHeight: containerHeight} = target.closest(roles.suggestions)
   const {offsetTop, offsetHeight: elementHeight} = target.closest(roles.suggestion)
-  const elementMiddle = offsetTop + (elementHeight * 0.5)
-  const isWithinViewport = (scrollTop <= elementMiddle)
-    && ((scrollTop + containerHeight) >= elementMiddle)
+  const elementMiddleOffset = offsetTop + (elementHeight * 0.5)
+  const isWithinViewport = (scrollTop <= elementMiddleOffset)
+    && ((scrollTop + containerHeight) >= elementMiddleOffset)
+  //
+  //  (∩｀-´)⊃━☆ﾟ.*･｡ﾟ Hocus pocus, set the focus!
+  //
   if (isWithinViewport) {
-    //  (∩｀-´)⊃━☆ﾟ.*･｡ﾟ Hocus pocus, set the focus!
     target.focus()
   }
 }
