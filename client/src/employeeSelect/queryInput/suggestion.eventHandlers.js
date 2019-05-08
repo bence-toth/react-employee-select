@@ -19,6 +19,10 @@ const onKeyDown = event => {
     event.preventDefault()
     onArrowDown({target})
   }
+  if (key === 'Enter') {
+    // In case somebody would boldly put this in a form
+    event.preventDefault()
+  }
 }
 
 export {onKeyDown}
