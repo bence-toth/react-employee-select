@@ -1,5 +1,5 @@
 import React from 'react'
-import {string, func, number, arrayOf, shape} from 'prop-types'
+import {string, func, arrayOf, shape} from 'prop-types'
 
 import EmployeeSelect from './employeeSelect/employeeSelect.presenter'
 import './app.css'
