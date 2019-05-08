@@ -5,7 +5,11 @@ import Suggestion from './suggestion/suggestion.presenter'
 import './suggestions.css'
 
 const Suggestions = ({suggestions}) => (
-  <div data-role='suggestions' className='suggestionsWrapper' tabIndex={-1}>
+  <div
+    data-role='suggestions'
+    className='suggestionsWrapper'
+    tabIndex={-1}
+  >
     <ul>
       {suggestions.map(({attributes: {id, name, email, avatar}}) => (
         <Suggestion

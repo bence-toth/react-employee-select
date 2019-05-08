@@ -33,7 +33,7 @@ const onArrowUp = ({target}) => {
   }
   else { // Jump back to the query input
     const query = target.closest(employeeSelect).querySelector(queryInput)
-    query.focus()
+    query.focus() // TODO: Keep cursor position
   }
 }
 

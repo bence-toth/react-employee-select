@@ -8,7 +8,10 @@ const Avatar = ({name, avatarURL}) => (
   <div className='avatarWrapper'>
     <div className='avatar'>
       {avatarURL && (
-        <img src={avatarURL} alt={name} />
+        <img
+          src={avatarURL}
+          alt={name}
+        />
       )}
       <div
         className='monogram'

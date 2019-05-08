@@ -11,8 +11,8 @@ const EmployeeSelect = ({
   onQueryChange
 }) => (
   <div
-    className='employeeSelect'
     data-role='employeeSelect'
+    className='employeeSelect'
   >
     <QueryInput
       query={query}
@@ -21,7 +21,7 @@ const EmployeeSelect = ({
     />
     {suggestions && (
       <Suggestions suggestions={suggestions} />
-    )/* That’s a lot of suggestions... */}
+    ) /* That’s a lot of suggestions... */}
   </div>
 )
 
