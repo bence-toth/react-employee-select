@@ -1,4 +1,16 @@
 .employeeSelect {
-  width: 335px;
+  width: auto;
   position: relative; /* Trigger stacking context for the suggestions */
+}
+
+.employeeSelect.narrow {
+  width: 252px;
+}
+
+.employeeSelect.normal {
+  width: 336px;
+}
+
+.employeeSelect.wide {
+  width: 420px;
 }

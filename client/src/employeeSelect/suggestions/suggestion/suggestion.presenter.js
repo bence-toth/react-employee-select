@@ -5,7 +5,13 @@ import Avatar from '../../../avatar/avatar.presenter' // ../../...
 import {onMouseMove, onKeyDown} from './suggestion.eventHandlers'
 import './suggestion.css'
 
-const Suggestion = ({id, name, email, avatar, onSelectEmployee}) => (
+const Suggestion = ({
+  id,
+  name,
+  email,
+  avatar,
+  onSelectEmployee
+}) => (
   <li data-role='suggestion'>
     <button
       className='suggestion'

@@ -1,4 +1,4 @@
-import React, {useReducer, useEffect} from 'react'
+import React, {useReducer, useEffect, useState} from 'react'
 
 import {reducer, initialState} from './app.reducer'
 import {clearSuggestions, updateQuery, selectEmployee} from './app.actionsCreators'
@@ -14,6 +14,14 @@ const App = () => {
     fetchEmployees({pageLength: 6, pageNumber: 1, query: state.query})
       .then(receiveEmployeeData(dispatch))
   }, [state.query])
+
+  // TODO: Delete me
+  const [isDisabled, onSetDisabled] = useState(false)
+  useEffect(() => {
+    setInterval(() => {
+      onSetDisabled(!isDisabled)
+    }, 5000)
+  }, [])
 
   const fetchNextPage = () => {
     fetchEmployees({URL: state.nextPageURL})
@@ -36,6 +44,7 @@ const App = () => {
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onFetchNextPage={fetchNextPageIfNeeded}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}
+      deleteMeIsDisabled={isDisabled}
     />
   )
 }

@@ -12,6 +12,7 @@ const QueryInput = ({
   query,
   isCaretUpsideDown,
   selectedEmployee,
+  isDisabled,
   onQueryChange,
   onRemoveSelection
 }) => (
@@ -26,21 +27,24 @@ const QueryInput = ({
           <div className='name'>{selectedEmployee.name}</div>
           <address className='email'>{selectedEmployee.email}</address>
         </div>
-        <button
-          className='removeSelection'
-          type='button'
-          onClick={onRemoveSelection}
-        >
-          <img
-            className={classNames(
-              'cross',
-              {upsideDown: isCaretUpsideDown}
-            )}
-            src={cross}
-            alt='Remove selection'
-            title='Remove selection'
-          />
-        </button>
+        {!isDisabled && (
+          <button
+            className='removeSelection'
+            type='button'
+            onClick={onRemoveSelection}
+            disabled={isDisabled}
+          >
+            <img
+              className={classNames(
+                'cross',
+                {upsideDown: isCaretUpsideDown}
+              )}
+              src={cross}
+              alt='Remove selection'
+              title='Remove selection'
+            />
+          </button>
+        )}
       </div>
     )}
     <input
@@ -54,6 +58,7 @@ const QueryInput = ({
       placeholder='Choose Manager'
       onChange={onQueryChange}
       onKeyDown={onKeyDown}
+      disabled={isDisabled}
     />
     <img
       className={classNames(
@@ -70,6 +75,7 @@ QueryInput.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
   selectedEmployee: shape({}), // TODO:
+  isDisabled: bool,
   onQueryChange: func.isRequired,
   onRemoveSelection: func.isRequired
 }
