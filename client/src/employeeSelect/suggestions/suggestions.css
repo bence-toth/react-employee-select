@@ -18,3 +18,7 @@
 .employeeSelect .suggestionsWrapper > ul {
   list-style-type: none;
 }
+
+.employeeSelect:not(:focus-within) .suggestionsWrapper {
+  display: none;
+}

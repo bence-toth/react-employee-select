@@ -51,7 +51,7 @@ const EmployeeSelect = ({
       label={label}
       uniqueID={uniqueID}
     />
-    {!isDisabled && (query.length > 0) && !selectedEmployee && suggestions && (
+    {!isDisabled && !selectedEmployee && suggestions && (
       <Suggestions
         suggestions={suggestions /* That’s a lot of suggestions... */}
         onFetchNextPage={onFetchNextPage}
