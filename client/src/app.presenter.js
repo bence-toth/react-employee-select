@@ -14,7 +14,8 @@ const MainPresenter = ({
   copy,
   onQueryChange,
   onFetchNextPage,
-  onSelectEmployee
+  onSelectEmployee,
+  hasFetchError
 }) => (
   <main>
     <div>
@@ -30,6 +31,7 @@ const MainPresenter = ({
         onQueryChange={onQueryChange}
         onFetchNextPage={onFetchNextPage}
         onSelectEmployee={onSelectEmployee}
+        hasFetchError={hasFetchError}
       />
     </div>
   </main>
@@ -41,6 +43,7 @@ MainPresenter.propTypes = {
   selectedEmployee: employeeShape,
   isQueryFetching: bool,
   isNextPageFetching: bool,
+  hasFetchError: bool,
   copy: copyShape,
   onFetchNextPage: func.isRequired,
   onQueryChange: func.isRequired,

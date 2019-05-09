@@ -34,3 +34,8 @@ export const setNextPageFetching = ({isFetching}) => ({
   type: actions.setNextPageFetching,
   isFetching
 })
+
+export const setFetchError = ({hasError}) => ({
+  type: actions.setFetchError,
+  hasError
+})

@@ -3,6 +3,7 @@ import {arrayOf, func, bool} from 'prop-types'
 
 import Suggestion from './suggestion/suggestion.presenter'
 import NoResultsMessage from './noResultsMessage/noResultsMessage.presenter'
+import FetchErrorMessage from './fetchErrorMessage/fetchErrorMessage.presenter'
 import Spinner from '../../spinner/spinner.presenter'
 import {employeeShape, copyShape} from '../../app.shapes'
 import './suggestions.css'
@@ -12,7 +13,8 @@ const Suggestions = ({
   isNextPageFetching,
   copy,
   onFetchNextPage,
-  onSelectEmployee
+  onSelectEmployee,
+  hasFetchError
 }) => (
   <div
     data-role='suggestions'
@@ -27,7 +29,16 @@ const Suggestions = ({
       }
     }}
   >
-    {(suggestions.length > 0)
+    {hasFetchError && (
+      <FetchErrorMessage
+        copy={
+          (({managerFetchError}) =>
+            ({managerFetchError})
+          )(copy)
+        }
+      />
+    )}
+    {!hasFetchError && ((suggestions.length > 0)
       ? (
         <ul>
           {suggestions.map(({attributes: {id, name, email, avatar}}) => (
@@ -43,10 +54,16 @@ const Suggestions = ({
         </ul>
       )
       : (
-        <NoResultsMessage copy={copy} />
-      )
+        <NoResultsMessage
+          copy={
+            (({managerNoQueryResults}) =>
+              ({managerNoQueryResults})
+            )(copy)
+          }
+        />
+      ))
     }
-    {isNextPageFetching && (
+    {isNextPageFetching && !hasFetchError && (
       <div className='spinnerWrapper'>
         <Spinner />
       </div>
@@ -57,6 +74,7 @@ const Suggestions = ({
 Suggestions.propTypes = {
   suggestions: arrayOf(employeeShape),
   isNextPageFetching: bool,
+  hasFetchError: bool,
   copy: copyShape,
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired

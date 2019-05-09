@@ -6,7 +6,8 @@ import {
   updateQuery,
   selectEmployee,
   setQueryFetching,
-  setNextPageFetching
+  setNextPageFetching,
+  setFetchError
 } from './app.actionsCreators'
 import {receiveEmployeeData} from './app.actionsCreators.async'
 import fetchEmployees from './app.consumer'
@@ -22,14 +23,20 @@ const App = () => {
   const [userLocale] = useState('en-US')
   const copy = locale[userLocale]
 
-  const receiveEmployees = ({payload, fetchID}) => {
-    payload.then(data => {
-      if (fetchID === fetchCounter.current) {
-        receiveEmployeeData(dispatch)(data)
-        dispatch(setQueryFetching({isFetching: false}))
-        dispatch(setNextPageFetching({isFetching: false}))
+  const receiveEmployees = ({payload, fetchID, ok}) => {
+    if (fetchID === fetchCounter.current) {
+      if (ok) {
+        payload.then(data => {
+          receiveEmployeeData(dispatch)(data)
+          dispatch(setQueryFetching({isFetching: false}))
+          dispatch(setNextPageFetching({isFetching: false}))
+          dispatch(setFetchError({hasError: false}))
+        })
       }
-    })
+      else {
+        dispatch(setFetchError({hasError: true}))
+      }
+    }
   }
 
   const getNewFetchID = () => { // Track the last fetch
@@ -86,6 +93,7 @@ const App = () => {
       selectedEmployee={state.selectedEmployee}
       isQueryFetching={state.isQueryFetching}
       isNextPageFetching={state.isNextPageFetching}
+      hasFetchError={state.hasFetchError}
       copy={copy}
       onFetchNextPage={fetchNextPageIfNeeded}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}

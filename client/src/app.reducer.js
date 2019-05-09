@@ -2,6 +2,7 @@ import actions from './app.actions'
 
 const initialState = {
   query: '',
+  hasFetchError: false,
   suggestions: null,
   nextPageURL: null,
   totalSuggestionsForQuery: null,
@@ -50,6 +51,13 @@ const reducer = (state, action) => { // TODO: Switch...
       return {
         ...state,
         isNextPageFetching: action.isFetching
+      }
+    case actions.setFetchError:
+      return {
+        ...state,
+        isQueryFetching: false,
+        suggestions: action.hasError ? [] : state.suggestions,
+        hasFetchError: action.hasError
       }
     default:
       throw new Error(`Unknown action type '${action.type}'`)

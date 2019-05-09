@@ -12,7 +12,11 @@ const employees = names.sort().map((name, index) => ({
 
 const server = http.createServer((request, response) => {
   const {query: {per_page: pageLength, page: pageNumber, q: query}} = url.parse(request.url, true)
-  if (pageLength && pageNumber && (typeof query === 'string')) {
+  if (query.includes('err')) {
+    response.writeHead(418, {'Content-Type': 'text/json'})
+    response.end(JSON.stringify({error: 'I’m almost, but not quite, entirely unlike a teapot'}))
+  }
+  else if (pageLength && pageNumber && (typeof query === 'string')) {
     queries = query.trim().split(' ')
     response.writeHead(200, {
       'Content-Type': 'text/json',

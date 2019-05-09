@@ -20,7 +20,8 @@ const EmployeeSelect = ({
   onSelectEmployee,
   uniqueID,
   isQueryFetching,
-  isNextPageFetching
+  isNextPageFetching,
+  hasFetchError
 }) => (
   <div
     data-role='employeeSelect'
@@ -63,7 +64,12 @@ const EmployeeSelect = ({
         onSelectEmployee={onSelectEmployee}
         isDisabled={isDisabled}
         isNextPageFetching={isNextPageFetching}
-        copy={(({managerNoQueryResults}) => ({managerNoQueryResults}))(copy)}
+        copy={
+          (({managerNoQueryResults, managerFetchError}) =>
+            ({managerNoQueryResults, managerFetchError})
+          )(copy)
+        }
+        hasFetchError={hasFetchError}
       />
     ) }
   </div>
@@ -82,7 +88,8 @@ EmployeeSelect.propTypes = {
   width: oneOf(['narrow', 'normal', 'wide', 'auto']),
   isDisabled: bool,
   copy: copyShape,
-  uniqueID: string
+  uniqueID: string,
+  hasFetchError: bool
 }
 
 export default EmployeeSelect
