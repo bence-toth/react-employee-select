@@ -31,6 +31,7 @@ const Input = ({
       type='text'
       value=''
       placeholder='Choose Manager'
+      readOnly
     />
     <img
       className={classNames(
