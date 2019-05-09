@@ -10,12 +10,13 @@ const Avatar = ({name, avatarURL}) => (
       {avatarURL && (
         <img
           src={avatarURL}
-          alt={name}
+          alt=''
         />
       )}
       <div
         className='monogram'
         style={{backgroundColor: generateBackgroundColor({name})}}
+        aria-hidden='true'
       >
         {generateMonogram({name})}
       </div>
