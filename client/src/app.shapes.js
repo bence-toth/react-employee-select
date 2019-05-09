@@ -1,4 +1,5 @@
-import {string, shape} from 'prop-types'
+/* eslint-disable function-paren-newline */
+import {string, arrayOf, objectOf, oneOfType, shape, func} from 'prop-types'
 
 const employeeShape = shape({
   attributes: {
@@ -9,4 +10,12 @@ const employeeShape = shape({
   }.isRequired
 })
 
-export {employeeShape}
+const copyShape = objectOf(
+  oneOfType([
+    string,
+    arrayOf(string),
+    func
+  ])
+)
+
+export {employeeShape, copyShape}

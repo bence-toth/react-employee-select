@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import QueryInput from './queryInput/queryInput.presenter'
 import Suggestions from './suggestions/suggestions.presenter'
-import {employeeShape} from '../app.shapes'
+import {employeeShape, copyShape} from '../app.shapes'
 import './employeeSelect.css'
 
 const EmployeeSelect = ({
@@ -14,6 +14,7 @@ const EmployeeSelect = ({
   width = 'normal',
   isDisabled,
   label,
+  copy,
   onQueryChange,
   onFetchNextPage,
   onSelectEmployee,
@@ -53,6 +54,7 @@ const EmployeeSelect = ({
       label={label}
       uniqueID={uniqueID}
       isQueryFetching={isQueryFetching}
+      copy={(({managerSelectPlaceholder}) => ({managerSelectPlaceholder}))(copy)}
     />
     {!isDisabled && !selectedEmployee && suggestions && (
       <Suggestions
@@ -61,6 +63,7 @@ const EmployeeSelect = ({
         onSelectEmployee={onSelectEmployee}
         isDisabled={isDisabled}
         isNextPageFetching={isNextPageFetching}
+        copy={(({managerNoQueryResults}) => ({managerNoQueryResults}))(copy)}
       />
     ) }
   </div>
@@ -78,6 +81,7 @@ EmployeeSelect.propTypes = {
   onSelectEmployee: func.isRequired,
   width: oneOf(['narrow', 'normal', 'wide', 'auto']),
   isDisabled: bool,
+  copy: copyShape,
   uniqueID: string
 }
 

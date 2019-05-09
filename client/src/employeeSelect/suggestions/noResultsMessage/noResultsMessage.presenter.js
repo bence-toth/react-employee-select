@@ -1,13 +1,18 @@
 import React from 'react'
 
+import {copyShape} from '../../../app.shapes'
 import './noResultsMessage.css'
 
-const NoResultsMessage = () => (
+const NoResultsMessage = ({copy}) => (
   <div className='noResults'>
-    Not sure who you are looking for.
-    <br />
-    Maybe it’s a typo?
+    {copy.managerNoQueryResults.map(line => (
+      <p>{line}</p>
+    ))}
   </div>
 )
+
+NoResultsMessage.propTypes = {
+  copy: copyShape
+}
 
 export default NoResultsMessage

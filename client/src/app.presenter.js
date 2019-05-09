@@ -2,7 +2,7 @@ import React from 'react'
 import {string, func, arrayOf, bool} from 'prop-types'
 
 import EmployeeSelect from './employeeSelect/employeeSelect.presenter'
-import {employeeShape} from './app.shapes'
+import {employeeShape, copyShape} from './app.shapes'
 import './app.css'
 
 const MainPresenter = ({
@@ -11,6 +11,7 @@ const MainPresenter = ({
   selectedEmployee,
   isQueryFetching,
   isNextPageFetching,
+  copy,
   onQueryChange,
   onFetchNextPage,
   onSelectEmployee
@@ -23,6 +24,7 @@ const MainPresenter = ({
         suggestions={suggestions}
         width='normal'
         uniqueID='mySpecialEmplyeeSelect'
+        copy={copy}
         isQueryFetching={isQueryFetching}
         isNextPageFetching={isNextPageFetching}
         onQueryChange={onQueryChange}
@@ -39,6 +41,7 @@ MainPresenter.propTypes = {
   selectedEmployee: employeeShape,
   isQueryFetching: bool,
   isNextPageFetching: bool,
+  copy: copyShape,
   onFetchNextPage: func.isRequired,
   onQueryChange: func.isRequired,
   onSelectEmployee: func.isRequired

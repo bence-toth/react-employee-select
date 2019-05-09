@@ -4,12 +4,13 @@ import {arrayOf, func, bool} from 'prop-types'
 import Suggestion from './suggestion/suggestion.presenter'
 import NoResultsMessage from './noResultsMessage/noResultsMessage.presenter'
 import Spinner from '../../spinner/spinner.presenter'
-import {employeeShape} from '../../app.shapes'
+import {employeeShape, copyShape} from '../../app.shapes'
 import './suggestions.css'
 
 const Suggestions = ({
   suggestions,
   isNextPageFetching,
+  copy,
   onFetchNextPage,
   onSelectEmployee
 }) => (
@@ -42,7 +43,7 @@ const Suggestions = ({
         </ul>
       )
       : (
-        <NoResultsMessage />
+        <NoResultsMessage copy={copy} />
       )
     }
     {isNextPageFetching && (
@@ -56,6 +57,7 @@ const Suggestions = ({
 Suggestions.propTypes = {
   suggestions: arrayOf(employeeShape),
   isNextPageFetching: bool,
+  copy: copyShape,
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired
 }

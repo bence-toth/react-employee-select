@@ -3,7 +3,7 @@ import {string, func, bool} from 'prop-types'
 
 import Selection from './selection/selection.presenter'
 import Input from './input/input.presenter'
-import {employeeShape} from '../../app.shapes'
+import {employeeShape, copyShape} from '../../app.shapes'
 import './queryInput.css'
 
 const QueryInput = ({
@@ -12,6 +12,7 @@ const QueryInput = ({
   selectedEmployee,
   isDisabled,
   uniqueID,
+  copy,
   onQueryChange,
   onRemoveSelection,
   isQueryFetching
@@ -33,6 +34,7 @@ const QueryInput = ({
           uniqueID={uniqueID}
           onQueryChange={onQueryChange}
           isQueryFetching={isQueryFetching}
+          copy={copy}
         />
       )
     }
@@ -45,6 +47,7 @@ QueryInput.propTypes = {
   selectedEmployee: employeeShape,
   isDisabled: bool,
   isQueryFetching: bool,
+  copy: copyShape,
   uniqueID: string,
   onQueryChange: func.isRequired,
   onRemoveSelection: func.isRequired

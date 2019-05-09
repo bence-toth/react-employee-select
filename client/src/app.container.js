@@ -1,4 +1,4 @@
-import React, {useReducer, useEffect, useRef} from 'react'
+import React, {useReducer, useEffect, useRef, useState} from 'react'
 
 import {reducer, initialState} from './app.reducer'
 import {
@@ -11,11 +11,16 @@ import {
 import {receiveEmployeeData} from './app.actionsCreators.async'
 import fetchEmployees from './app.consumer'
 import MainPresenter from './app.presenter'
+import locale from './app.locale'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const fetchCounter = useRef(0)
+
+  // This would probably come from some context provider
+  const [userLocale] = useState('en-US')
+  const copy = locale[userLocale]
 
   const receiveEmployees = ({payload, fetchID}) => {
     payload.then(data => {
@@ -81,6 +86,7 @@ const App = () => {
       selectedEmployee={state.selectedEmployee}
       isQueryFetching={state.isQueryFetching}
       isNextPageFetching={state.isNextPageFetching}
+      copy={copy}
       onFetchNextPage={fetchNextPageIfNeeded}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}

@@ -4,6 +4,7 @@ import classNames from 'classnames'
 
 import Spinner from '../../../spinner/spinner.presenter'
 import {onKeyDown} from './input.eventHandlers'
+import {copyShape} from '../../../app.shapes'
 import './input.css'
 import caret from './caret-down.svg'
 
@@ -13,7 +14,8 @@ const Input = ({
   isDisabled,
   uniqueID,
   onQueryChange,
-  isQueryFetching
+  isQueryFetching,
+  copy
 }) => (
   <>
     <input
@@ -22,7 +24,7 @@ const Input = ({
       className='queryInput'
       type='text'
       value={query}
-      placeholder='Choose Manager'
+      placeholder={copy.managerSelectPlaceholder}
       onChange={onQueryChange}
       onKeyDown={onKeyDown}
       disabled={isDisabled}
@@ -32,7 +34,7 @@ const Input = ({
       className='ghost queryInput'
       type='text'
       value=''
-      placeholder='Choose Manager'
+      placeholder={copy.managerSelectPlaceholder}
       readOnly
     />
     {isQueryFetching
@@ -61,6 +63,7 @@ Input.propTypes = {
   isDisabled: bool,
   isQueryFetching: bool,
   uniqueID: string,
+  copy: copyShape,
   onQueryChange: func.isRequired
 }
 
