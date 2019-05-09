@@ -2,6 +2,7 @@ import React from 'react'
 import {string, func, bool} from 'prop-types'
 import classNames from 'classnames'
 
+import Spinner from '../../../spinner/spinner.presenter'
 import {onKeyDown} from './input.eventHandlers'
 import './input.css'
 import caret from './caret-down.svg'
@@ -11,7 +12,8 @@ const Input = ({
   isCaretUpsideDown,
   isDisabled,
   uniqueID,
-  onQueryChange
+  onQueryChange,
+  isQueryFetching
 }) => (
   <>
     <input
@@ -33,14 +35,23 @@ const Input = ({
       placeholder='Choose Manager'
       readOnly
     />
-    <img
-      className={classNames(
-        'caret',
-        {upsideDown: isCaretUpsideDown}
-      )}
-      src={caret}
-      alt=''
-    />
+    {isQueryFetching
+      ? (
+        <div className='spinnerWrapper'>
+          <Spinner />
+        </div>
+      )
+      : (
+        <img
+          className={classNames(
+            'caret',
+            {upsideDown: isCaretUpsideDown}
+          )}
+          src={caret}
+          alt=''
+        />
+      )
+    }
   </>
 )
 
@@ -48,6 +59,7 @@ Input.propTypes = {
   query: string.isRequired,
   isCaretUpsideDown: bool,
   isDisabled: bool,
+  isQueryFetching: bool,
   uniqueID: string,
   onQueryChange: func.isRequired
 }

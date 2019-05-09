@@ -22,3 +22,18 @@
 .employeeSelect:not(:focus-within) .suggestionsWrapper {
   display: none;
 }
+
+.employeeSelect .suggestionsWrapper .spinnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 64px;
+  pointer-events: none;
+}
+
+.employeeSelect .suggestionsWrapper .spinner {
+  width: 30px;
+  height: 30px;
+}
+

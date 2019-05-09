@@ -1,13 +1,15 @@
 import React from 'react'
-import {arrayOf, func} from 'prop-types'
+import {arrayOf, func, bool} from 'prop-types'
 
 import Suggestion from './suggestion/suggestion.presenter'
 import NoResultsMessage from './noResultsMessage/noResultsMessage.presenter'
+import Spinner from '../../spinner/spinner.presenter'
 import {employeeShape} from '../../app.shapes'
 import './suggestions.css'
 
 const Suggestions = ({
   suggestions,
+  isNextPageFetching,
   onFetchNextPage,
   onSelectEmployee
 }) => (
@@ -43,11 +45,17 @@ const Suggestions = ({
         <NoResultsMessage />
       )
     }
+    {isNextPageFetching && (
+      <div className='spinnerWrapper'>
+        <Spinner />
+      </div>
+    )}
   </div>
 )
 
 Suggestions.propTypes = {
   suggestions: arrayOf(employeeShape),
+  isNextPageFetching: bool,
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired
 }

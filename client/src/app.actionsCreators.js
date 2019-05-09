@@ -24,3 +24,13 @@ export const selectEmployee = ({employee = null}) => ({
   type: actions.selectEmployee,
   employee
 })
+
+export const setQueryFetching = ({isFetching}) => ({
+  type: actions.setQueryFetching,
+  isFetching
+})
+
+export const setNextPageFetching = ({isFetching}) => ({
+  type: actions.setNextPageFetching,
+  isFetching
+})

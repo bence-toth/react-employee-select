@@ -39,3 +39,16 @@
 .employeeSelect .caret.upsideDown {
   transform: translateY(-50%) scaleY(-1);
 }
+
+.employeeSelect .queryInputWrapper .spinnerWrapper {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.employeeSelect .queryInputWrapper .spinner {
+  position: absolute;
+  top: calc(50% - (15px / 2) + 1px);
+  right: 8px;
+  width: 15px;
+  height: 15px;
+}

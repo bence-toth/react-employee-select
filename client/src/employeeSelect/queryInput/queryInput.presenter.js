@@ -13,7 +13,8 @@ const QueryInput = ({
   isDisabled,
   uniqueID,
   onQueryChange,
-  onRemoveSelection
+  onRemoveSelection,
+  isQueryFetching
 }) => (
   <div className='queryInputWrapper'>
     {selectedEmployee
@@ -31,6 +32,7 @@ const QueryInput = ({
           isDisabled={isDisabled}
           uniqueID={uniqueID}
           onQueryChange={onQueryChange}
+          isQueryFetching={isQueryFetching}
         />
       )
     }
@@ -42,6 +44,7 @@ QueryInput.propTypes = {
   isCaretUpsideDown: bool,
   selectedEmployee: employeeShape,
   isDisabled: bool,
+  isQueryFetching: bool,
   uniqueID: string,
   onQueryChange: func.isRequired,
   onRemoveSelection: func.isRequired

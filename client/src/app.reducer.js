@@ -6,7 +6,9 @@ const initialState = {
   nextPageURL: null,
   totalSuggestionsForQuery: null,
   highlightedSuggestionIndex: null,
-  selectedEmployee: null
+  selectedEmployee: null,
+  isQueryFetching: false,
+  isNextPageFetching: false
 }
 
 const reducer = (state, action) => { // TODO: Switch...
@@ -38,6 +40,16 @@ const reducer = (state, action) => { // TODO: Switch...
         totalSuggestionsForQuery: null,
         highlightedSuggestionIndex: null,
         selectedEmployee: action.employee
+      }
+    case actions.setQueryFetching:
+      return {
+        ...state,
+        isQueryFetching: action.isFetching
+      }
+    case actions.setNextPageFetching:
+      return {
+        ...state,
+        isNextPageFetching: action.isFetching
       }
     default:
       throw new Error(`Unknown action type '${action.type}'`)

@@ -1,10 +1,16 @@
 import React, {useReducer, useEffect, useRef} from 'react'
 
 import {reducer, initialState} from './app.reducer'
-import {clearSuggestions, updateQuery, selectEmployee} from './app.actionsCreators'
+import {
+  clearSuggestions,
+  updateQuery,
+  selectEmployee,
+  setQueryFetching,
+  setNextPageFetching
+} from './app.actionsCreators'
 import {receiveEmployeeData} from './app.actionsCreators.async'
 import fetchEmployees from './app.consumer'
-import Presenter from './app.presenter'
+import MainPresenter from './app.presenter'
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -15,6 +21,8 @@ const App = () => {
     payload.then(data => {
       if (fetchID === fetchCounter.current) {
         receiveEmployeeData(dispatch)(data)
+        dispatch(setQueryFetching({isFetching: false}))
+        dispatch(setNextPageFetching({isFetching: false}))
       }
     })
   }
@@ -28,6 +36,7 @@ const App = () => {
   const fetchEmployeeData = () => {
     dispatch(clearSuggestions())
     const newFetchID = getNewFetchID()
+    dispatch(setQueryFetching({isFetching: true}))
     fetchEmployees({
       pageLength: 6,
       pageNumber: 1,
@@ -49,6 +58,7 @@ const App = () => {
 
   const fetchNextPage = () => { // Fetch next page when scrolled to bottom
     const newFetchID = getNewFetchID()
+    dispatch(setNextPageFetching({isFetching: true}))
     fetchEmployees({
       URL: state.nextPageURL,
       fetchID: newFetchID
@@ -65,10 +75,12 @@ const App = () => {
   }
 
   return (
-    <Presenter
+    <MainPresenter
       query={state.query}
       suggestions={state.suggestions}
       selectedEmployee={state.selectedEmployee}
+      isQueryFetching={state.isQueryFetching}
+      isNextPageFetching={state.isNextPageFetching}
       onFetchNextPage={fetchNextPageIfNeeded}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}

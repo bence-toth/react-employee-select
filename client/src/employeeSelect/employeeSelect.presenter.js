@@ -17,7 +17,9 @@ const EmployeeSelect = ({
   onQueryChange,
   onFetchNextPage,
   onSelectEmployee,
-  uniqueID
+  uniqueID,
+  isQueryFetching,
+  isNextPageFetching
 }) => (
   <div
     data-role='employeeSelect'
@@ -50,6 +52,7 @@ const EmployeeSelect = ({
       isDisabled={isDisabled}
       label={label}
       uniqueID={uniqueID}
+      isQueryFetching={isQueryFetching}
     />
     {!isDisabled && !selectedEmployee && suggestions && (
       <Suggestions
@@ -57,6 +60,7 @@ const EmployeeSelect = ({
         onFetchNextPage={onFetchNextPage}
         onSelectEmployee={onSelectEmployee}
         isDisabled={isDisabled}
+        isNextPageFetching={isNextPageFetching}
       />
     ) }
   </div>
@@ -67,6 +71,8 @@ EmployeeSelect.propTypes = {
   suggestions: arrayOf(employeeShape),
   selectedEmployee: employeeShape,
   label: node,
+  isQueryFetching: bool,
+  isNextPageFetching: bool,
   onQueryChange: func.isRequired,
   onFetchNextPage: func.isRequired,
   onSelectEmployee: func.isRequired,
