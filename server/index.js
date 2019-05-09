@@ -26,7 +26,10 @@ const server = http.createServer((request, response) => {
       pageNumber,
       query
     })
-    response.end(JSON.stringify(payload))
+    setTimeout(
+      () => response.end(JSON.stringify(payload)),
+      Math.round(Math.random() * 1000)
+    )
   }
   else {
     response.writeHead(400, {'Content-Type': 'text/json'})
