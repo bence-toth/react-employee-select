@@ -25,7 +25,7 @@ const App = () => {
     return newFetchID
   }
 
-  useEffect(() => { // Fetch data as the user types
+  const fetchEmployeeData = () => {
     dispatch(clearSuggestions())
     const newFetchID = getNewFetchID()
     fetchEmployees({
@@ -35,7 +35,17 @@ const App = () => {
       fetchID: newFetchID
     })
       .then(receiveEmployees)
+  }
+
+  useEffect(() => { // Fetch data as the user types
+    fetchEmployeeData()
   }, [state.query])
+
+  useEffect(() => { // Fetch when removing selection
+    if (state.selectedEmployee === null) {
+      fetchEmployeeData()
+    }
+  }, [state.selectedEmployee])
 
   const fetchNextPage = () => { // Fetch next page when scrolled to bottom
     const newFetchID = getNewFetchID()
