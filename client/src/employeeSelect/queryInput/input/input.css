@@ -1,4 +1,5 @@
 .employeeSelect .queryInput {
+  display: block;
   border-width: 0;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
@@ -6,20 +7,25 @@
   height: 100%;
   background-color: transparent;
   padding: 0 10px;
-  opacity: 1;
   outline: none; /* We can do better #a11y TODO: */
   font-weight: 400;
   color: hsl(0, 0%, 25%);
 }
 
-.employeeSelect .queryInput:placeholder-shown {
-  opacity: 0.85;
-  font-weight: 300;
+.employeeSelect .ghost.queryInput {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 12.5px - 10px);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
-.queryInput:disabled,
-.queryInput:disabled:placeholder-shown {
-  opacity: 0.5;
+.employeeSelect:not(:focus-within) .ghost.queryInput {
+  opacity: 1;
+  background: white;
 }
 
 .employeeSelect .caret {

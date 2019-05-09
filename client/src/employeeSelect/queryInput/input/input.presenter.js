@@ -17,10 +17,7 @@ const Input = ({
     <input
       id={uniqueID}
       data-role='queryInput'
-      className={classNames(
-        'queryInput',
-        {showsPlaceholder: query.length === 0}
-      )}
+      className='queryInput'
       type='text'
       value={query}
       placeholder='Choose Manager'
@@ -28,6 +25,12 @@ const Input = ({
       onKeyDown={onKeyDown}
       disabled={isDisabled}
       autoComplete='off'
+    />
+    <input
+      className='ghost queryInput'
+      type='text'
+      value=''
+      placeholder='Choose Manager'
     />
     <img
       className={classNames(
