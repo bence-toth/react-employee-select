@@ -5,8 +5,9 @@ import './fetchErrorMessage.css'
 
 const FetchErrorMessage = ({copy}) => (
   <div className='fetchError'>
-    {copy.managerFetchError.map(line => (
-      <p>{line}</p>
+    {copy.managerFetchError.map((line, lineIndex) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <p key={lineIndex}>{line}</p>
     ))}
   </div>
 )
