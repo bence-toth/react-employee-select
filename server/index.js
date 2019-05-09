@@ -28,7 +28,7 @@ const server = http.createServer((request, response) => {
     })
     setTimeout(
       () => response.end(JSON.stringify(payload)),
-      Math.round(Math.random() * 1000)
+      Math.round(500 + (Math.random() * 500))
     )
   }
   else {
