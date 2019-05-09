@@ -7,8 +7,8 @@ const receiveEmployeeData = dispatch => (
     meta: {page: {total: totalSuggestionsForQuery}}
   }) => {
     dispatch(addSuggestions({
-      suggestions,
       nextPageURL,
+      suggestions,
       totalSuggestionsForQuery
     }))
   }

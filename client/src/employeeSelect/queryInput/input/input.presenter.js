@@ -9,33 +9,33 @@ import './input.css'
 import caret from './caret-down.svg'
 
 const Input = ({
-  query,
+  copy,
   isCaretUpsideDown,
   isDisabled,
-  uniqueID,
-  onQueryChange,
   isQueryFetching,
-  copy
+  onQueryChange,
+  query,
+  uniqueID
 }) => (
   <>
     <input
-      id={uniqueID}
-      data-role='queryInput'
+      autoComplete='off'
       className='queryInput'
-      type='text'
-      value={query}
-      placeholder={copy.managerSelectPlaceholder}
+      data-role='queryInput'
+      disabled={isDisabled}
+      id={uniqueID}
       onChange={onQueryChange}
       onKeyDown={onKeyDown}
-      disabled={isDisabled}
-      autoComplete='off'
+      placeholder={copy.managerSelectPlaceholder}
+      type='text'
+      value={query}
     />
     <input
       className='ghost queryInput'
-      type='text'
-      value=''
       placeholder={copy.managerSelectPlaceholder}
       readOnly
+      type='text'
+      value=''
     />
     {isQueryFetching
       ? (
@@ -58,13 +58,13 @@ const Input = ({
 )
 
 Input.propTypes = {
-  query: string.isRequired,
+  copy: copyShape,
   isCaretUpsideDown: bool,
   isDisabled: bool,
   isQueryFetching: bool,
-  uniqueID: string,
-  copy: copyShape,
-  onQueryChange: func.isRequired
+  onQueryChange: func.isRequired,
+  query: string.isRequired,
+  uniqueID: string
 }
 
 export default Input

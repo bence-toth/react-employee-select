@@ -1,6 +1,6 @@
 .employeeSelect {
-  width: auto;
   position: relative; /* Trigger stacking context for the suggestions */
+  width: auto;
 }
 
 .employeeSelect.narrow {
@@ -16,11 +16,11 @@
 }
 
 .employeeSelect .selectLabel {
-  font-size: 14px;
-  margin-left: 10px;
-  font-weight: 400;
   color: hsl(0, 0%, 50%);
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
 }
 
 .employeeSelect .selectLabel.inputDisabled {

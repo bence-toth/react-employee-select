@@ -9,17 +9,16 @@ import {employeeShape, copyShape} from '../../app.shapes'
 import './suggestions.css'
 
 const Suggestions = ({
-  suggestions,
-  isNextPageFetching,
   copy,
+  hasFetchError,
+  isNextPageFetching,
   onFetchNextPage,
   onSelectEmployee,
-  hasFetchError
+  suggestions
 }) => (
   <div
-    data-role='suggestions'
     className='suggestionsWrapper'
-    tabIndex={-1}
+    data-role='suggestions'
     onScroll={({target}) => {
       const {scrollTop, scrollHeight, offsetHeight} = target
       const distanceFromBottom = scrollHeight - (scrollTop + offsetHeight)
@@ -28,6 +27,7 @@ const Suggestions = ({
         onFetchNextPage()
       }
     }}
+    tabIndex={-1}
   >
     {hasFetchError && (
       <FetchErrorMessage
@@ -43,11 +43,11 @@ const Suggestions = ({
         <ul>
           {suggestions.map(({attributes: {id, name, email, avatar}}) => (
             <Suggestion
-              key={id}
-              id={id}
-              name={name}
-              email={email}
               avatar={avatar}
+              email={email}
+              id={id}
+              key={id}
+              name={name}
               onSelectEmployee={onSelectEmployee}
             />
           ))}
@@ -72,12 +72,12 @@ const Suggestions = ({
 )
 
 Suggestions.propTypes = {
-  suggestions: arrayOf(employeeShape),
-  isNextPageFetching: bool,
-  hasFetchError: bool,
   copy: copyShape,
+  hasFetchError: bool,
+  isNextPageFetching: bool,
   onFetchNextPage: func.isRequired,
-  onSelectEmployee: func.isRequired
+  onSelectEmployee: func.isRequired,
+  suggestions: arrayOf(employeeShape)
 }
 
 export default Suggestions

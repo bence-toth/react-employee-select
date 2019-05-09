@@ -4,7 +4,10 @@ import {string} from 'prop-types'
 import {generateMonogram, generateBackgroundColor} from './avatar.utility'
 import './avatar.css'
 
-const Avatar = ({name, avatarURL}) => (
+const Avatar = ({
+  avatarURL,
+  name
+}) => (
   <div className='avatarWrapper'>
     <div className='avatar'>
       {avatarURL && (
@@ -14,9 +17,9 @@ const Avatar = ({name, avatarURL}) => (
         />
       )}
       <div
+        aria-hidden='true'
         className='monogram'
         style={{backgroundColor: generateBackgroundColor({name})}}
-        aria-hidden='true'
       >
         {generateMonogram({name})}
       </div>
@@ -25,8 +28,8 @@ const Avatar = ({name, avatarURL}) => (
 )
 
 Avatar.propTypes = {
-  name: string.isRequired,
-  avatarURL: string
+  avatarURL: string,
+  name: string.isRequired
 }
 
 export default Avatar

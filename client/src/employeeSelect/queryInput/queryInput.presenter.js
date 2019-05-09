@@ -7,34 +7,34 @@ import {employeeShape, copyShape} from '../../app.shapes'
 import './queryInput.css'
 
 const QueryInput = ({
-  query,
-  isCaretUpsideDown,
-  selectedEmployee,
-  isDisabled,
-  uniqueID,
   copy,
+  isCaretUpsideDown,
+  isDisabled,
+  isQueryFetching,
   onQueryChange,
   onRemoveSelection,
-  isQueryFetching
+  query,
+  selectedEmployee,
+  uniqueID
 }) => (
   <div className='queryInputWrapper'>
     {selectedEmployee
       ? (
         <Selection
-          selectedEmployee={selectedEmployee}
           isDisabled={isDisabled}
           onRemoveSelection={onRemoveSelection}
+          selectedEmployee={selectedEmployee}
         />
       )
       : (
         <Input
-          query={query}
+          copy={copy}
           isCaretUpsideDown={isCaretUpsideDown}
           isDisabled={isDisabled}
-          uniqueID={uniqueID}
-          onQueryChange={onQueryChange}
           isQueryFetching={isQueryFetching}
-          copy={copy}
+          onQueryChange={onQueryChange}
+          query={query}
+          uniqueID={uniqueID}
         />
       )
     }
@@ -42,15 +42,15 @@ const QueryInput = ({
 )
 
 QueryInput.propTypes = {
-  query: string.isRequired,
+  copy: copyShape,
   isCaretUpsideDown: bool,
-  selectedEmployee: employeeShape,
   isDisabled: bool,
   isQueryFetching: bool,
-  copy: copyShape,
-  uniqueID: string,
   onQueryChange: func.isRequired,
-  onRemoveSelection: func.isRequired
+  onRemoveSelection: func.isRequired,
+  query: string.isRequired,
+  selectedEmployee: employeeShape,
+  uniqueID: string
 }
 
 export default QueryInput

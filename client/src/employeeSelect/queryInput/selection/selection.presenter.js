@@ -7,14 +7,14 @@ import './selection.css'
 import cross from './cross.svg'
 
 const Selection = ({
-  selectedEmployee,
   isDisabled,
-  onRemoveSelection
+  onRemoveSelection,
+  selectedEmployee
 }) => (
   <div className='selection'>
     <Avatar
-      name={selectedEmployee.name}
       avatarURL={selectedEmployee.avatar}
+      name={selectedEmployee.name}
     />
     <div className='nameWrapper'>
       <div className='name'>{selectedEmployee.name}</div>
@@ -23,14 +23,14 @@ const Selection = ({
     {!isDisabled && (
       <button
         className='removeSelection'
-        type='button'
-        onClick={onRemoveSelection}
         disabled={isDisabled}
+        onClick={onRemoveSelection}
+        type='button'
       >
         <img
+          alt='Remove selection'
           className='cross'
           src={cross}
-          alt='Remove selection'
           title='Remove selection'
         />
       </button>
@@ -39,9 +39,9 @@ const Selection = ({
 )
 
 Selection.propTypes = {
-  selectedEmployee: employeeShape,
   isDisabled: bool,
-  onRemoveSelection: func.isRequired
+  onRemoveSelection: func.isRequired,
+  selectedEmployee: employeeShape
 }
 
 export default Selection

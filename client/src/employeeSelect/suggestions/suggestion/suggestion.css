@@ -1,13 +1,13 @@
 .employeeSelect .suggestion {
-  height: 64px;
-  border-width: 0;
-  background-color: hsl(0, 0%, 100%);
-  width: 100%;
-  border-bottom: 1px solid hsl(0, 0%, 90%);
-  display: flex;
   align-items: center;
-  transition: background-color 0.15s;
+  background-color: hsl(0, 0%, 100%);
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+  border-width: 0;
   cursor: pointer;
+  display: flex;
+  height: 64px;
+  transition: background-color 0.15s;
+  width: 100%;
 }
 
 .employeeSelect .suggestion:focus {
@@ -16,18 +16,18 @@
 }
 
 .employeeSelect .suggestion .nameWrapper {
-  width: calc(100% - 16px - 30px - 10px);
   padding-right: 20px;
   text-align: left;
+  width: calc(100% - 16px - 30px - 10px);
 }
 
 .employeeSelect .suggestion .name {
   color: hsl(0, 0%, 25%);
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: color 0.15s;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .employeeSelect .suggestion:focus .name {
@@ -35,11 +35,11 @@
 }
 
 .employeeSelect .suggestion .email {
-  margin-top: 3px;
-  font-style: normal;
   color: hsl(0, 0%, 50%);
   font-size: 12px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-style: normal;
+  margin-top: 3px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

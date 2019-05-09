@@ -1,16 +1,16 @@
 .employeeSelect .selection {
-  height: 40px;
-  border-width: 0;
-  background-color: hsl(0, 0%, 100%);
-  box-shadow: 0 1px 0 hsl(0, 0%, 90%);
-  border-radius: 6px;
-  width: 100%;
-  display: flex;
   align-items: center;
-  transition: background-color 0.15s;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: 0 1px 0 hsl(0, 0%, 90%);
+  display: flex;
+  height: 40px;
   position: absolute;
-  z-index: 1;
+  transition: background-color 0.15s;
   user-select: none;
+  width: 100%;
+  z-index: 1;
 }
 
 .employeeSelect .selection .avatarWrapper {
@@ -19,18 +19,18 @@
 }
 
 .employeeSelect .selection .nameWrapper {
-  width: calc(100% - 16px - 30px - 10px);
   padding-right: 40px;
   text-align: left;
+  width: calc(100% - 16px - 30px - 10px);
 }
 
 .employeeSelect .selection .name {
   color: hsl(0, 0%, 25%);
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: color 0.15s;
   white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 
 .employeeSelect .selection:focus .name {
@@ -38,25 +38,25 @@
 }
 
 .employeeSelect .selection .email {
-  margin-top: -2px;
-  font-style: normal;
   color: hsl(0, 0%, 50%);
   font-size: 12px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-style: normal;
+  margin-top: -2px;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .employeeSelect .removeSelection {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 0;
+  padding: 5px;
   position: absolute;
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0;
-  padding: 5px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
 }
 
 .employeeSelect .removeSelection img {

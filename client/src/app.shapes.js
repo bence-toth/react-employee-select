@@ -3,10 +3,10 @@ import {string, arrayOf, objectOf, oneOfType, shape, func} from 'prop-types'
 
 const employeeShape = shape({
   attributes: {
-    name: string.isRequired,
-    id: string.isRequired,
+    avatar: string,
     email: string.isRequired,
-    avatar: string
+    id: string.isRequired,
+    name: string.isRequired
   }.isRequired
 })
 

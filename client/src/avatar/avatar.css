@@ -1,32 +1,32 @@
 .avatarWrapper {
-  width: 30px;
   height: 64px;
   margin: 0 10px 0 16px;
   position: relative;  /* Trigger stacking context for monogram or profile picture */
+  width: 30px;
 }
 
 .avatar img {
+  border-radius: 6px;
+  height: 30px;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translate(-50%, -50%);
   width: 30px;
-  height: 30px;
-  border-radius: 6px;
   z-index: 1;
 }
 
 .avatar .monogram {
-  position: absolute;
-  top: 50%;
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  font-size: 15px;
+  font-weight: 500;
+  height: 30px;
   left: 50%;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  text-align: center;
-  line-height: 30px;
-  color: hsl(0, 0%, 100%);
-  font-weight: 500;
-  font-size: 15px;
 }

@@ -1,13 +1,13 @@
-import React, {useReducer, useEffect, useRef, useState} from 'react'
+import React, {useEffect, useReducer, useRef, useState} from 'react'
 
-import {reducer, initialState} from './app.reducer'
+import {initialState, reducer} from './app.reducer'
 import {
   clearSuggestions,
-  updateQuery,
   selectEmployee,
-  setQueryFetching,
+  setFetchError,
   setNextPageFetching,
-  setFetchError
+  setQueryFetching,
+  updateQuery
 } from './app.actionsCreators'
 import {receiveEmployeeData} from './app.actionsCreators.async'
 import fetchEmployees from './app.consumer'
@@ -28,9 +28,9 @@ const App = () => {
       if (ok) {
         payload.then(data => {
           receiveEmployeeData(dispatch)(data)
-          dispatch(setQueryFetching({isFetching: false}))
-          dispatch(setNextPageFetching({isFetching: false}))
           dispatch(setFetchError({hasError: false}))
+          dispatch(setNextPageFetching({isFetching: false}))
+          dispatch(setQueryFetching({isFetching: false}))
         })
       }
       else {

@@ -1,8 +1,8 @@
 const roles = {
-  suggestion: '[data-role=suggestion]',
-  suggestions: '[data-role=suggestions]',
   employeeSelect: '[data-role=employeeSelect]',
-  queryInput: '[data-role=queryInput]'
+  queryInput: '[data-role=queryInput]',
+  suggestion: '[data-role=suggestion]',
+  suggestions: '[data-role=suggestions]'
 }
 
 const onMouseMove = ({target}) => {

@@ -6,23 +6,23 @@ import {onMouseMove, onKeyDown} from './suggestion.eventHandlers'
 import './suggestion.css'
 
 const Suggestion = ({
+  avatar,
+  email,
   id,
   name,
-  email,
-  avatar,
   onSelectEmployee
 }) => (
   <li data-role='suggestion'>
     <button
       className='suggestion'
-      type='button'
-      onMouseMove={onMouseMove}
-      onKeyDown={onKeyDown}
       onClick={() => onSelectEmployee({employee: {id, name, email, avatar}})}
+      onKeyDown={onKeyDown}
+      onMouseMove={onMouseMove}
+      type='button'
     >
       <Avatar
-        name={name}
         avatarURL={avatar}
+        name={name}
       />
       <div className='nameWrapper'>
         <div className='name'>{name}</div>
@@ -33,10 +33,10 @@ const Suggestion = ({
 )
 
 Suggestion.propTypes = {
+  avatar: string,
+  email: string.isRequired,
   id: string.isRequired,
   name: string.isRequired,
-  email: string.isRequired,
-  avatar: string,
   onSelectEmployee: func.isRequired
 }
 

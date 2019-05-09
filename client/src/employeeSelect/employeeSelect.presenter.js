@@ -8,23 +8,22 @@ import {employeeShape, copyShape} from '../app.shapes'
 import './employeeSelect.css'
 
 const EmployeeSelect = ({
-  query,
-  suggestions,
-  selectedEmployee,
-  width = 'normal',
-  isDisabled,
-  label,
   copy,
-  onQueryChange,
-  onFetchNextPage,
-  onSelectEmployee,
-  uniqueID,
-  isQueryFetching,
+  hasFetchError,
+  isDisabled,
   isNextPageFetching,
-  hasFetchError
+  isQueryFetching,
+  label,
+  onFetchNextPage,
+  onQueryChange,
+  onSelectEmployee,
+  query,
+  selectedEmployee,
+  suggestions,
+  uniqueID,
+  width = 'normal'
 }) => (
   <div
-    data-role='employeeSelect'
     className={classNames(
       'employeeSelect',
       {
@@ -33,6 +32,7 @@ const EmployeeSelect = ({
         wide: width === 'wide'
       }
     )}
+    data-role='employeeSelect'
   >
     {(label && uniqueID) && (
       <label
@@ -46,50 +46,50 @@ const EmployeeSelect = ({
       </label>
     )}
     <QueryInput
-      query={query}
+      copy={(({managerSelectPlaceholder}) => ({managerSelectPlaceholder}))(copy)}
       isCaretUpsideDown={suggestions !== null}
-      selectedEmployee={selectedEmployee}
+      isDisabled={isDisabled}
+      isQueryFetching={isQueryFetching}
+      label={label}
       onQueryChange={onQueryChange}
       onRemoveSelection={() => onSelectEmployee({employee: null})}
-      isDisabled={isDisabled}
-      label={label}
+      query={query}
+      selectedEmployee={selectedEmployee}
       uniqueID={uniqueID}
-      isQueryFetching={isQueryFetching}
-      copy={(({managerSelectPlaceholder}) => ({managerSelectPlaceholder}))(copy)}
     />
     {!isDisabled && !selectedEmployee && suggestions && (
       <Suggestions
-        suggestions={suggestions /* That’s a lot of suggestions... */}
-        onFetchNextPage={onFetchNextPage}
-        onSelectEmployee={onSelectEmployee}
-        isDisabled={isDisabled}
-        isNextPageFetching={isNextPageFetching}
         copy={
           (({managerNoQueryResults, managerFetchError}) =>
             ({managerNoQueryResults, managerFetchError})
           )(copy)
         }
         hasFetchError={hasFetchError}
+        isDisabled={isDisabled}
+        isNextPageFetching={isNextPageFetching}
+        onFetchNextPage={onFetchNextPage}
+        onSelectEmployee={onSelectEmployee}
+        suggestions={suggestions /* That’s a lot of suggestions... */}
       />
     ) }
   </div>
 )
 
 EmployeeSelect.propTypes = {
-  query: string.isRequired,
-  suggestions: arrayOf(employeeShape),
-  selectedEmployee: employeeShape,
-  label: node,
-  isQueryFetching: bool,
-  isNextPageFetching: bool,
-  onQueryChange: func.isRequired,
-  onFetchNextPage: func.isRequired,
-  onSelectEmployee: func.isRequired,
-  width: oneOf(['narrow', 'normal', 'wide', 'auto']),
-  isDisabled: bool,
   copy: copyShape,
+  hasFetchError: bool,
+  isDisabled: bool,
+  isNextPageFetching: bool,
+  isQueryFetching: bool,
+  label: node,
+  onFetchNextPage: func.isRequired,
+  onQueryChange: func.isRequired,
+  onSelectEmployee: func.isRequired,
+  query: string.isRequired,
+  selectedEmployee: employeeShape,
+  suggestions: arrayOf(employeeShape),
   uniqueID: string,
-  hasFetchError: bool
+  width: oneOf(['narrow', 'normal', 'wide', 'auto'])
 }
 
 export default EmployeeSelect

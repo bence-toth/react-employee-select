@@ -1,31 +1,31 @@
 .employeeSelect .queryInput {
-  display: block;
-  border-width: 0;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  width: calc(100% - 12.5px - 10px);
-  height: 100%;
   background-color: transparent;
-  padding: 0 10px;
-  outline: none; /* We can do better #a11y TODO: */
-  font-weight: 400;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  border-width: 0;
   color: hsl(0, 0%, 25%);
+  display: block;
+  font-weight: 400;
+  height: 100%;
+  outline: none; /* We can do better #a11y TODO: */
+  padding: 0 10px;
+  width: calc(100% - 12.5px - 10px);
 }
 
 .employeeSelect .ghost.queryInput {
+  left: 0;
+  opacity: 0;
   pointer-events: none;
   position: absolute;
   top: 0;
-  left: 0;
+  transition: opacity 0.2s;
   width: calc(100% - 12.5px - 10px);
   z-index: 1;
-  opacity: 0;
-  transition: opacity 0.2s;
 }
 
 .employeeSelect:not(:focus-within) .ghost.queryInput {
-  opacity: 1;
   background: white;
+  opacity: 1;
 }
 
 .employeeSelect .caret {
@@ -47,9 +47,9 @@
 }
 
 .employeeSelect .queryInputWrapper .spinner {
-  position: absolute;
-  top: calc(50% - (15px / 2) + 1px);
-  right: 8px;
-  width: 15px;
   height: 15px;
+  position: absolute;
+  right: 8px;
+  top: calc(50% - (15px / 2) + 1px);
+  width: 15px;
 }

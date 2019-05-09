@@ -6,48 +6,48 @@ import {employeeShape, copyShape} from './app.shapes'
 import './app.css'
 
 const MainPresenter = ({
-  query,
-  suggestions,
-  selectedEmployee,
-  isQueryFetching,
-  isNextPageFetching,
   copy,
-  onQueryChange,
+  hasFetchError,
+  isNextPageFetching,
+  isQueryFetching,
   onFetchNextPage,
+  onQueryChange,
   onSelectEmployee,
-  hasFetchError
+  query,
+  selectedEmployee,
+  suggestions
 }) => (
   <main>
     <div>
       <EmployeeSelect
+        copy={copy}
+        hasFetchError={hasFetchError}
+        isNextPageFetching={isNextPageFetching}
+        isQueryFetching={isQueryFetching}
+        onFetchNextPage={onFetchNextPage}
+        onQueryChange={onQueryChange}
+        onSelectEmployee={onSelectEmployee}
         query={query}
         selectedEmployee={selectedEmployee}
         suggestions={suggestions}
-        width='normal'
         uniqueID='mySpecialEmplyeeSelect'
-        copy={copy}
-        isQueryFetching={isQueryFetching}
-        isNextPageFetching={isNextPageFetching}
-        onQueryChange={onQueryChange}
-        onFetchNextPage={onFetchNextPage}
-        onSelectEmployee={onSelectEmployee}
-        hasFetchError={hasFetchError}
+        width='normal'
       />
     </div>
   </main>
 )
 
 MainPresenter.propTypes = {
-  query: string.isRequired,
-  suggestions: arrayOf(employeeShape),
-  selectedEmployee: employeeShape,
-  isQueryFetching: bool,
-  isNextPageFetching: bool,
-  hasFetchError: bool,
   copy: copyShape,
+  hasFetchError: bool,
+  isNextPageFetching: bool,
+  isQueryFetching: bool,
   onFetchNextPage: func.isRequired,
   onQueryChange: func.isRequired,
-  onSelectEmployee: func.isRequired
+  onSelectEmployee: func.isRequired,
+  query: string.isRequired,
+  selectedEmployee: employeeShape,
+  suggestions: arrayOf(employeeShape)
 }
 
 export default MainPresenter

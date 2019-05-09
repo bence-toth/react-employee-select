@@ -1,14 +1,14 @@
 import actions from './app.actions'
 
 export const addSuggestions = ({
-  suggestions,
   nextPageURL,
+  suggestions,
   totalSuggestionsForQuery
 }) => ({
-  type: actions.addSuggestions,
-  suggestions,
   nextPageURL,
-  totalSuggestionsForQuery
+  suggestions,
+  totalSuggestionsForQuery,
+  type: actions.addSuggestions
 })
 
 export const clearSuggestions = () => ({

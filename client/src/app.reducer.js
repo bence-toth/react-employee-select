@@ -1,15 +1,15 @@
 import actions from './app.actions'
 
 const initialState = {
-  query: '',
   hasFetchError: false,
-  suggestions: null,
-  nextPageURL: null,
-  totalSuggestionsForQuery: null,
   highlightedSuggestionIndex: null,
-  selectedEmployee: null,
+  isNextPageFetching: false,
   isQueryFetching: false,
-  isNextPageFetching: false
+  nextPageURL: null,
+  query: '',
+  selectedEmployee: null,
+  suggestions: null,
+  totalSuggestionsForQuery: null
 }
 
 const reducer = (state, action) => { // TODO: Switch...
@@ -22,25 +22,25 @@ const reducer = (state, action) => { // TODO: Switch...
     case actions.addSuggestions:
       return {
         ...state,
-        suggestions: [...(state.suggestions || []), ...action.suggestions],
         nextPageURL: action.nextPageURL,
+        suggestions: [...(state.suggestions || []), ...action.suggestions],
         totalSuggestionsForQuery: action.totalSuggestionsForQuery
       }
     case actions.clearSuggestions:
       return {
         ...state,
-        suggestions: null,
         nextPageURL: null,
+        suggestions: null,
         totalSuggestionsForQuery: null
       }
     case actions.selectEmployee:
       return {
-        query: '',
-        suggestions: null,
+        ...state,
         nextPageURL: null,
-        totalSuggestionsForQuery: null,
-        highlightedSuggestionIndex: null,
-        selectedEmployee: action.employee
+        query: '',
+        selectedEmployee: action.employee,
+        suggestions: null,
+        totalSuggestionsForQuery: null
       }
     case actions.setQueryFetching:
       return {
@@ -55,9 +55,9 @@ const reducer = (state, action) => { // TODO: Switch...
     case actions.setFetchError:
       return {
         ...state,
+        hasFetchError: action.hasError,
         isQueryFetching: false,
-        suggestions: action.hasError ? [] : state.suggestions,
-        hasFetchError: action.hasError
+        suggestions: action.hasError ? [] : state.suggestions
       }
     default:
       throw new Error(`Unknown action type '${action.type}'`)
