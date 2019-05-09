@@ -39,12 +39,21 @@ const onArrowUp = ({target}) => {
   }
 }
 
+const onEscape = ({target}) => {
+  const {employeeSelect, queryInput} = roles
+  const query = target.closest(employeeSelect).querySelector(queryInput)
+  query.focus()
+}
+
 const onKeyDown = ({target, key}) => {
   if (key === 'ArrowDown') {
     onArrowDown({target})
   }
   if (key === 'ArrowUp') {
     onArrowUp({target})
+  }
+  if (key === 'Escape') {
+    onEscape({target})
   }
 }
 
