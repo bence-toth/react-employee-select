@@ -27,7 +27,20 @@ const Readme = ({
     <h2>Props</h2>
 
     <h3><code>copy</code></h3>
+
     <h3><code>hasFetchError</code></h3>
+    <p>A boolean flag marking whether there was an error fetching data from the server.</p>
+    <p>
+      Its current value is
+      <code>{hasFetchError.toString()}</code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>false</code>
+      .
+    </p>
+
     <h3><code>isDisabled</code></h3>
     <h3><code>isNextPageFetching</code></h3>
     <h3><code>isQueryFetching</code></h3>
