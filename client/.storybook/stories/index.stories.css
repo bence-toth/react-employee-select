@@ -1,0 +1,71 @@
+/* Found some cool font that looks similar to the one on the screenshot... :) */
+@font-face {
+  font-family: CalibreWeb;
+  src: url(https://peakon.com/wp-content/themes/peakon/assets/fonts/CalibreWeb-Light.woff2);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: CalibreWeb;
+  src: url(https://peakon.com/wp-content/themes/peakon/assets/fonts/CalibreWeb-Medium.woff2);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: CalibreWeb;
+  src: url(https://peakon.com/wp-content/themes/peakon/assets/fonts/CalibreWeb-Semibold.woff2);
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+  /* ...and I stole this stunning list of fonts from your website without hesitation. :P */
+  font-family: CalibreWeb, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: hsl(0, 0%, 97.5%);
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  color: hsl(194, 29%, 23%);
+}
+
+/* These behave weird with hsla */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: white;
+}
+
+::-webkit-scrollbar {
+	background-color: #f8f8f8;
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 6px;
+}
+
+p {
+  margin: 10px 0;
+}
+
+h1 {
+  color: hsl(154, 66%, 45%);
+  font-weight: 300;
+}
+
+code {
+  background-color: hsl(154, 35%, 90%);
+  padding: 2.5px 5px;
+  color: hsl(154, 66%, 25%);
+}

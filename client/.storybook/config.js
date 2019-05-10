@@ -1,6 +1,6 @@
 import {configure} from '@storybook/react'
 
-const loadStories= () => {
+const loadStories = () => {
   // eslint-disable-next-line global-require
   require('./index.js')
 }
