@@ -28,7 +28,7 @@ const thicknessKnob = {
   defaultValue: 'normal'
 }
 
-const defaultStory = () => {
+const main = () => {
   const size = select(sizeKnob.label, sizeKnob.options, sizeKnob.defaultValue)
   const thickness = select(thicknessKnob.label, thicknessKnob.options, thicknessKnob.defaultValue)
   return (
@@ -45,4 +45,4 @@ const defaultStory = () => {
   )
 }
 
-export default {defaultStory}
+export default {main}

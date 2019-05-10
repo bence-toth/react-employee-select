@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import {storiesOf} from '@storybook/react'
 import {withKnobs} from '@storybook/addon-knobs'
-// import {linkTo} from '@storybook/addon-links'
-// import {Welcome} from '@storybook/react/demo'
 
 import spinnerStories from './stories/spinner/spinner.stories'
 import avatarStories from './stories/avatar/avatar.stories'
@@ -10,16 +8,19 @@ import employeeSelectStories from './stories/employeeSelect/employeeSelect.stori
 
 storiesOf('Spinner', module)
   .addDecorator(withKnobs)
-  .add('Default', spinnerStories.defaultStory)
+  .add('Default', spinnerStories.main)
 
 storiesOf('Avatar', module)
   .addDecorator(withKnobs)
-  .add('Default', avatarStories.defaultStory)
-  .add('With image', avatarStories.avatarImageStory)
+  .add('Default', avatarStories.main)
+  .add('With image', avatarStories.avatarImage)
 
 storiesOf('EmployeeSelect', module)
   .addDecorator(withKnobs)
-  .add('Default', employeeSelectStories.defaultStory)
-
-// storiesOf('Welcome', module)
-//   .add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
+  .add('Default', employeeSelectStories.main)
+  .add('Fetching', employeeSelectStories.fetching)
+  .add('Suggestions', employeeSelectStories.receivedSuggestions)
+  .add('Fetching next page', employeeSelectStories.fetchingNextPage)
+  .add('Selected employee', employeeSelectStories.selectedEmployee)
+  .add('No results', employeeSelectStories.noResults)
+  .add('Network error', employeeSelectStories.networkError)

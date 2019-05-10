@@ -1,10 +1,10 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import React from 'react'
 import {string, bool, arrayOf, oneOf, node} from 'prop-types'
 
-import {employeeShape, copyShape} from '../../../src/app.shapes'
+import {employeeShape} from '../../../src/app.shapes'
 
 const Readme = ({
-  copy,
   hasFetchError,
   isDisabled,
   isNextPageFetching,
@@ -13,8 +13,7 @@ const Readme = ({
   query,
   selectedEmployee,
   suggestions,
-  uniqueID,
-  width,
+  width
 }) => (
   <article>
     <h1>EmployeeSelect</h1>
@@ -133,7 +132,7 @@ const Readme = ({
     <p>The content of the query input field.</p>
     <p>
       Its default value is
-      <code></code>
+      <code />
       .
     </p>
     <p>
@@ -150,9 +149,7 @@ const Readme = ({
       if no employee is selected.
     </p>
     <p>
-      The object has an
-      <code>attribute</code>
-      object, that contains employee data:
+      The object contains employee data:
       <code>avatar</code>
       ,
       <code>email</code>
@@ -249,7 +246,6 @@ const Readme = ({
 )
 
 Readme.propTypes = {
-  copy: copyShape,
   hasFetchError: bool,
   isDisabled: bool,
   isNextPageFetching: bool,
@@ -258,7 +254,6 @@ Readme.propTypes = {
   query: string.isRequired,
   selectedEmployee: employeeShape,
   suggestions: arrayOf(employeeShape),
-  uniqueID: string,
   width: oneOf(['narrow', 'normal', 'wide', 'auto'])
 }
 

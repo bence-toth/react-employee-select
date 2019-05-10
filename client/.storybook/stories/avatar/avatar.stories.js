@@ -17,7 +17,7 @@ const avatarURLKnob = {
   defaultValue: 'https://bit.ly/2HcSTkM'
 }
 
-const defaultStory = () => {
+const main = () => {
   const name = text(nameKnob.label, nameKnob.defaultValue)
   return (
     <div>
@@ -30,7 +30,7 @@ const defaultStory = () => {
   )
 }
 
-const avatarImageStory = () => {
+const avatarImage = () => {
   const name = text(nameKnob.label, nameKnob.defaultValue)
   const avatarURL = text(avatarURLKnob.label, avatarURLKnob.defaultValue)
   return (
@@ -47,4 +47,4 @@ const avatarImageStory = () => {
   )
 }
 
-export default {defaultStory, avatarImageStory}
+export default {main, avatarImage}
