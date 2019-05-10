@@ -30,17 +30,15 @@ const Readme = ({
     <p>The picture is expected to be a square.</p>
     <p>
       Its current value is
-      <code>
-      {avatarURL || 'undefined'}
-      </code>
+      <code>{avatarURL || 'undefined'}</code>
       . In some of the stories you can change that using the knobs.
     </p>
   </article>
 )
 
 Readme.propTypes = {
-  size: string,
-  thickness: string
+  name: string,
+  avatarURL: string
 }
 
 export default Readme
