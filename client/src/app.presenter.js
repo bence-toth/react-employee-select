@@ -30,7 +30,7 @@ const MainPresenter = ({
         query={query}
         selectedEmployee={selectedEmployee}
         suggestions={suggestions}
-        uniqueID='mySpecialEmplyeeSelect'
+        uniqueID='mySpecialEmployeeSelect'
         width='normal'
       />
     </div>
