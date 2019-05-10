@@ -26,13 +26,13 @@ const Input = ({
       id={uniqueID}
       onChange={onQueryChange}
       onKeyDown={onKeyDown}
-      placeholder={copy.managerSelectPlaceholder}
+      placeholder={copy.employeeSelectPlaceholder}
       type='text'
       value={query}
     />
     <input
       className='ghost queryInput'
-      placeholder={copy.managerSelectPlaceholder}
+      placeholder={copy.employeeSelectPlaceholder}
       readOnly
       type='text'
       value=''

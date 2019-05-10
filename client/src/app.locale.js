@@ -1,13 +1,13 @@
 export default {
   'en-US': {
-    managerFetchError: [
+    employeeFetchError: [
       'This went wrong, maybe try something else.',
       'The server says it’s a teapot, so what do I know?'
     ],
-    managerNoQueryResults: [
+    employeeNoQueryResults: [
       'Not sure who you are looking for.',
       'Maybe it’s a typo?'
     ],
-    managerSelectPlaceholder: 'Choose Manager'
+    employeeSelectPlaceholder: 'Choose Manager'
   }
 }

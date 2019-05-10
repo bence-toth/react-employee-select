@@ -32,8 +32,8 @@ const Suggestions = ({
     {hasFetchError && (
       <FetchErrorMessage
         copy={
-          (({managerFetchError}) =>
-            ({managerFetchError})
+          (({employeeFetchError}) =>
+            ({employeeFetchError})
           )(copy)
         }
       />
@@ -56,8 +56,8 @@ const Suggestions = ({
       : (
         <NoResultsMessage
           copy={
-            (({managerNoQueryResults}) =>
-              ({managerNoQueryResults})
+            (({employeeNoQueryResults}) =>
+              ({employeeNoQueryResults})
             )(copy)
           }
         />

@@ -27,6 +27,38 @@ const Readme = ({
     <h2>Props</h2>
 
     <h3><code>copy</code></h3>
+    <p>An object that contains all microcopy this component needs.</p>
+    <p>
+      It has
+      <code>employeeFetchError</code>
+      which is an array of strings, lines of an error message
+      which is displayed if the last network action has failed.
+      Typically something like
+      <code>Something went terribly wrong.</code>
+      ,
+      <code>We are so sorry! Maybe try another name?</code>
+      .
+    </p>
+    <p>
+      It has
+      <code>employeeNoQueryResults</code>
+      which is an also array of strings, lines of a notice which is
+      displayed if the last network action has come up with no results.
+      Typically something like
+      <code>There are no matches.</code>
+      ,
+      <code>Are you sure you got the right name?</code>
+      .
+    </p>
+    <p>
+      It has
+      <code>employeeSelectPlaceholder</code>
+      which is a strings, the text of the input placeholder which is visible
+      when the input is not in focus or has no input value.
+      Typically something like
+      <code>Select employee</code>
+      .
+    </p>
 
     <h3><code>hasFetchError</code></h3>
     <p>A boolean flag marking whether there was an error fetching data from the server.</p>
@@ -120,7 +152,7 @@ const Readme = ({
     <p>
       The object has an
       <code>attribute</code>
-      object, that contains
+      object, that contains employee data:
       <code>avatar</code>
       ,
       <code>email</code>
@@ -135,12 +167,57 @@ const Readme = ({
       .
     </p>
     <p>
-      The currently selected employee’s name is value is
-      <code>{selectedEmployee ? selectedEmployee.name : 'undefined'}</code>
-      .
+      The currently suggested employee’s name is
+      {
+        selectedEmployee
+          ? selectedEmployee.name
+          : (
+            <code>undefined</code>
+          )
+      }
     </p>
 
     <h3><code>suggestions</code></h3>
+    <p>An array of objects describing the currently suggested employees.</p>
+    <p>
+      Its value is
+      <code>null</code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>attribute</code>
+      object, that contains employee data:
+      <code>avatar</code>
+      ,
+      <code>email</code>
+      ,
+      <code>id</code>
+      , and
+      <code>name</code>
+    </p>
+    <p>
+      Its default value is
+      <code>null</code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+      {!suggestions && (
+        <>
+          <code>undefined</code>
+          .
+        </>
+      )}
+    </p>
+    {suggestions && (
+      <ul>
+        {suggestions.map(({attributes: {id, name}}) => (
+          <li key={id}>{name}</li>
+        ))}
+      </ul>
+    )}
+
     <h3><code>uniqueID</code></h3>
     <p>A unique string identifier that is required when using a label, it is ignored otherwise.</p>
     <p>It is used to create a link between the label end the input field.</p>
