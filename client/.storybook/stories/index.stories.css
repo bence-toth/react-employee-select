@@ -34,7 +34,6 @@ html, body {
 body {
   background-color: hsl(0, 0%, 97.5%);
   padding: 20px;
-  font-size: 18px;
   font-weight: 300;
   color: hsl(194, 29%, 23%);
 }
@@ -56,16 +55,30 @@ body {
 }
 
 p {
+  font-size: 16px;
   margin: 10px 0;
 }
 
 h1 {
+  font-size: 32px;
   color: hsl(154, 66%, 45%);
   font-weight: 300;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 20px;
+}
+
 code {
-  background-color: hsl(154, 35%, 90%);
+  background-color: hsla(154, 35%, 90%, 50%);
   padding: 2.5px 5px;
   color: hsl(154, 66%, 25%);
 }

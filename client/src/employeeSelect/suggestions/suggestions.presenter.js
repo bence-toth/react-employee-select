@@ -65,7 +65,7 @@ const Suggestions = ({
     }
     {isNextPageFetching && !hasFetchError && (
       <div className='spinnerWrapper'>
-        <Spinner />
+        <Spinner thickness='thin' />
       </div>
     )}
   </div>

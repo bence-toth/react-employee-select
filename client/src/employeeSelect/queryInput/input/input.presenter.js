@@ -40,7 +40,10 @@ const Input = ({
     {isQueryFetching
       ? (
         <div className='spinnerWrapper'>
-          <Spinner />
+          <Spinner
+            size='tiny'
+            thickness='thin'
+          />
         </div>
       )
       : (
