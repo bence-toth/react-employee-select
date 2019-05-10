@@ -4,7 +4,7 @@ import {withKnobs} from '@storybook/addon-knobs'
 // import {linkTo} from '@storybook/addon-links'
 // import {Welcome} from '@storybook/react/demo'
 
-import spinnerStories from './stories/spinner.stories'
+import spinnerStories from './stories/spinner/spinner.stories'
 
 storiesOf('Spinner', module)
   .addDecorator(withKnobs)

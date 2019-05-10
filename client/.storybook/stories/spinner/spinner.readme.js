@@ -1,7 +1,10 @@
 import React from 'react'
 import {string} from 'prop-types'
 
-const Readme = ({size, thickness}) => (
+const Readme = ({
+  size,
+  thickness
+}) => (
   <article>
     <h1>Spinner</h1>
     <p>
@@ -61,7 +64,7 @@ const Readme = ({size, thickness}) => (
   </article>
 )
 
-Readme.proptypes = {
+Readme.propTypes = {
   size: string,
   thickness: string
 }

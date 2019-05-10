@@ -3,8 +3,8 @@ import React from 'react'
 import {select} from '@storybook/addon-knobs'
 
 import Readme from './spinner.readme'
-import Spinner from '../../src/spinner/spinner.presenter'
-import './index.stories.css'
+import Spinner from '../../../src/spinner/spinner.presenter'
+import '../stories.css'
 import './spinner.stories.css'
 
 const sizeKnob = {
