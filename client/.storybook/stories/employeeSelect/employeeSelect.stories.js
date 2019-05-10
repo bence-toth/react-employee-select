@@ -40,14 +40,14 @@ const defaultStory = () => {
   const width = select(sizeKnob.label, sizeKnob.options, sizeKnob.defaultValue)
   const copy = {
     employeeFetchError: [
-      'This went wrong, maybe try something else.',
-      'The server says it’s a teapot, so what do I know?'
+      'Something went terribly wrong.',
+      'We are so sorry! Maybe try another name?'
     ],
     employeeNoQueryResults: [
-      'Not sure who you are looking for.',
-      'Maybe it’s a typo?'
+      'There are no matches.',
+      'Are you sure you got the right name?'
     ],
-    employeeSelectPlaceholder: 'Choose Manager'
+    employeeSelectPlaceholder: 'Select employee'
   }
   const props = {
     copy,
