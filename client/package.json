@@ -15,7 +15,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ignore-path .eslintignore ."
+    "lint": "eslint --ignore-path .eslintignore ./src ./.storybook",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +35,12 @@
     ]
   },
   "devDependencies": {
-    "@agillic/eslint-config": "0.0.4"
+    "@agillic/eslint-config": "0.0.4",
+    "@babel/core": "^7.4.4",
+    "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.5"
   }
 }

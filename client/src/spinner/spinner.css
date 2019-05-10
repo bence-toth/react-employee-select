@@ -9,8 +9,8 @@
 
 .spinner {
   animation: rotate 1s infinite linear;
-  border-left-color: transparent;
   border: 3px solid hsl(148, 58%, 44%);
+  border-left-color: transparent;
   position: relative;
   transform: translateZ(0);
   user-select: none;
