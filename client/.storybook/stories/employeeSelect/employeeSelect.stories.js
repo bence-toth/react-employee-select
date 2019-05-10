@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react'
-import {select} from '@storybook/addon-knobs'
+import {boolean, select, text} from '@storybook/addon-knobs'
 
 import Readme from './employeeSelect.readme'
 import EmployeeSelect from '../../../src/employeeSelect/employeeSelect.presenter'
@@ -18,7 +18,25 @@ const sizeKnob = {
   defaultValue: 'normal'
 }
 
+const isDisabledKnob = {
+  label: 'Disabled',
+  defaultValue: false
+}
+
+const labelKnob = {
+  label: 'Label',
+  defaultValue: ''
+}
+
+const queryKnob = {
+  label: 'Query',
+  defaultValue: ''
+}
+
 const defaultStory = () => {
+  const query = text(queryKnob.label, queryKnob.defaultValue)
+  const isDisabled = boolean(isDisabledKnob.label, isDisabledKnob.defaultValue)
+  const label = text(labelKnob.label, labelKnob.defaultValue)
   const width = select(sizeKnob.label, sizeKnob.options, sizeKnob.defaultValue)
   const copy = {
     managerFetchError: [
@@ -34,11 +52,11 @@ const defaultStory = () => {
   const props = {
     copy,
     hasFetchError: false,
-    isDisabled: false,
+    isDisabled,
     isNextPageFetching: false,
     isQueryFetching: false,
-    label: '',
-    query: '',
+    label,
+    query,
     selectedEmployee: null,
     suggestions: null,
     uniqueID: 'id',
