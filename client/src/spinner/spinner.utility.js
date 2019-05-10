@@ -7,8 +7,8 @@ const calculateBorderWidth = ({thickness}) => ({
 const calculateDimensions = ({size}) => ({
   tiny: 15,
   small: 22.5,
-  big: 45,
-  normal: 30
+  normal: 30,
+  big: 45
 }[size])
 
 const calculateStyle = ({size, thickness}) => ({
