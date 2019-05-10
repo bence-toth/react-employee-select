@@ -33,13 +33,12 @@ const defaultStory = () => {
   const thickness = select(thicknessKnob.label, thicknessKnob.options, thicknessKnob.defaultValue)
   return (
     <div>
-      <Readme />
-
+      <Readme {...{size, thickness}} />
       <h2>Preview</h2>
-      <div className='spinnerWrapper'>
+      <div className='spinnerContainer'>
         <Spinner
-          thickness={thickness}
           size={size}
+          thickness={thickness}
         />
       </div>
     </div>
