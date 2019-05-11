@@ -31,7 +31,7 @@
 }
 
 .employeeSelect .suggestion:focus .name {
-  color: #27c07c;
+  color: hsl(153, 66%, 45%);
 }
 
 .employeeSelect .suggestion .email {
