@@ -27,6 +27,7 @@ const Input = ({
       onChange={onQueryChange}
       onKeyDown={onKeyDown}
       placeholder={copy.employeeSelectPlaceholder}
+      tabIndex={0}
       type='text'
       value={query}
     />

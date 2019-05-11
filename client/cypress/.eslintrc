@@ -1,0 +1,7 @@
+{
+  "globals": {
+    "cy": "readonly",
+    "context": "readonly",
+    "beforeEach": "readonly"
+  }
+}

@@ -18,6 +18,7 @@ const Suggestion = ({
       onClick={() => onSelectEmployee({employee: {id, name, email, avatar}})}
       onKeyDown={onKeyDown}
       onMouseMove={onMouseMove}
+      tabIndex={0}
       type='button'
     >
       <Avatar

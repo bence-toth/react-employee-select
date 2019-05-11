@@ -1,4 +1,4 @@
-import React, {useEffect, useReducer, useRef, useState} from 'react'
+import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react'
 
 import {initialState, reducer} from './app.reducer'
 import {
@@ -45,28 +45,34 @@ const App = () => {
     return newFetchID
   }
 
-  const fetchEmployeeData = () => {
-    dispatch(clearSuggestions())
-    const newFetchID = getNewFetchID()
-    dispatch(setQueryFetching({isFetching: true}))
-    fetchEmployees({
-      pageLength: 6,
-      pageNumber: 1,
-      query: state.query,
-      fetchID: newFetchID
-    })
-      .then(receiveEmployees)
-  }
+  const fetchEmployeeDataCallback = useCallback(
+    () => {
+      const fetchEmployeeData = () => {
+        dispatch(clearSuggestions())
+        const newFetchID = getNewFetchID()
+        dispatch(setQueryFetching({isFetching: true}))
+        fetchEmployees({
+          pageLength: 6,
+          pageNumber: 1,
+          query: state.query,
+          fetchID: newFetchID
+        })
+          .then(receiveEmployees)
+      }
+      fetchEmployeeData()
+    },
+    [state.query],
+  )
 
   useEffect(() => { // Fetch data as the user types
-    fetchEmployeeData()
-  }, [state.query])
+    fetchEmployeeDataCallback()
+  }, [state.query, fetchEmployeeDataCallback])
 
   useEffect(() => { // Fetch when removing selection
     if (state.selectedEmployee === null) {
-      fetchEmployeeData()
+      fetchEmployeeDataCallback()
     }
-  }, [state.selectedEmployee])
+  }, [state.selectedEmployee, fetchEmployeeDataCallback])
 
   const fetchNextPage = () => { // Fetch next page when scrolled to bottom
     const newFetchID = getNewFetchID()

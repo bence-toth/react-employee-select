@@ -11,7 +11,10 @@ const Selection = ({
   onRemoveSelection,
   selectedEmployee
 }) => (
-  <div className='selection'>
+  <div
+    className='selection'
+    data-role='selection'
+  >
     <Avatar
       avatarURL={selectedEmployee.avatar}
       name={selectedEmployee.name}
@@ -23,6 +26,7 @@ const Selection = ({
     {!isDisabled && (
       <button
         className='removeSelection'
+        data-role='removeSelection'
         disabled={isDisabled}
         onClick={onRemoveSelection}
         type='button'
