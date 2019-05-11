@@ -1,4 +1,4 @@
-import {addSuggestions} from './app.actionCreators'
+import {addSuggestions, setFetchError, setNextPageFetching, setQueryFetching} from './app.actionCreators'
 
 const receiveEmployeeData = dispatch => (
   ({
@@ -11,6 +11,9 @@ const receiveEmployeeData = dispatch => (
       suggestions,
       totalSuggestionsForQuery
     }))
+    dispatch(setQueryFetching({isFetching: false}))
+    dispatch(setNextPageFetching({isFetching: false}))
+    dispatch(setFetchError({hasError: false}))
   }
 )
 

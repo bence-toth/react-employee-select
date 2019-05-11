@@ -27,12 +27,7 @@ const App = () => {
   const receiveEmployees = ({payload, fetchID, ok}) => {
     if (fetchID === fetchCounter.current) {
       if (ok) {
-        payload.then(data => {
-          receiveEmployeeData(dispatch)(data)
-          dispatch(setFetchError({hasError: false}))
-          dispatch(setNextPageFetching({isFetching: false}))
-          dispatch(setQueryFetching({isFetching: false}))
-        })
+        payload.then(receiveEmployeeData(dispatch))
       }
       else {
         dispatch(setFetchError({hasError: true}))
@@ -49,13 +44,13 @@ const App = () => {
   const fetchEmployeeDataCallback = useCallback(
     () => {
       debounce(() => {
-        dispatch(clearSuggestions())
         dispatch(setQueryFetching({isFetching: true}))
+        dispatch(clearSuggestions())
         fetchEmployees({
+          fetchID: getNewFetchID(),
           pageLength: 6,
           pageNumber: 1,
-          query: state.query,
-          fetchID: getNewFetchID()
+          query: state.query
         })
           .then(receiveEmployees)
       }, 350)()
@@ -77,8 +72,8 @@ const App = () => {
     const newFetchID = getNewFetchID()
     dispatch(setNextPageFetching({isFetching: true}))
     fetchEmployees({
-      URL: state.nextPageURL,
-      fetchID: newFetchID
+      fetchID: newFetchID,
+      URL: state.nextPageURL
     })
       .then(receiveEmployees)
   }
