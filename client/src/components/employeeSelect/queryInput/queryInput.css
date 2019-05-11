@@ -7,3 +7,8 @@
   position: relative; /* Trigger stacking context for the caret */
   width: 100%;
 }
+
+.employeeSelect .queryInputWrapper:focus-within {
+  border-color: hsl(153, 59%, 60%);
+  box-shadow: 0 1px 0 hsl(153, 59%, 70%);
+}

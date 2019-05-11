@@ -14,6 +14,8 @@ const Selection = ({
   <div
     className='selection'
     data-role='selection'
+    tabIndex={0}
+    role='button'
   >
     <Avatar
       avatarURL={selectedEmployee.avatar}

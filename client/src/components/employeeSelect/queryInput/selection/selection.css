@@ -11,6 +11,7 @@
   user-select: none;
   width: 100%;
   z-index: 1;
+  outline: 0;
 }
 
 .employeeSelect .selection .avatarWrapper {
@@ -34,7 +35,7 @@
 }
 
 .employeeSelect .selection:focus .name {
-  color: #27c07c;
+  color: hsl(153, 66%, 45%);
 }
 
 .employeeSelect .selection .email {
@@ -57,6 +58,7 @@
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
+  outline-color: hsl(153, 59%, 40%);
 }
 
 .employeeSelect .removeSelection img {
