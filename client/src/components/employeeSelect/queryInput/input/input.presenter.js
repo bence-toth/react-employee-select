@@ -38,26 +38,22 @@ const Input = ({
       type='text'
       value=''
     />
-    {isQueryFetching
-      ? (
-        <div className='spinnerWrapper'>
-          <Spinner
-            size='tiny'
-            thickness='thin'
-          />
-        </div>
-      )
-      : (
-        <img
-          className={classNames(
-            'caret',
-            {upsideDown: isCaretUpsideDown}
-          )}
-          src={caret}
-          alt=''
+    {isQueryFetching && (
+      <div className='spinnerWrapper'>
+        <Spinner
+          size='tiny'
+          thickness='thin'
         />
-      )
-    }
+      </div>
+    )}
+    <img
+      className={classNames(
+        'caret',
+        {upsideDown: isCaretUpsideDown}
+      )}
+      src={caret}
+      alt=''
+    />
   </>
 )
 
