@@ -48,19 +48,17 @@ const App = () => {
 
   const fetchEmployeeDataCallback = useCallback(
     () => {
-      const fetchEmployeeData = debounce(() => {
+      debounce(() => {
         dispatch(clearSuggestions())
-        const newFetchID = getNewFetchID()
         dispatch(setQueryFetching({isFetching: true}))
         fetchEmployees({
           pageLength: 6,
           pageNumber: 1,
           query: state.query,
-          fetchID: newFetchID
+          fetchID: getNewFetchID()
         })
           .then(receiveEmployees)
-      }, 350)
-      fetchEmployeeData()
+      }, 350)()
     },
     [state.query],
   )
