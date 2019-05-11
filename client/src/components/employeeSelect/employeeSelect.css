@@ -18,9 +18,15 @@
 .employeeSelect .selectLabel {
   color: hsl(0, 0%, 50%);
   cursor: pointer;
+  display: block;
   font-size: 14px;
   font-weight: 400;
-  margin-left: 10px;
+  margin-bottom: 2.5px;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .employeeSelect .selectLabel.inputDisabled {
