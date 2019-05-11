@@ -12,6 +12,7 @@ import {
 import {receiveEmployeeData} from './app.actionCreators.async'
 import fetchEmployees from './app.consumer'
 import MainPresenter from './app.presenter'
+import {debounce} from './app.utility'
 import locale from './app.locale'
 
 const App = () => {
@@ -47,7 +48,7 @@ const App = () => {
 
   const fetchEmployeeDataCallback = useCallback(
     () => {
-      const fetchEmployeeData = () => {
+      const fetchEmployeeData = debounce(() => {
         dispatch(clearSuggestions())
         const newFetchID = getNewFetchID()
         dispatch(setQueryFetching({isFetching: true}))
@@ -58,7 +59,7 @@ const App = () => {
           fetchID: newFetchID
         })
           .then(receiveEmployees)
-      }
+      }, 350)
       fetchEmployeeData()
     },
     [state.query],
