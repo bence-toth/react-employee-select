@@ -32,7 +32,7 @@ const server = http.createServer((request, response) => {
     })
     setTimeout(
       () => response.end(JSON.stringify(payload)),
-      Math.round(500 + (Math.random() * 500))
+      Math.round(125 + (Math.random() * 125))
     )
   }
   else {
