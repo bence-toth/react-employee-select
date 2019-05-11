@@ -102,12 +102,21 @@ describe('folderTreeResizable reducer unit tests_', () => {
       }
     ],
     [
-      'selectEmployee: should set state correctly on employee selection',
+      'selectEmployee: should set state correctly on employee selection v1',
       {
         ...initialState,
         selectedEmployee: {some: 'object'}
       },
       selectEmployee({employee: null}),
+      initialState
+    ],
+    [
+      'selectEmployee: should set state correctly on employee selection v2',
+      {
+        ...initialState,
+        selectedEmployee: {some: 'object'}
+      },
+      selectEmployee({}),
       initialState
     ],
     [
