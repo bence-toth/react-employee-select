@@ -1,8 +1,8 @@
 .employeeSelect .suggestion {
   align-items: center;
   background-color: hsl(0, 0%, 100%);
-  border-bottom: 1px solid hsl(0, 0%, 90%);
   border-width: 0;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
   cursor: pointer;
   display: flex;
   height: 64px;
