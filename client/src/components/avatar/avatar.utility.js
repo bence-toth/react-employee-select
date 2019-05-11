@@ -10,7 +10,7 @@ const generateMonogram = ({name}) => {
 const generateBackgroundColor = ({name}) => {
   // This function generates an HSL color based on the name.
   // It's kinda random, but it's deterministic at the same time.
-  // I have tests to prove the latter (TODO:), and I need you to believe me on the former.
+  // TODO: I have tests to prove the latter, and I need you to believe me on the former.
   const brandColorHueValue = 154
   const minDistanceFromBrandColor = 50 // Plot twist: Let's not get very close to the brand color
   const intervalLength = 360 - (2 * minDistanceFromBrandColor)

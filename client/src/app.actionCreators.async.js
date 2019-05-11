@@ -1,4 +1,4 @@
-import {addSuggestions} from './app.actionsCreators'
+import {addSuggestions} from './app.actionCreators'
 
 const receiveEmployeeData = dispatch => (
   ({

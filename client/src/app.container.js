@@ -8,8 +8,8 @@ import {
   setNextPageFetching,
   setQueryFetching,
   updateQuery
-} from './app.actionsCreators'
-import {receiveEmployeeData} from './app.actionsCreators.async'
+} from './app.actionCreators'
+import {receiveEmployeeData} from './app.actionCreators.async'
 import fetchEmployees from './app.consumer'
 import MainPresenter from './app.presenter'
 import locale from './app.locale'

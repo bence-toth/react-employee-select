@@ -1,4 +1,13 @@
 import actions from './app.actions'
+import {
+  addSuggestions,
+  clearSuggestions,
+  selectEmployee,
+  setFetchError,
+  setNextPageFetching,
+  setQueryFetching,
+  updateQuery
+} from './app.actionHandlers'
 
 const initialState = {
   hasFetchError: false,
@@ -12,56 +21,23 @@ const initialState = {
   totalSuggestionsForQuery: null
 }
 
-const reducer = (state, action) => { // TODO: Switch...
-  switch (action.type) {
-    case actions.updateQuery:
-      return {
-        ...state,
-        query: action.query
-      }
-    case actions.addSuggestions:
-      return {
-        ...state,
-        nextPageURL: action.nextPageURL,
-        suggestions: [...(state.suggestions || []), ...action.suggestions],
-        totalSuggestionsForQuery: action.totalSuggestionsForQuery
-      }
-    case actions.clearSuggestions:
-      return {
-        ...state,
-        nextPageURL: null,
-        suggestions: null,
-        totalSuggestionsForQuery: null
-      }
-    case actions.selectEmployee:
-      return {
-        ...state,
-        nextPageURL: null,
-        query: '',
-        selectedEmployee: action.employee,
-        suggestions: null,
-        totalSuggestionsForQuery: null
-      }
-    case actions.setQueryFetching:
-      return {
-        ...state,
-        isQueryFetching: action.isFetching
-      }
-    case actions.setNextPageFetching:
-      return {
-        ...state,
-        isNextPageFetching: action.isFetching
-      }
-    case actions.setFetchError:
-      return {
-        ...state,
-        hasFetchError: action.hasError,
-        isQueryFetching: false,
-        suggestions: action.hasError ? [] : state.suggestions
-      }
-    default:
-      throw new Error(`Unknown action type '${action.type}'`)
-  }
+const actionHandlers = {
+  [actions.addSuggestions]: addSuggestions,
+  [actions.clearSuggestions]: clearSuggestions,
+  [actions.selectEmployee]: selectEmployee,
+  [actions.setFetchError]: setFetchError,
+  [actions.setNextPageFetching]: setNextPageFetching,
+  [actions.setQueryFetching]: setQueryFetching,
+  [actions.updateQuery]: updateQuery
 }
+
+const reducer = (state, action) => ({
+  ...state,
+  ...(
+    actionHandlers[action.type]
+      ? (actionHandlers[action.type])({state, action})
+      : {}
+  )
+})
 
 export {reducer, initialState}

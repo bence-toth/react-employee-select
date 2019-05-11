@@ -15,19 +15,14 @@ export const clearSuggestions = () => ({
   type: actions.clearSuggestions
 })
 
-export const updateQuery = ({query}) => ({
-  type: actions.updateQuery,
-  query
-})
-
 export const selectEmployee = ({employee = null}) => ({
   type: actions.selectEmployee,
   employee
 })
 
-export const setQueryFetching = ({isFetching}) => ({
-  type: actions.setQueryFetching,
-  isFetching
+export const setFetchError = ({hasError}) => ({
+  type: actions.setFetchError,
+  hasError
 })
 
 export const setNextPageFetching = ({isFetching}) => ({
@@ -35,7 +30,12 @@ export const setNextPageFetching = ({isFetching}) => ({
   isFetching
 })
 
-export const setFetchError = ({hasError}) => ({
-  type: actions.setFetchError,
-  hasError
+export const setQueryFetching = ({isFetching}) => ({
+  type: actions.setQueryFetching,
+  isFetching
+})
+
+export const updateQuery = ({query}) => ({
+  type: actions.updateQuery,
+  query
 })
