@@ -1,7 +1,7 @@
 import React from 'react'
 import {string, func, arrayOf, bool} from 'prop-types'
 
-import EmployeeSelect from './employeeSelect/employeeSelect.presenter'
+import EmployeeSelect from './components/employeeSelect/employeeSelect.presenter'
 import {employeeShape, copyShape} from './app.shapes'
 import './app.css'
 

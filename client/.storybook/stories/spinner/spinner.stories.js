@@ -3,7 +3,7 @@ import React from 'react'
 import {select} from '@storybook/addon-knobs'
 
 import Readme from './spinner.readme'
-import Spinner from '../../../src/spinner/spinner.presenter'
+import Spinner from '../../../src/components/spinner/spinner.presenter'
 import '../stories.css'
 import './spinner.stories.css'
 

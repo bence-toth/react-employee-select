@@ -3,7 +3,7 @@ import React from 'react'
 import {boolean, select, text} from '@storybook/addon-knobs'
 
 import Readme from './employeeSelect.readme'
-import EmployeeSelect from '../../../src/employeeSelect/employeeSelect.presenter'
+import EmployeeSelect from '../../../src/components/employeeSelect/employeeSelect.presenter'
 import {copy, suggestions} from './employeeSelect.props'
 import '../stories.css'
 import './employeeSelect.stories.css'

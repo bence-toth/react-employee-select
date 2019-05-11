@@ -2,7 +2,7 @@ import React from 'react'
 import {func, bool} from 'prop-types'
 
 import Avatar from '../../../avatar/avatar.presenter'
-import {employeeShape} from '../../../app.shapes'
+import {employeeShape} from '../../../../app.shapes'
 import './selection.css'
 import cross from './cross.svg'
 

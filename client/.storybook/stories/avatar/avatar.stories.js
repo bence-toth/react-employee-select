@@ -3,7 +3,7 @@ import React from 'react'
 import {text} from '@storybook/addon-knobs'
 
 import Readme from './avatar.readme'
-import Avatar from '../../../src/avatar/avatar.presenter'
+import Avatar from '../../../src/components/avatar/avatar.presenter'
 import '../stories.css'
 import './avatar.stories.css'
 

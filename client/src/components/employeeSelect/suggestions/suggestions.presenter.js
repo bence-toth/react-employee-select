@@ -5,7 +5,7 @@ import Suggestion from './suggestion/suggestion.presenter'
 import NoResultsMessage from './noResultsMessage/noResultsMessage.presenter'
 import FetchErrorMessage from './fetchErrorMessage/fetchErrorMessage.presenter'
 import Spinner from '../../spinner/spinner.presenter'
-import {employeeShape, copyShape} from '../../app.shapes'
+import {employeeShape, copyShape} from '../../../app.shapes'
 import './suggestions.css'
 
 const Suggestions = ({
