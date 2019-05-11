@@ -33,6 +33,7 @@ const Input = ({
     />
     <input
       className='ghost queryInput'
+      disabled={isDisabled}
       placeholder={copy.employeeSelectPlaceholder}
       readOnly
       type='text'

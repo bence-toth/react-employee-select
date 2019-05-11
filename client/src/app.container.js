@@ -88,16 +88,16 @@ const App = () => {
 
   return (
     <MainPresenter
-      query={state.query}
-      suggestions={state.suggestions}
-      selectedEmployee={state.selectedEmployee}
-      isQueryFetching={state.isQueryFetching}
-      isNextPageFetching={state.isNextPageFetching}
-      hasFetchError={state.hasFetchError}
       copy={copy}
+      hasFetchError={state.hasFetchError}
+      isNextPageFetching={state.isNextPageFetching}
+      isQueryFetching={state.isQueryFetching}
       onFetchNextPage={fetchNextPageIfNeeded}
       onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
       onSelectEmployee={employee => dispatch(selectEmployee(employee))}
+      query={state.query}
+      selectedEmployee={state.selectedEmployee}
+      suggestions={state.suggestions}
     />
   )
 }

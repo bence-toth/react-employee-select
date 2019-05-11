@@ -203,4 +203,13 @@ context('EmployeeSelect', () => {
       .find('.fetchError')
       .should('exist')
   })
+
+  it('Cannot focus input field when component is disabled', () => {
+    cy.visit('http://localhost:3000/disabled')
+    cy.get(component)
+      .find(input)
+      .focus()
+    cy.focused()
+      .should('not.exist')
+  })
 })

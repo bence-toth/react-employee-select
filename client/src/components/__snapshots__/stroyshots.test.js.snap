@@ -565,6 +565,7 @@ exports[`Storyshots EmployeeSelect Default 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
@@ -972,6 +973,7 @@ exports[`Storyshots EmployeeSelect Fetching 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
@@ -1409,6 +1411,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
@@ -2120,6 +2123,7 @@ exports[`Storyshots EmployeeSelect Network error 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
@@ -2541,6 +2545,7 @@ exports[`Storyshots EmployeeSelect No results 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
@@ -3419,6 +3424,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
         />
         <input
           className="ghost queryInput"
+          disabled={false}
           placeholder="Select employee"
           readOnly={true}
           type="text"
