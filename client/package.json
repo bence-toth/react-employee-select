@@ -33,7 +33,11 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/serviceWorker.js",
+      "!src/**/*.actions.js",
+      "!src/**/*.locale.js"
     ],
     "coverageReporters": [
       "text"

@@ -4,7 +4,7 @@ const generateMonogram = ({name}) => {
   const [firstName, lastName] = name.split(' ')
   const firstLetter = firstName.substring(0, 1)
   const secondLetter = lastName ? lastName.substring(0, 1) : ''
-  return ` ${firstLetter}${secondLetter}`
+  return `${firstLetter}${secondLetter}`
 }
 
 const generateBackgroundColor = ({name}) => {
