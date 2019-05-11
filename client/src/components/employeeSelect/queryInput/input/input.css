@@ -7,7 +7,7 @@
   display: block;
   font-weight: 400;
   height: 100%;
-  outline: none; /* We can do better #a11y TODO: */
+  outline: none;
   padding: 0 10px;
   width: calc(100% - 12.5px - 10px);
 }
