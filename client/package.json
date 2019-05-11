@@ -25,11 +25,13 @@
     "@agillic/eslint-config": "0.0.4",
     "@babel/core": "^7.4.4",
     "@storybook/addon-knobs": "^5.0.11",
+    "@storybook/addon-storyshots": "^5.0.11",
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.5",
     "cypress": "^3.2.0",
-    "mocha-each": "^1.2.0"
+    "mocha-each": "^1.2.0",
+    "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "collectCoverageFrom": [

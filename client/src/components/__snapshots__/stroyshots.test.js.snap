@@ -1,0 +1,3847 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Avatar Default 1`] = `
+<div>
+  <article>
+    <h1>
+      Avatar
+    </h1>
+    <p>
+      The
+      <code>
+        Avatar
+      </code>
+      represents a user in the application.
+    </p>
+    <p>
+      It is typically used together with the user name.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        name
+      </code>
+    </h3>
+    <p>
+      The full name of the user. Used for generating the monogram.
+    </p>
+    <p>
+      This field is required.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        Sherlock Holmes
+      </code>
+      . You can change that using the knobs.
+    </p>
+    <h3>
+      <code>
+        avatarURL
+      </code>
+    </h3>
+    <p>
+      The URL for the picture of the user.
+    </p>
+    <p>
+      The picture is expected to be a square.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . In some of the stories you can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="avatarContainer"
+  >
+    <div
+      className="avatarWrapper"
+    >
+      <div
+        className="avatar"
+      >
+        <div
+          aria-hidden="true"
+          className="monogram"
+          style={
+            Object {
+              "backgroundColor": "hsl(252, 45%, 65%)",
+            }
+          }
+        >
+          SH
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Avatar With image 1`] = `
+<div>
+  <article>
+    <h1>
+      Avatar
+    </h1>
+    <p>
+      The
+      <code>
+        Avatar
+      </code>
+      represents a user in the application.
+    </p>
+    <p>
+      It is typically used together with the user name.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        name
+      </code>
+    </h3>
+    <p>
+      The full name of the user. Used for generating the monogram.
+    </p>
+    <p>
+      This field is required.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        Sherlock Holmes
+      </code>
+      . You can change that using the knobs.
+    </p>
+    <h3>
+      <code>
+        avatarURL
+      </code>
+    </h3>
+    <p>
+      The URL for the picture of the user.
+    </p>
+    <p>
+      The picture is expected to be a square.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        https://bit.ly/2HcSTkM
+      </code>
+      . In some of the stories you can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="avatarContainer"
+  >
+    <div
+      className="avatarWrapper"
+    >
+      <div
+        className="avatar"
+      >
+        <img
+          alt=""
+          src="https://bit.ly/2HcSTkM"
+        />
+        <div
+          aria-hidden="true"
+          className="monogram"
+          style={
+            Object {
+              "backgroundColor": "hsl(252, 45%, 65%)",
+            }
+          }
+        >
+          SH
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Default 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+      <code>
+        undefined
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt=""
+          className="caret"
+          src="caret-down.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Fetching 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        true
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+      <code>
+        undefined
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <div
+          className="spinnerWrapper"
+        >
+          <div
+            className="spinner"
+            style={
+              Object {
+                "borderWidth": 2,
+                "height": 15,
+                "width": 15,
+              }
+            }
+          />
+        </div>
+        <img
+          alt=""
+          className="caret"
+          src="caret-down.svg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        true
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+    </p>
+    <ul>
+      <li>
+        Mathew Sullivan
+      </li>
+      <li>
+        Iris Fernandez
+      </li>
+      <li>
+        Ian Robertson
+      </li>
+      <li>
+        Eileen Marshall
+      </li>
+      <li>
+        Claudia Cole
+      </li>
+      <li>
+        Charlie Woods
+      </li>
+    </ul>
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt=""
+          className="caret upsideDown"
+          src="caret-down.svg"
+        />
+      </div>
+      <div
+        className="suggestionsWrapper"
+        data-role="suggestions"
+        onScroll={[Function]}
+        tabIndex={-1}
+      >
+        <ul>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <img
+                    alt=""
+                    src="https://randomuser.me/api/portraits/men/49.jpg"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(18, 45%, 65%)",
+                      }
+                    }
+                  >
+                    MS
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Mathew Sullivan
+                </div>
+                <address
+                  className="email"
+                >
+                  
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(206, 45%, 65%)",
+                      }
+                    }
+                  >
+                    IF
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Iris Fernandez
+                </div>
+                <address
+                  className="email"
+                >
+                  iris.fernandez@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(293, 45%, 65%)",
+                      }
+                    }
+                  >
+                    IR
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Ian Robertson
+                </div>
+                <address
+                  className="email"
+                >
+                  ian.robertson@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <img
+                    alt=""
+                    src="https://randomuser.me/api/portraits/women/71.jpg"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(209, 45%, 65%)",
+                      }
+                    }
+                  >
+                    EM
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Eileen Marshall
+                </div>
+                <address
+                  className="email"
+                >
+                  eileen.marshall@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(47, 45%, 65%)",
+                      }
+                    }
+                  >
+                    CC
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Claudia Cole
+                </div>
+                <address
+                  className="email"
+                >
+                  claudia.cole@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(22, 45%, 65%)",
+                      }
+                    }
+                  >
+                    CW
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Charlie Woods
+                </div>
+                <address
+                  className="email"
+                >
+                  charlie.woods@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+        </ul>
+        <div
+          className="spinnerWrapper"
+        >
+          <div
+            className="spinner"
+            style={
+              Object {
+                "borderWidth": 2,
+                "height": 30,
+                "width": 30,
+              }
+            }
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Network error 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        true
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+    </p>
+    <ul />
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt=""
+          className="caret upsideDown"
+          src="caret-down.svg"
+        />
+      </div>
+      <div
+        className="suggestionsWrapper"
+        data-role="suggestions"
+        onScroll={[Function]}
+        tabIndex={-1}
+      >
+        <div
+          className="fetchError"
+        >
+          <p>
+            Something went terribly wrong.
+          </p>
+          <p>
+            We are so sorry! Maybe try another name?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect No results 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+    </p>
+    <ul />
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt=""
+          className="caret upsideDown"
+          src="caret-down.svg"
+        />
+      </div>
+      <div
+        className="suggestionsWrapper"
+        data-role="suggestions"
+        onScroll={[Function]}
+        tabIndex={-1}
+      >
+        <div
+          className="noResults"
+        >
+          <p>
+            There are no matches.
+          </p>
+          <p>
+            Are you sure you got the right name?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Selected employee 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        A
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      Bruce Wayne
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+      <code>
+        undefined
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <div
+          className="selection"
+          data-role="selection"
+          role="button"
+          tabIndex={0}
+        >
+          <div
+            className="avatarWrapper"
+          >
+            <div
+              className="avatar"
+            >
+              <img
+                alt=""
+                src="https://bit.ly/2Jg25XM"
+              />
+              <div
+                aria-hidden="true"
+                className="monogram"
+                style={
+                  Object {
+                    "backgroundColor": "hsl(30, 45%, 65%)",
+                  }
+                }
+              >
+                BW
+              </div>
+            </div>
+          </div>
+          <div
+            className="nameWrapper"
+          >
+            <div
+              className="name"
+            >
+              Bruce Wayne
+            </div>
+            <address
+              className="email"
+            >
+              bruce@batcave.io
+            </address>
+          </div>
+          <button
+            className="removeSelection"
+            data-role="removeSelection"
+            disabled={false}
+            onClick={[Function]}
+            type="button"
+          >
+            <img
+              alt="Remove selection"
+              className="cross"
+              src="cross.svg"
+              title="Remove selection"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots EmployeeSelect Suggestions 1`] = `
+<div>
+  <article>
+    <h1>
+      EmployeeSelect
+    </h1>
+    <p>
+      The
+      <code>
+        EmployeeSelect
+      </code>
+      lets the user select an employee from a list of employees.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        copy
+      </code>
+    </h3>
+    <p>
+      An object that contains all microcopy this component needs.
+    </p>
+    <p>
+      It has
+      <code>
+        employeeFetchError
+      </code>
+      which is an array of strings, lines of an error message which is displayed if the last network action has failed. Typically something like
+      <code>
+        Something went terribly wrong.
+      </code>
+      ,
+      <code>
+        We are so sorry! Maybe try another name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeNoQueryResults
+      </code>
+      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      <code>
+        There are no matches.
+      </code>
+      ,
+      <code>
+        Are you sure you got the right name?
+      </code>
+      .
+    </p>
+    <p>
+      It has
+      <code>
+        employeeSelectPlaceholder
+      </code>
+      which is a strings, the text of the input placeholder which is visible when the input is not in focus or has no input value. Typically something like
+      <code>
+        Select employee
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        hasFetchError
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there was an error fetching data from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        isDisabled
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether there the select is disabled.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isNextPageFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        isQueryFetching
+      </code>
+    </h3>
+    <p>
+      A boolean flag marking whether the next page of employees is yet to arrive from the server.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        false
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        false
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        label
+      </code>
+    </h3>
+    <p>
+      An optional string value that renders a label on top of the select field.
+    </p>
+    <p>
+      Its current value is
+      <code>
+        undefined
+      </code>
+      . You can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        onFetchNextPage
+      </code>
+    </h3>
+    <p>
+      Callback firing when a new page of employees is requested.
+    </p>
+    <h3>
+      <code>
+        onQueryChange
+      </code>
+    </h3>
+    <p>
+      Event handler firing when the content of the query input changes.
+    </p>
+    <h3>
+      <code>
+        onSelectEmployee
+      </code>
+    </h3>
+    <p>
+      Callback firing when an employee from the list is selected.
+    </p>
+    <h3>
+      <code>
+        query
+      </code>
+    </h3>
+    <p>
+      The content of the query input field.
+    </p>
+    <p>
+      Its default value is
+      <code />
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        
+      </code>
+      . In some stories you can change this using the knobs.
+    </p>
+    <h3>
+      <code>
+        selectedEmployee
+      </code>
+    </h3>
+    <p>
+      An object describing the currently selected employee.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no employee is selected.
+    </p>
+    <p>
+      The object contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employee’s name is
+      <code>
+        undefined
+      </code>
+    </p>
+    <h3>
+      <code>
+        suggestions
+      </code>
+    </h3>
+    <p>
+      An array of objects describing the currently suggested employees.
+    </p>
+    <p>
+      Its value is
+      <code>
+        null
+      </code>
+      if no search was attempted.
+    </p>
+    <p>
+      The objects have an
+      <code>
+        attribute
+      </code>
+      object, that contains employee data:
+      <code>
+        avatar
+      </code>
+      ,
+      <code>
+        email
+      </code>
+      ,
+      <code>
+        id
+      </code>
+      , and
+      <code>
+        name
+      </code>
+    </p>
+    <p>
+      Its default value is
+      <code>
+        null
+      </code>
+      .
+    </p>
+    <p>
+      The currently suggested employees’ names are:
+    </p>
+    <ul>
+      <li>
+        Mathew Sullivan
+      </li>
+      <li>
+        Iris Fernandez
+      </li>
+      <li>
+        Ian Robertson
+      </li>
+      <li>
+        Eileen Marshall
+      </li>
+      <li>
+        Claudia Cole
+      </li>
+      <li>
+        Charlie Woods
+      </li>
+    </ul>
+    <h3>
+      <code>
+        uniqueID
+      </code>
+    </h3>
+    <p>
+      A unique string identifier that is required when using a label, it is ignored otherwise.
+    </p>
+    <p>
+      It is used to create a link between the label end the input field.
+    </p>
+    <h3>
+      <code>
+        width
+      </code>
+    </h3>
+    <p>
+      The width of the input field and the suggestions drop down.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        auto
+      </code>
+      ,
+      <code>
+        narrow
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        wide
+      </code>
+      .
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="employeeSelectContainer"
+  >
+    <div
+      className="employeeSelect normal"
+      data-role="employeeSelect"
+    >
+      
+      <div
+        className="queryInputWrapper"
+      >
+        <input
+          autoComplete="off"
+          className="queryInput"
+          data-role="queryInput"
+          disabled={false}
+          id="id"
+          onChange={[Function]}
+          onKeyDown={[Function]}
+          placeholder="Select employee"
+          tabIndex={0}
+          type="text"
+          value=""
+        />
+        <input
+          className="ghost queryInput"
+          placeholder="Select employee"
+          readOnly={true}
+          type="text"
+          value=""
+        />
+        <img
+          alt=""
+          className="caret upsideDown"
+          src="caret-down.svg"
+        />
+      </div>
+      <div
+        className="suggestionsWrapper"
+        data-role="suggestions"
+        onScroll={[Function]}
+        tabIndex={-1}
+      >
+        <ul>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <img
+                    alt=""
+                    src="https://randomuser.me/api/portraits/men/49.jpg"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(18, 45%, 65%)",
+                      }
+                    }
+                  >
+                    MS
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Mathew Sullivan
+                </div>
+                <address
+                  className="email"
+                >
+                  
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(206, 45%, 65%)",
+                      }
+                    }
+                  >
+                    IF
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Iris Fernandez
+                </div>
+                <address
+                  className="email"
+                >
+                  iris.fernandez@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(293, 45%, 65%)",
+                      }
+                    }
+                  >
+                    IR
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Ian Robertson
+                </div>
+                <address
+                  className="email"
+                >
+                  ian.robertson@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <img
+                    alt=""
+                    src="https://randomuser.me/api/portraits/women/71.jpg"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(209, 45%, 65%)",
+                      }
+                    }
+                  >
+                    EM
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Eileen Marshall
+                </div>
+                <address
+                  className="email"
+                >
+                  eileen.marshall@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(47, 45%, 65%)",
+                      }
+                    }
+                  >
+                    CC
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Claudia Cole
+                </div>
+                <address
+                  className="email"
+                >
+                  claudia.cole@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+          <li
+            data-role="suggestion"
+          >
+            <button
+              className="suggestion"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              onMouseMove={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <div
+                className="avatarWrapper"
+              >
+                <div
+                  className="avatar"
+                >
+                  <div
+                    aria-hidden="true"
+                    className="monogram"
+                    style={
+                      Object {
+                        "backgroundColor": "hsl(22, 45%, 65%)",
+                      }
+                    }
+                  >
+                    CW
+                  </div>
+                </div>
+              </div>
+              <div
+                className="nameWrapper"
+              >
+                <div
+                  className="name"
+                >
+                  Charlie Woods
+                </div>
+                <address
+                  className="email"
+                >
+                  charlie.woods@peakon.com
+                </address>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Spinner Default 1`] = `
+<div>
+  <article>
+    <h1>
+      Spinner
+    </h1>
+    <p>
+      The
+      <code>
+        Spinner
+      </code>
+      suggests that the user must wait for some action in the application.
+    </p>
+    <p>
+      It is typically used when waiting for responses to requests over HTTP.
+    </p>
+    <h2>
+      Props
+    </h2>
+    <h3>
+      <code>
+        size
+      </code>
+    </h3>
+    <p>
+      Control the size of the spinner.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        tiny
+      </code>
+      ,
+      <code>
+        small
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        big
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+    <h3>
+      <code>
+        thickness
+      </code>
+    </h3>
+    <p>
+      Control the thickness of the spinner.
+    </p>
+    <p>
+      It is a string value and it can be either
+      <code>
+        thin
+      </code>
+      ,
+      <code>
+        normal
+      </code>
+      , or
+      <code>
+        thick
+      </code>
+      .
+    </p>
+    <p>
+      Its current value is
+      <code>
+        normal
+      </code>
+      . You can change that using the knobs.
+    </p>
+    <p>
+      Its default value is
+      <code>
+        normal
+      </code>
+      .
+    </p>
+  </article>
+  <h2>
+    Preview
+  </h2>
+  <div
+    className="spinnerContainer"
+  >
+    <div
+      className="spinner"
+      style={
+        Object {
+          "borderWidth": 3,
+          "height": 30,
+          "width": 30,
+        }
+      }
+    />
+  </div>
+</div>
+`;
