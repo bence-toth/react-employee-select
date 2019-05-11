@@ -26,6 +26,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Launches storybook.<br>
 [Read about Stroybook](https://storybook.js.org/)
 
+### `npm run cypress`
+
+Launches Cypress and runs all tests.<br>
+[Read about Cypress](https://www.cypress.io/)
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
