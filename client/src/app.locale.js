@@ -1,8 +1,9 @@
 export default {
   'en-US': {
     employeeFetchError: [
-      'This went wrong, maybe try something else.',
-      'The server says it’s a teapot, so what do I know?'
+      // Non-breaking spaces so it doesn't look bad when width is narrow
+      'This went wrong, maybe try something\u00a0else.',
+      'If this persists, please contact Peakon\u00a0support.'
     ],
     employeeNoQueryResults: [
       'Not sure who you are looking for.',
