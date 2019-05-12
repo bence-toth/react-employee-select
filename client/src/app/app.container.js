@@ -52,6 +52,7 @@ const App = () => {
     const canFetchMore = suggestions.length < totalSuggestionsForQuery
     if (canFetchMore) {
       fetchNextPage(dispatch)({
+        fetchCounter,
         getNewFetchID,
         nextPageURL
       })

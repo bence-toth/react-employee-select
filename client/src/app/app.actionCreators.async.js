@@ -69,6 +69,7 @@ const requestEmployeeData = dispatch => (
 )
 
 const fetchNextPage = dispatch => (({
+  fetchCounter,
   getNewFetchID,
   nextPageURL
 }) => { // Fetch next page when scrolled to bottom
@@ -78,7 +79,14 @@ const fetchNextPage = dispatch => (({
     fetchID: newFetchID,
     URL: nextPageURL
   })
-    .then(receiveEmployees(dispatch))
+    .then(({ok, payload}) => {
+      receiveEmployees(dispatch)({
+        fetchCounter,
+        fetchID: newFetchID,
+        ok,
+        payload
+      })
+    })
 })
 
 export {requestEmployeeData, fetchNextPage}
