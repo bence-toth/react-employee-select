@@ -112,6 +112,6 @@ You can also squeeze out a [nasty 418 error](https://developer.mozilla.org/en-US
 
 ## Improvement ideas
 
-- Maybe this would deserve an actual node project, now it’s just 3 JavaScript files lying around.
+- Maybe this would deserve an actual npm project, now it’s just 3 JavaScript files lying around.
 - Some tests wouldn’t hurt.
 - An optional fuzzy search functionality would be killer, so that e,g, Barack Obama would come up to `barobm`.
