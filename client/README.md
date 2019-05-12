@@ -120,7 +120,7 @@ Please note that as the tests work with focus, **it is required that the focus s
 
 - Scroll bar styles could be cross-browser, now only webkit-based browsers get the nice scroll bars.
 
-- The presenters and their event handlers should be tested with libraries like `sinon` and `react-testing-library`, right now the only tests that actually tests their behavior is end-to-end (Cypress).
+- The presenters and their event handlers should be tested with libraries like `sinon` and `react-testing-library`, for now they are only covered by snapshot tests (StoryShots) and end-to-end tests (Cypress).
 
 - Although I subjectively consider the component generally accessible, no actual accessibility testing was conducted, so the component probably has some space for improvement there.
 
