@@ -218,7 +218,7 @@ exports[`Storyshots EmployeeSelect Default 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -429,7 +429,7 @@ exports[`Storyshots EmployeeSelect Default 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -479,7 +479,7 @@ exports[`Storyshots EmployeeSelect Default 1`] = `
     <p>
       The currently suggested employees’ names are:
       <code>
-        undefined
+        null
       </code>
       .
     </p>
@@ -492,7 +492,7 @@ exports[`Storyshots EmployeeSelect Default 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -626,7 +626,7 @@ exports[`Storyshots EmployeeSelect Fetching 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -837,7 +837,7 @@ exports[`Storyshots EmployeeSelect Fetching 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -887,7 +887,7 @@ exports[`Storyshots EmployeeSelect Fetching 1`] = `
     <p>
       The currently suggested employees’ names are:
       <code>
-        undefined
+        null
       </code>
       .
     </p>
@@ -900,7 +900,7 @@ exports[`Storyshots EmployeeSelect Fetching 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -1048,7 +1048,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -1259,7 +1259,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -1338,7 +1338,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -1779,7 +1779,7 @@ exports[`Storyshots EmployeeSelect Network error 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -1990,7 +1990,7 @@ exports[`Storyshots EmployeeSelect Network error 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -2050,7 +2050,7 @@ exports[`Storyshots EmployeeSelect Network error 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -2201,7 +2201,7 @@ exports[`Storyshots EmployeeSelect No results 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -2412,7 +2412,7 @@ exports[`Storyshots EmployeeSelect No results 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -2472,7 +2472,7 @@ exports[`Storyshots EmployeeSelect No results 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -2623,7 +2623,7 @@ exports[`Storyshots EmployeeSelect Selected employee 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -2882,7 +2882,7 @@ exports[`Storyshots EmployeeSelect Selected employee 1`] = `
     <p>
       The currently suggested employees’ names are:
       <code>
-        undefined
+        null
       </code>
       .
     </p>
@@ -2895,7 +2895,7 @@ exports[`Storyshots EmployeeSelect Selected employee 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
@@ -2999,7 +2999,6 @@ exports[`Storyshots EmployeeSelect Selected employee 1`] = `
           <button
             className="removeSelection"
             data-role="removeSelection"
-            disabled={false}
             onClick={[Function]}
             type="button"
           >
@@ -3061,7 +3060,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
       <code>
         employeeNoQueryResults
       </code>
-      which is an also array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
+      which is also an array of strings, lines of a notice which is displayed if the last network action has come up with no results. Typically something like
       <code>
         There are no matches.
       </code>
@@ -3272,7 +3271,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
     <p>
       The currently suggested employee’s name is
       <code>
-        undefined
+        null
       </code>
     </p>
     <h3>
@@ -3351,7 +3350,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
       A unique string identifier that is required when using a label, it is ignored otherwise.
     </p>
     <p>
-      It is used to create a link between the label end the input field.
+      It is used to create a link between the label and the input field.
     </p>
     <h3>
       <code>
