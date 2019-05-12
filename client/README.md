@@ -1,87 +1,129 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EmployeeSelect Application
 
-## Available Scripts
+This project consists of three stateless components and a small React application which showcases one of them, the EmployeeSelect.
 
-In the project directory, you can run:
+The project was bootstrapped with create-react-app, you might want to [read a bit about it](https://github.com/facebook/create-react-app), it’s really cool.
 
-### `npm start`
+## Application structure
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The stateless components are in `/src/components`. This folder contains sub-folders, one for each component.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Besides these components, there is the React application in `/src/app`.
 
-### `npm run lint`
+### Stateless components
 
-Runs the linter.
+The stateless components are in `/src/components`:
+- EmployeeSelect in `/src/components/employeeSelect/`
+- Avatar in `/src/components/avatar/`
+- Spinner in `/src/components/spinner/`
 
-### `npm test`
+EmployeeSelect is dependent on both Avatar and Spinner.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All components are documented in Storybook.
 
-### `npm test:coverage`
+### React application
 
-Generates and prints the coverage report from the test runner.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Think about this as a set (a pair to be fair) of implementation examples of the EmployeeSelect component.
 
-### `npm run storybook`
+This is where all of state management happens and all side effect are neatly isolated here (and even here you will find quite a lot of pure functions).
 
-Launches storybook.<br />
-[Read about Stroybook](https://storybook.js.org/)
+The application fetches data [from the server](../server/README.md).
 
-### `npm run cypress`
+The application has two routes:
+- `/` for default demo
+- `/disabled` for a disabled component
 
-Launches Cypress and runs all tests.<br />
-[Read about Cypress](https://www.cypress.io/)
+Routing is done via `reach-router`.
 
-### `npm run build`
+The application bootstrapped with `/src/index.js`, which imports `/src/app/app.container.js` which is where all the magic starts. The container is a React function component using hooks for state management (and more).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I decided not to introduce an external state manager like Redux or MobX, instead, I used the `useReducer` and `useState` hooks and stored all data I needed in the React component itself. Nonetheless I decided to keep the _consumer_, _reducer_, and _action creator_ patterns familiar from the Redux world, even if I managed to build a slightly unconventional (but switch-case-free) setup.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The app fetches data from the server, keeps track of the state. It renders an EmployeeSelect component on both routes, although the select is disabled on `/disabled`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The container handles all microcopy necessary for rendering EmployeeSelect. It is made in a way that it would be extremely simple to support (some) other languages. The default language selection (`en_US`) is hard-coded in the container.
 
-### `npm run eject`
+## Run the application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run the application, first install dependencies:
+```bash
+npm ci
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Then start up the project in your favorite browser with React running in dev mode, hot reloading, and all the bells and whistles:
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Do weird things
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The project was built on top of create-react-app, so you _can_ technically `npm run build` or `npm run eject`, but why in Odin’s name would you ever want to do that is beyond me.
 
-## Learn More
+## Test the application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### ESLint
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run ESLint with [a _very_ extensive config](https://www.npmjs.com/package/@agillic/eslint-config) I love:
+```
+npm run lint
+```
 
-### Code Splitting
+### Storybook
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+You can run [Stroybook](https://storybook.js.org/) that documents and showcases all stateless components:
+```
+npm run storybook
+```
+There are plenty of stories and it uses the knobs addon, so you can see every possible state of the components, and even interact with them to some extent.
 
-### Analyzing the Bundle Size
+### Jest and StoryShots
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Start Jest’s test runner:
 
-### Making a Progressive Web App
+```
+npm test
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Press `a` to run all tests, or just follow the instructions in the console.
 
-### Advanced Configuration
+Running `npm test` will execute unit tests and integration tests.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+It will also execute snapshot tests with [StoryShots](https://github.com/storybooks/storybook/tree/master/addons/storyshots), a snapshot tester for Storybook. After thoroughly reviewing failed snapshot tests, you can regenerate the snapshots by pressing `u`.
 
-### Deployment
+You can generate a coverage report with Jest:
+```
+npm test:coverage
+```
+A few boilerplate files are excluded from the report.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Cypress
 
-### `npm run build` fails to minify
+You can run [Cypress](https://www.cypress.io/) tests that cover every possible use case I could come up with:
+```
+npm run cypress
+```
+Just click “Run all specs” in the main Cypress window and see the magic happen.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Please note that as the tests work with focus, **it is required that the focus stays in the browser running the tests**, otherwise the tests could semi-randomly fail.
+
+## Improvement ideas
+
+- Viewport/component edge detection (so the drop down can go on the top if that is more convenient).
+
+- Keep cursor position and selection state of the input field when returning after leaving it for suggestions.
+
+- The race condition situation could be handled in a better way with request cancellation. Now every time the component fires a new request, previous requests are left there hanging and resolving, while they could be cancelled [using `AbortController`s](https://developer.mozilla.org/en-US/docs/Web/API/AbortController).
+
+- Consider using _department_ instead of _email address_ in drop down and selection to help the users identify suggestions easier, maybe this should be user tested.
+
+- When there are many suggestions in the drop down, it is unnecessary to render all of them, it is only necessary to render the ones that are visible within the viewport of the scrollable area. Using some tool like `react-virtual-list` could come with a nice performance gain, especially because of the avatar images.
+
+- Rounded corners – on the screenshot one version was with rounded corners, and the other without. I decided to go with rounded corners as I thought that it looked nicer, but it could be easily turned to a `prop` so the EmployeeSelect component would support both.
+
+- Scroll bar styles could be cross-browser, now only webkit-based browsers get the nice scroll bars.
+
+- The presenters and their event handlers should be tested with libraries like `sinon` and `react-testing-library`, right now the only tests that actually tests their behavior is end-to-end (Cypress).
+
+- Although I subjectively consider the component generally accessible, no actual accessibility testing was conducted, so the component probably has some space for improvement there.
+
+- Some usability testing would not hurt.

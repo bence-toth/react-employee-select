@@ -4,14 +4,6 @@ This is a little mock REST API that works with about a 1000 hard-coded names and
 
 **Disclaimer:** I did not concentrate a lot on this part of the project, hence the not too neatly organized code, no separation of concerns, lack of tests etc.
 
-## Run the server
-
-Start the server:
-```bash
-node index.js
-```
-This will make the server listen on port `:3001`.
-
 ## API
 
 There are no endpoints. There are no routes either.<br />
@@ -109,6 +101,13 @@ You can also squeeze out a [nasty 418 error](https://developer.mozilla.org/en-US
   "error": "I’m almost, but not quite, entirely unlike a teapot"
 }
 ```
+## Run the server
+
+Start the server:
+```bash
+node index.js
+```
+This will make the server listen closely on port `:3001`.
 
 ## Improvement ideas
 
