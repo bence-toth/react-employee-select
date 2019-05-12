@@ -25,4 +25,5 @@ const onKeyDown = event => {
   }
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export {onKeyDown}

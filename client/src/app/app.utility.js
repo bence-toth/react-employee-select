@@ -13,4 +13,5 @@ const debounce = (functionToDebounce, delay) => (
   }
 )
 
+// eslint-disable-next-line import/prefer-default-export
 export {debounce}

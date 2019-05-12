@@ -17,4 +17,5 @@ const receiveEmployeeData = dispatch => (
   }
 )
 
+// eslint-disable-next-line import/prefer-default-export
 export {receiveEmployeeData}

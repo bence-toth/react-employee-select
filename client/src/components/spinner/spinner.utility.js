@@ -17,4 +17,5 @@ const calculateStyle = ({size, thickness}) => ({
   width: calculateDimensions({size})
 })
 
+// eslint-disable-next-line import/prefer-default-export
 export {calculateStyle}
