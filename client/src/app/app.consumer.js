@@ -9,7 +9,6 @@ export default async ({
 }) => {
   const targetURL = URL
     || `http://localhost:3001/?per_page=${pageLength}&page=${pageNumber}&q=${prepareQuery(query)}`
-
   try {
     const response = await fetch(targetURL)
     return {

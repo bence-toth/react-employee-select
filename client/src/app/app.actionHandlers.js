@@ -1,6 +1,9 @@
 export const addSuggestions = ({state, action}) => ({
   nextPageURL: action.nextPageURL,
-  suggestions: [...(state.suggestions || []), ...action.suggestions],
+  suggestions: [
+    ...(state.suggestions || []),
+    ...action.suggestions
+  ],
   totalSuggestionsForQuery: action.totalSuggestionsForQuery
 })
 
@@ -21,7 +24,9 @@ export const selectEmployee = ({action}) => ({
 export const setFetchError = ({state, action}) => ({
   hasFetchError: action.hasError,
   isQueryFetching: false,
-  suggestions: action.hasError ? [] : state.suggestions
+  suggestions: action.hasError
+    ? []
+    : state.suggestions
 })
 
 export const setNextPageFetching = ({action}) => ({

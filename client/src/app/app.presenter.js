@@ -26,6 +26,7 @@ const MainPresenter = ({
           path='/'
           copy={copy}
           hasFetchError={hasFetchError}
+          isDisabled={isDisabled}
           isNextPageFetching={isNextPageFetching}
           isQueryFetching={isQueryFetching}
           onFetchNextPage={onFetchNextPage}
@@ -34,7 +35,6 @@ const MainPresenter = ({
           query={query}
           selectedEmployee={selectedEmployee}
           suggestions={suggestions}
-          isDisabled={isDisabled}
           uniqueID='mySpecialEmployeeSelect'
           width='normal'
         />
