@@ -31,6 +31,10 @@ const Input = ({
       type='text'
       value={query}
     />
+    {/*
+      We show a blank ghost input when the select is not in focus.
+      This masks the content of the input field and renders the placeholder.
+    */}
     <input
       className='ghost queryInput'
       disabled={isDisabled}

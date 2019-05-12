@@ -46,7 +46,9 @@ const EmployeeSelect = ({
       </label>
     )}
     <QueryInput
-      copy={(({employeeSelectPlaceholder}) => ({employeeSelectPlaceholder}))(copy)}
+      copy={(
+        ({employeeSelectPlaceholder}) => ({employeeSelectPlaceholder})
+      )(copy)}
       isCaretUpsideDown={suggestions !== null}
       isDisabled={isDisabled}
       isQueryFetching={isQueryFetching}
@@ -59,11 +61,9 @@ const EmployeeSelect = ({
     />
     {!isDisabled && !selectedEmployee && suggestions && (
       <Suggestions
-        copy={
-          (({employeeNoQueryResults, employeeFetchError}) =>
-            ({employeeNoQueryResults, employeeFetchError})
-          )(copy)
-        }
+        copy={(({employeeNoQueryResults, employeeFetchError}) =>
+          ({employeeNoQueryResults, employeeFetchError})
+        )(copy)}
         hasFetchError={hasFetchError}
         isDisabled={isDisabled}
         isNextPageFetching={isNextPageFetching}

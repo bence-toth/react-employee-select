@@ -5,6 +5,7 @@ import Suggestion from './suggestion/suggestion.presenter'
 import NoResultsMessage from './noResultsMessage/noResultsMessage.presenter'
 import FetchErrorMessage from './fetchErrorMessage/fetchErrorMessage.presenter'
 import Spinner from '../../spinner/spinner.presenter'
+import {onScroll} from './suggestions.eventHandlers'
 import {employeeShape, copyShape} from '../../../index.shapes'
 import './suggestions.css'
 
@@ -19,50 +20,40 @@ const Suggestions = ({
   <div
     className='suggestionsWrapper'
     data-role='suggestions'
-    onScroll={({target}) => {
-      const {scrollTop, scrollHeight, offsetHeight} = target
-      const distanceFromBottom = scrollHeight - (scrollTop + offsetHeight)
-      const distanceFromEdgeThreshold = 10
-      if (distanceFromBottom < distanceFromEdgeThreshold) {
-        onFetchNextPage()
-      }
-    }}
+    onScroll={onScroll({onFetchNextPage})}
     tabIndex={-1}
   >
     {hasFetchError && (
       <FetchErrorMessage
-        copy={
-          (({employeeFetchError}) =>
-            ({employeeFetchError})
-          )(copy)
-        }
+        copy={(
+          ({employeeFetchError}) => ({employeeFetchError})
+        )(copy)}
       />
     )}
-    {!hasFetchError && ((suggestions.length > 0)
-      ? (
-        <ul>
-          {suggestions.map(({attributes: {id, name, email, avatar}}) => (
-            <Suggestion
-              avatar={avatar}
-              email={email}
-              id={id}
-              key={id}
-              name={name}
-              onSelectEmployee={onSelectEmployee}
-            />
-          ))}
-        </ul>
-      )
-      : (
-        <NoResultsMessage
-          copy={
-            (({employeeNoQueryResults}) =>
-              ({employeeNoQueryResults})
-            )(copy)
-          }
-        />
-      ))
-    }
+    {!hasFetchError && (
+      (suggestions.length > 0)
+        ? (
+          <ul>
+            {suggestions.map(({attributes: {id, name, email, avatar}}) => (
+              <Suggestion
+                avatar={avatar}
+                email={email}
+                id={id}
+                key={id}
+                name={name}
+                onSelectEmployee={onSelectEmployee}
+              />
+            ))}
+          </ul>
+        )
+        : (
+          <NoResultsMessage
+            copy={(
+              ({employeeNoQueryResults}) => ({employeeNoQueryResults})
+            )(copy)}
+          />
+        )
+    )}
     {isNextPageFetching && !hasFetchError && (
       <div className='spinnerWrapper'>
         <Spinner thickness='thin' />

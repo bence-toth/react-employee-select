@@ -41,7 +41,7 @@ const Readme = ({
     <p>
       It has
       <code>employeeNoQueryResults</code>
-      which is an also array of strings, lines of a notice which is
+      which is also an array of strings, lines of a notice which is
       displayed if the last network action has come up with no results.
       Typically something like
       <code>There are no matches.</code>
@@ -169,7 +169,7 @@ const Readme = ({
         selectedEmployee
           ? selectedEmployee.name
           : (
-            <code>undefined</code>
+            <code>null</code>
           )
       }
     </p>
@@ -202,7 +202,7 @@ const Readme = ({
       The currently suggested employees’ names are:
       {!suggestions && (
         <>
-          <code>undefined</code>
+          <code>null</code>
           .
         </>
       )}
@@ -217,7 +217,7 @@ const Readme = ({
 
     <h3><code>uniqueID</code></h3>
     <p>A unique string identifier that is required when using a label, it is ignored otherwise.</p>
-    <p>It is used to create a link between the label end the input field.</p>
+    <p>It is used to create a link between the label and the input field.</p>
 
     <h3><code>width</code></h3>
     <p>The width of the input field and the suggestions drop down.</p>

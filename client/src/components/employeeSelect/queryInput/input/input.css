@@ -12,7 +12,12 @@
   width: calc(100% - 12.5px - 10px);
 }
 
+.employeeSelect .queryInput:disabled {
+  cursor: not-allowed;
+}
+
 .employeeSelect .ghost.queryInput {
+  background: hsl(0, 0%, 100%);
   left: 0;
   opacity: 0;
   pointer-events: none;
@@ -24,7 +29,6 @@
 }
 
 .employeeSelect:not(:focus-within) .ghost.queryInput {
-  background: white;
   opacity: 1;
 }
 

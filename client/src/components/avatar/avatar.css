@@ -1,7 +1,7 @@
 .avatarWrapper {
   height: 64px;
   margin: 0 10px 0 16px;
-  position: relative;  /* Trigger stacking context for monogram or profile picture */
+  position: relative;  /* Trigger stacking context for monogram and profile picture */
   width: 30px;
 }
 

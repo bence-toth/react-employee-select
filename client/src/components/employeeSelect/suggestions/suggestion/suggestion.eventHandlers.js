@@ -1,3 +1,5 @@
+// I wish all this could be done in a more declarative way...
+
 const roles = {
   employeeSelect: '[data-role=employeeSelect]',
   queryInput: '[data-role=queryInput]',
@@ -6,6 +8,8 @@ const roles = {
 }
 
 const onMouseMove = ({target}) => {
+  // Let's check if at least half of the target
+  // is currently visible in the scrollable area
   const {scrollTop, offsetHeight: containerHeight} = target.closest(roles.suggestions)
   const {offsetTop, offsetHeight: elementHeight} = target.closest(roles.suggestion)
   const elementMiddleOffset = offsetTop + (elementHeight * 0.5)

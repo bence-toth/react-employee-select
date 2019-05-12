@@ -9,7 +9,7 @@ import cross from './cross.svg'
 const Selection = ({
   isDisabled,
   onRemoveSelection,
-  selectedEmployee
+  selectedEmployee: {avatar, email, name}
 }) => (
   <div
     className='selection'
@@ -18,18 +18,17 @@ const Selection = ({
     role='button'
   >
     <Avatar
-      avatarURL={selectedEmployee.avatar}
-      name={selectedEmployee.name}
+      avatarURL={avatar}
+      name={name}
     />
     <div className='nameWrapper'>
-      <div className='name'>{selectedEmployee.name}</div>
-      <address className='email'>{selectedEmployee.email}</address>
+      <div className='name'>{name}</div>
+      <address className='email'>{email}</address>
     </div>
     {!isDisabled && (
       <button
         className='removeSelection'
         data-role='removeSelection'
-        disabled={isDisabled}
         onClick={onRemoveSelection}
         type='button'
       >

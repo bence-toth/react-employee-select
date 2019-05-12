@@ -1,7 +1,7 @@
 import React from 'react'
 import {string, func} from 'prop-types'
 
-import Avatar from '../../../avatar/avatar.presenter' // ../../...
+import Avatar from '../../../avatar/avatar.presenter'
 import {onMouseMove, onKeyDown} from './suggestion.eventHandlers'
 import './suggestion.css'
 
@@ -15,7 +15,9 @@ const Suggestion = ({
   <li data-role='suggestion'>
     <button
       className='suggestion'
-      onClick={() => onSelectEmployee({employee: {id, name, email, avatar}})}
+      onClick={() => onSelectEmployee({
+        employee: {id, name, email, avatar}
+      })}
       onKeyDown={onKeyDown}
       onMouseMove={onMouseMove}
       tabIndex={0}
