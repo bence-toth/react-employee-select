@@ -4,14 +4,13 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "react-scripts test --watchAll=false --coverage",
-    "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .eslintignore ./src ./.storybook ./cypress",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "cypress": "cypress open"
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --watchAll=false --coverage",
+    "cypress": "cypress open",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
