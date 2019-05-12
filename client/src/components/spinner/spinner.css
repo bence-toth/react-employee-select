@@ -11,18 +11,10 @@
   animation: rotate 1s infinite linear;
   border: solid hsl(148, 58%, 44%);
   border-left-color: transparent;
+  border-radius: 50%;
   position: relative;
+  /* The GPU should take care of this */
   transform: translateZ(0);
   user-select: none;
   z-index: 1;
-}
-
-.spinner, .spinner:after {
-  border-radius: 50%;
-}
-
-.spinner:after {
-  border-radius: 50%;
-  height: 100%;
-  width: 100%;
 }
