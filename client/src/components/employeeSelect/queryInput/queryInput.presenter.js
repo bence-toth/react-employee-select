@@ -1,5 +1,6 @@
 import React from 'react'
 import {string, func, bool} from 'prop-types'
+import classNames from 'classnames'
 
 import Selection from './selection/selection.presenter'
 import Input from './input/input.presenter'
@@ -17,7 +18,10 @@ const QueryInput = ({
   selectedEmployee,
   uniqueID
 }) => (
-  <div className='queryInputWrapper'>
+  <div className={classNames(
+    'queryInputWrapper',
+    {disabled: isDisabled}
+  )}>
     {selectedEmployee
       ? (
         <Selection

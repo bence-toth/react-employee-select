@@ -12,3 +12,8 @@
   border-color: hsl(153, 59%, 60%);
   box-shadow: 0 1px 0 hsl(153, 59%, 70%);
 }
+
+.employeeSelect .queryInputWrapper.disabled {
+  background-color: #e8e8e8;
+  border-color: #e2e2e2;
+}

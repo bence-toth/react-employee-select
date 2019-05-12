@@ -32,6 +32,11 @@
   opacity: 1;
 }
 
+.employeeSelect:not(:focus-within) .ghost.queryInput:disabled {
+  background-color: #e8e8e8;
+  border-color: #e2e2e2;
+}
+
 .employeeSelect .queryInputWrapper .spinnerWrapper {
   overflow: hidden;
   pointer-events: none;
