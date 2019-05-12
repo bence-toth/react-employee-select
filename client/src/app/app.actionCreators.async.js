@@ -1,9 +1,11 @@
 import {addSuggestions, clearSuggestions, setFetchError, setNextPageFetching, setQueryFetching} from './app.actionCreators'
 import {fetchEmployees} from './app.consumer'
+import {getSuggestions} from './app.utility'
 
 const receiveEmployeeData = dispatch => (
   ({
-    data: suggestions,
+    data,
+    included,
     links: {
       next: nextPageURL
     },
@@ -13,6 +15,7 @@ const receiveEmployeeData = dispatch => (
       }
     }
   }) => {
+    const suggestions = getSuggestions({data, included})
     dispatch(addSuggestions({
       nextPageURL,
       suggestions,
