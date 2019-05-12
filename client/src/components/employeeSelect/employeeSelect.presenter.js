@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import QueryInput from './queryInput/queryInput.presenter'
 import Suggestions from './suggestions/suggestions.presenter'
-import {employeeShape, copyShape} from '../../app.shapes'
+import {employeeShape, copyShape} from '../../index.shapes'
 import './employeeSelect.css'
 
 const EmployeeSelect = ({

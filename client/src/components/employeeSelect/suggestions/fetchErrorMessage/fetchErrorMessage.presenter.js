@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {copyShape} from '../../../../app.shapes'
+import {copyShape} from '../../../../index.shapes'
 import './fetchErrorMessage.css'
 
 const FetchErrorMessage = ({copy}) => (

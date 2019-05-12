@@ -2,8 +2,8 @@ import React from 'react'
 import {string, func, arrayOf, bool} from 'prop-types'
 import {Router} from '@reach/router'
 
-import EmployeeSelect from './components/employeeSelect/employeeSelect.presenter'
-import {employeeShape, copyShape} from './app.shapes'
+import EmployeeSelect from '../components/employeeSelect/employeeSelect.presenter'
+import {employeeShape, copyShape} from '../index.shapes'
 import './app.css'
 
 const MainPresenter = ({

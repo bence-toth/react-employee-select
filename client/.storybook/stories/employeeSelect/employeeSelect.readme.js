@@ -2,7 +2,7 @@
 import React from 'react'
 import {string, bool, arrayOf, oneOf, node} from 'prop-types'
 
-import {employeeShape} from '../../../src/app.shapes'
+import {employeeShape} from '../../../src/index.shapes'
 
 const Readme = ({
   hasFetchError,

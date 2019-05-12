@@ -3,7 +3,7 @@ import {string, func, bool} from 'prop-types'
 
 import Selection from './selection/selection.presenter'
 import Input from './input/input.presenter'
-import {employeeShape, copyShape} from '../../../app.shapes'
+import {employeeShape, copyShape} from '../../../index.shapes'
 import './queryInput.css'
 
 const QueryInput = ({

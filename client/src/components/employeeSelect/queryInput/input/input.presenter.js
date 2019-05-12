@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import Spinner from '../../../spinner/spinner.presenter'
 import {onKeyDown} from './input.eventHandlers'
-import {copyShape} from '../../../../app.shapes'
+import {copyShape} from '../../../../index.shapes'
 import './input.css'
 import caret from './caret-down.svg'
 
