@@ -11,16 +11,15 @@ const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const fetchCounter = useRef(0)
-
-  // This would probably come from some context provider
-  const [userLocale] = useState('en-US')
-  const copy = locale[userLocale]
-
   const getNewFetchID = () => { // Track the last fetch
     const newFetchID = fetchCounter.current + 1
     fetchCounter.current = newFetchID
     return newFetchID
   }
+
+  // This would probably come from some context provider
+  const [userLocale] = useState('en-US')
+  const copy = locale[userLocale]
 
   const fetchEmployeeDataCallback = useCallback(
     () => {

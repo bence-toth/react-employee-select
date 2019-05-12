@@ -21,7 +21,7 @@ const runTests = ({startState, actions, expectedEndState}) => {
   expect(endState).toEqual(expectedEndState)
 }
 
-describe('folderTreeResizable reducer unit tests_', () => {
+describe('reducer unit tests_', () => {
   each([
     [
       'addSuggestions: should set state correctly on empty array',
