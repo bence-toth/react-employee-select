@@ -1,6 +1,6 @@
 const generateEmployee = ({employee: {id, name, email}}) => ({
+  id,
   attributes: {
-    id,
     name,
     email,
     avatar: (name === 'Nicolas Cage')

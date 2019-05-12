@@ -1,47 +1,47 @@
 const suggestions = [ // Mock and roll ♫ ♪
   {
+    id: '1',
     attributes: {
-      id: '1',
       name: 'Mathew Sullivan',
       email: '',
       avatar: 'https://randomuser.me/api/portraits/men/49.jpg'
     }
   },
   {
+    id: '2',
     attributes: {
-      id: '2',
       name: 'Iris Fernandez',
       email: 'iris.fernandez@peakon.com',
       avatar: null
     }
   },
   {
+    id: '3',
     attributes: {
-      id: '3',
       name: 'Ian Robertson',
       email: 'ian.robertson@peakon.com',
       avatar: null
     }
   },
   {
+    id: '4',
     attributes: {
-      id: '4',
       name: 'Eileen Marshall',
       email: 'eileen.marshall@peakon.com',
       avatar: 'https://randomuser.me/api/portraits/women/71.jpg'
     }
   },
   {
+    id: '5',
     attributes: {
-      id: '5',
       name: 'Claudia Cole',
       email: 'claudia.cole@peakon.com',
       avatar: null
     }
   },
   {
+    id: '6',
     attributes: {
-      id: '6',
       name: 'Charlie Woods',
       email: 'charlie.woods@peakon.com',
       avatar: null

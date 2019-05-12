@@ -202,7 +202,7 @@ const Readme = ({
     </p>
     {suggestions && (
       <ul>
-        {suggestions.map(({attributes: {id, name}}) => (
+        {suggestions.map(({id, attributes: {name}}) => (
           <li key={id}>{name}</li>
         ))}
       </ul>

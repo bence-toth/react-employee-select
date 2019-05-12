@@ -5,9 +5,9 @@ const employeeShape = shape({
   attributes: {
     avatar: string,
     email: string.isRequired,
-    id: string.isRequired,
     name: string.isRequired
-  }.isRequired
+  }.isRequired,
+  id: string.isRequired
 })
 
 const copyShape = objectOf(

@@ -34,7 +34,7 @@ const Suggestions = ({
       (suggestions.length > 0)
         ? (
           <ul>
-            {suggestions.map(({attributes: {id, name, email, avatar}}) => (
+            {suggestions.map(({id, attributes: {name, email, avatar}}) => (
               <Suggestion
                 avatar={avatar}
                 email={email}

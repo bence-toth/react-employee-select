@@ -69,7 +69,7 @@ const EmployeeSelect = ({
         isNextPageFetching={isNextPageFetching}
         onFetchNextPage={onFetchNextPage}
         onSelectEmployee={onSelectEmployee}
-        suggestions={suggestions /* That’s a lot of suggestions... */}
+        suggestions={suggestions}
       />
     ) }
   </div>
