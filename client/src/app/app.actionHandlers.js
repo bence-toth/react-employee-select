@@ -1,10 +1,19 @@
-export const addSuggestions = ({state, action}) => ({
-  nextPageURL: action.nextPageURL,
+export const addSuggestions = ({
+  state: {
+    suggestions: currentSuggestions
+  },
+  action: {
+    nextPageURL,
+    suggestions: newSuggestions,
+    totalSuggestionsForQuery
+  }
+}) => ({
+  nextPageURL,
   suggestions: [
-    ...(state.suggestions || []),
-    ...action.suggestions
+    ...(currentSuggestions || []),
+    ...newSuggestions
   ],
-  totalSuggestionsForQuery: action.totalSuggestionsForQuery
+  totalSuggestionsForQuery
 })
 
 export const clearSuggestions = () => ({
@@ -13,30 +22,49 @@ export const clearSuggestions = () => ({
   totalSuggestionsForQuery: null
 })
 
-export const selectEmployee = ({action}) => ({
+export const selectEmployee = ({
+  action: {
+    employee: selectedEmployee
+  }
+}) => ({
   nextPageURL: null,
   query: '',
-  selectedEmployee: action.employee,
+  selectedEmployee,
   suggestions: null,
   totalSuggestionsForQuery: null
 })
 
-export const setFetchError = ({state, action}) => ({
-  hasFetchError: action.hasError,
+export const setFetchError = ({
+  state: {
+    suggestions: currentSuggestions
+  },
+  action: {
+    hasError: hasFetchError
+  }
+}) => ({
+  hasFetchError,
   isQueryFetching: false,
-  suggestions: action.hasError
+  suggestions: hasFetchError
     ? []
-    : state.suggestions
+    : currentSuggestions
 })
 
-export const setNextPageFetching = ({action}) => ({
-  isNextPageFetching: action.isFetching
+export const setNextPageFetching = ({
+  action: {
+    isFetching: isNextPageFetching
+  }
+}) => ({
+  isNextPageFetching
 })
 
-export const setQueryFetching = ({action}) => ({
-  isQueryFetching: action.isFetching
+export const setQueryFetching = ({
+  action: {
+    isFetching: isQueryFetching
+  }
+}) => ({
+  isQueryFetching
 })
 
-export const updateQuery = ({action}) => ({
-  query: action.query
+export const updateQuery = ({action: {query}}) => ({
+  query
 })

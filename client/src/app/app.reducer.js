@@ -11,7 +11,6 @@ import {
 
 const initialState = {
   hasFetchError: false,
-  highlightedSuggestionIndex: null,
   isNextPageFetching: false,
   isQueryFetching: false,
   nextPageURL: null,

@@ -1,6 +1,6 @@
 const prepareQuery = query => query.split(' ').join('+')
 
-export default async ({
+const fetchEmployees = async ({
   fetchID,
   pageLength,
   pageNumber,
@@ -25,3 +25,6 @@ export default async ({
     }
   }
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export {fetchEmployees}

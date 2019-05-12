@@ -1,16 +1,8 @@
 import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react'
 
 import {initialState, reducer} from './app.reducer'
-import {
-  clearSuggestions,
-  selectEmployee,
-  setFetchError,
-  setNextPageFetching,
-  setQueryFetching,
-  updateQuery
-} from './app.actionCreators'
-import {receiveEmployeeData} from './app.actionCreators.async'
-import fetchEmployees from './app.consumer'
+import {selectEmployee, updateQuery} from './app.actionCreators'
+import {requestEmployeeData, fetchNextPage} from './app.actionCreators.async'
 import MainPresenter from './app.presenter'
 import {debounce} from './app.utility'
 import locale from './app.locale'
@@ -24,17 +16,6 @@ const App = () => {
   const [userLocale] = useState('en-US')
   const copy = locale[userLocale]
 
-  const receiveEmployees = ({payload, fetchID, ok}) => {
-    if (fetchID === fetchCounter.current) {
-      if (ok) {
-        payload.then(receiveEmployeeData(dispatch))
-      }
-      else {
-        dispatch(setFetchError({hasError: true}))
-      }
-    }
-  }
-
   const getNewFetchID = () => { // Track the last fetch
     const newFetchID = fetchCounter.current + 1
     fetchCounter.current = newFetchID
@@ -43,19 +24,18 @@ const App = () => {
 
   const fetchEmployeeDataCallback = useCallback(
     () => {
-      debounce(() => {
-        dispatch(setQueryFetching({isFetching: true}))
-        dispatch(clearSuggestions())
-        fetchEmployees({
-          fetchID: getNewFetchID(),
-          pageLength: 6,
-          pageNumber: 1,
-          query: state.query
-        })
-          .then(receiveEmployees)
-      }, 350)()
+      debounce(
+        () => {
+          requestEmployeeData(dispatch)({
+            fetchCounter,
+            getNewFetchID,
+            query: state.query
+          })
+        },
+        350
+      )()
     },
-    [state.query],
+    [state.query]
   )
 
   useEffect(() => { // Fetch data as the user types
@@ -68,21 +48,14 @@ const App = () => {
     }
   }, [state.selectedEmployee, fetchEmployeeDataCallback])
 
-  const fetchNextPage = () => { // Fetch next page when scrolled to bottom
-    const newFetchID = getNewFetchID()
-    dispatch(setNextPageFetching({isFetching: true}))
-    fetchEmployees({
-      fetchID: newFetchID,
-      URL: state.nextPageURL
-    })
-      .then(receiveEmployees)
-  }
-
   const fetchNextPageIfNeeded = () => {
-    const {suggestions, totalSuggestionsForQuery} = state
+    const {suggestions, totalSuggestionsForQuery, nextPageURL} = state
     const canFetchMore = suggestions.length < totalSuggestionsForQuery
     if (canFetchMore) {
-      fetchNextPage()
+      fetchNextPage(dispatch)({
+        getNewFetchID,
+        nextPageURL
+      })
     }
   }
 
