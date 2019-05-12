@@ -16,7 +16,6 @@ const generatePayload = ({employees, total, pageLength, pageNumber, query}) => (
   data: employees.map(employee => generateEmployee({employee})),
   meta: {page: {total}},
   links: {
-    self: generateLink({pageNumber, pageLength, query}),
     next: generateLink({pageNumber: +pageNumber + 1, pageLength, query})
   }
 })
