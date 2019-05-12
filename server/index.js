@@ -12,7 +12,7 @@ const employees = names.sort().map((name, index) => ({
 
 const server = http.createServer((request, response) => {
   const {query: {per_page: pageLength, page: pageNumber, q: query}} = url.parse(request.url, true)
-  if (query.includes('err')) {
+  if ((typeof query === 'string') && query.includes('err')) {
     response.writeHead(418, {'Content-Type': 'text/json'})
     response.end(JSON.stringify({error: 'I’m almost, but not quite, entirely unlike a teapot'}))
   }
@@ -37,7 +37,7 @@ const server = http.createServer((request, response) => {
   }
   else {
     response.writeHead(400, {'Content-Type': 'text/json'})
-    response.end(JSON.stringify({error: 'You must provide the following GET parameters: pageLength, pageNumber, query'}))
+    response.end(JSON.stringify({error: 'You must provide the following GET parameters: page, page_number, q'}))
   }
 })
 server.listen(3001)
