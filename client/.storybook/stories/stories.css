@@ -54,28 +54,28 @@ body {
   border-radius: 6px;
 }
 
-article p {
+article > p {
   font-size: 16px;
   margin: 10px 0;
 }
 
-article ul {
+article > ul {
   margin-left: 20px;
 }
 
-h1 {
+article > h1 {
   color: hsl(154, 66%, 45%);
   font-size: 32px;
   font-weight: 300;
 }
 
-article h2 {
+> article h2 {
   font-size: 24px;
   font-weight: 400;
   margin-top: 20px;
 }
 
-article h3 {
+> article h3 {
   font-size: 20px;
   font-weight: 400;
   margin-top: 20px;
