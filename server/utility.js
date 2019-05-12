@@ -3,24 +3,23 @@ const generateEmployee = ({employee: {id, name, email}}) => ({
     id,
     name,
     email,
-    avatar: (name === 'Nicolas Cage') ? 'http://www.placecage.com/100/100' : null
+    avatar: (name === 'Nicolas Cage')
+      ? 'http://www.placecage.com/100/100'
+      : null
   }
 })
 
 const generateLink = ({pageLength, pageNumber, query}) =>
   `http://localhost:3001/?per_page=${pageLength}&page=${pageNumber}&q=${query}`
 
-
-const generatePayload = ({employees, total, pageLength, pageNumber, query}) => {
-  return ({
-    data: employees.map(employee => generateEmployee({employee})),
-    meta: {page: {total}},
-    links: {
-      self: generateLink({pageNumber, pageLength, query}),
-      next: generateLink({pageNumber: +pageNumber + 1, pageLength, query})
-    }
-  })
-}
+const generatePayload = ({employees, total, pageLength, pageNumber, query}) => ({
+  data: employees.map(employee => generateEmployee({employee})),
+  meta: {page: {total}},
+  links: {
+    self: generateLink({pageNumber, pageLength, query}),
+    next: generateLink({pageNumber: +pageNumber + 1, pageLength, query})
+  }
+})
 
 const getMatches = ({employees, queries}) => employees.filter(({nameParts}) => (
   (queries[0].length === 0) ||

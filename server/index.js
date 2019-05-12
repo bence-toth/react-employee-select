@@ -14,10 +14,12 @@ const server = http.createServer((request, response) => {
   const {query: {per_page: pageLength, page: pageNumber, q: query}} = url.parse(request.url, true)
   if ((typeof query === 'string') && query.includes('err')) {
     response.writeHead(418, {'Content-Type': 'text/json'})
-    response.end(JSON.stringify({error: 'I’m almost, but not quite, entirely unlike a teapot'}))
+    response.end(JSON.stringify({
+      error: 'I’m almost, but not quite, entirely unlike a teapot'
+    }))
   }
   else if (pageLength && pageNumber && (typeof query === 'string')) {
-    queries = query.trim().split(' ')
+    const queries = query.trim().split(' ')
     response.writeHead(200, {
       'Content-Type': 'text/json',
       'Access-Control-Allow-Origin': '*'
@@ -30,7 +32,7 @@ const server = http.createServer((request, response) => {
       pageNumber,
       query
     })
-    setTimeout(
+    setTimeout( // Rough network conditions, carry an umbrella
       () => response.end(JSON.stringify(payload)),
       Math.round(125 + (Math.random() * 125))
     )

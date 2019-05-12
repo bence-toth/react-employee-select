@@ -16,8 +16,8 @@ The server catches every `GET` request coming its way and responds with:
 
 In order to query “the database” and get one page of results, you must supply the following `GET` arguments:
 - `q` – the name you are looking for, use `john+doe` format when providing multiple word queries
-- `page` – the page number
-- `per_page` – the number of items per page
+- `page` – the page number for pagination of suggestions
+- `per_page` – the number of items per page for pagination of suggestions
 
 So a request URL could for example look like:
 ```
