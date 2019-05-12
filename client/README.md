@@ -6,10 +6,6 @@ The project was bootstrapped with create-react-app, you might want to [read a bi
 
 ## Application structure
 
-The stateless components are in `/src/components`. This folder contains sub-folders, one for each component.
-
-Besides these components, there is the React application in `/src/app`.
-
 ### Stateless components
 
 The stateless components are in `/src/components`:
@@ -23,9 +19,11 @@ All components are documented in Storybook.
 
 ### React application
 
+Besides these components, there is the React application in `/src/app`.
+
 Think about this as a set (a pair to be fair) of implementation examples of the EmployeeSelect component.
 
-This is where all of state management happens and all side effect are neatly isolated here (and even here you will find quite a lot of pure functions).
+This is where all of the state management happens and all side effect are neatly isolated here.
 
 The application fetches data [from the server](../server/README.md).
 
@@ -35,11 +33,11 @@ The application has two routes:
 
 Routing is done via `reach-router`.
 
-The application bootstrapped with `/src/index.js`, which imports `/src/app/app.container.js` which is where all the magic starts. The container is a React function component using hooks for state management (and more).
+The application is bootstrapped at `/src/index.js`, which imports `/src/app/app.container.js` which is where all the magic starts. The container is a React function component using hooks for state management (and more).
 
-I decided not to introduce an external state manager like Redux or MobX, instead, I used the `useReducer` and `useState` hooks and stored all data I needed in the React component itself. Nonetheless I decided to keep the _consumer_, _reducer_, and _action creator_ patterns familiar from the Redux world, even if I managed to build a slightly unconventional (but switch-case-free) setup.
+I decided not to introduce an external state manager like Redux or MobX, instead, I used the `useReducer` and `useState` hooks and stored all the data I needed in the React component itself. Nonetheless I decided to keep the _consumer_, _reducer_, and _action creator_ patterns familiar from the Redux world, even if I managed to build a slightly unconventional (but switch-case-free) setup.
 
-The app fetches data from the server, keeps track of the state. It renders an EmployeeSelect component on both routes, although the select is disabled on `/disabled`.
+The app fetches data from the server and keeps track of the state. It renders an EmployeeSelect component on both routes, although the select is disabled on `/disabled`.
 
 The container handles all microcopy necessary for rendering EmployeeSelect. It is made in a way that it would be extremely simple to support (some) other languages. The default language selection (`en_US`) is hard-coded in the container.
 
