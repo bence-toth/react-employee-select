@@ -4,7 +4,7 @@ A possible solution to a Peakon technical assignment.
 
 ## General introduction
 
-I was trying to apply a functional programming approach (which I love so much) as much as it was possible, the project consists of mostly pure functions, the only control structure being used is `if`, there is only one variable declared with `let`, and I was even leaving a comment there that it should be moved within a more declarative environment, e.g. some React component state.
+I was trying to apply a functional programming approach (which I love so much) as much as it was possible. The project mostly consists of pure functions, the only control structure being used is `if`, there is only one variable declared with `let`, and I was even leaving a comment there that it should be moved within a more declarative environment, e.g. some React component state.
 
 I was trying to build the project as close to production-ready as possible.
 Therefore I was concentrating a lot on:
@@ -44,13 +44,14 @@ If any of this was to be released in any way, or if multiple developers were to 
 
 Check the commit history. My commit messages are sometimes almost as hilarious as my comments.
 
-## Contact
-
-Made by _Bence A. Tóth_.<br />
-Feel free to reach out at tothab@gmail.com.
-
 ## License
 
 MIT, I guess.
 
 Even though I haven't published it anywhere.
+
+## Contact
+
+Made by _Bence A. Tóth_.<br />
+Feel free to reach out at tothab@gmail.com.
+

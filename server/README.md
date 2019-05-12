@@ -1,6 +1,6 @@
 # “The server”
 
-This is a little mock REST API that works with about a 1000 hard-coded names and responds to network requests with responses that bear a payload which is semantically homomorphic to the one [specified in the gist](https://gist.github.com/daviferreira/41238222ac31fe36348544ee1d4a9a5e). I however cleared away all the clutter, so the server responds with no more data than absolutely necessary for [the client application](../client/README.md) to function.
+This is a little mock REST API that works with about a 1000 hard-coded names and responds to network requests with responses that bear a payload which is semantically homomorphic to the one [specified in the gist](https://gist.github.com/daviferreira/41238222ac31fe36348544ee1d4a9a5e). I however cleared away all the clutter, so the server responds with no more data than what is absolutely necessary for [the client application](../client/README.md) to function.
 
 **Disclaimer:** I did not concentrate a lot on this part of the project, hence the not too neatly organized code, no separation of concerns, lack of tests etc.
 
@@ -15,7 +15,7 @@ The server catches every `GET` request coming its way and responds with:
 ### Parameters
 
 In order to query “the database” and get one page of results, you must supply the following `GET` arguments:
-- `q` – the name you are looking for, use `john+doe` format when providing multiple inputs
+- `q` – the name you are looking for, use `john+doe` format when providing multiple word queries
 - `page` – the page number
 - `per_page` – the number of items per page
 
