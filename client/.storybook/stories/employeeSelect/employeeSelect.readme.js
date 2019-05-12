@@ -15,14 +15,7 @@ const Readme = ({
   suggestions,
   width
 }) => (
-  <article>
-    <h1>EmployeeSelect</h1>
-    <p>
-      The
-      <code>EmployeeSelect</code>
-      lets the user select an employee from a list of employees.
-    </p>
-
+  <>
     <h2>Props</h2>
 
     <h3><code>copy</code></h3>
@@ -242,7 +235,7 @@ const Readme = ({
       <code>{width}</code>
       . You can change that using the knobs.
     </p>
-  </article>
+  </>
 )
 
 Readme.propTypes = {

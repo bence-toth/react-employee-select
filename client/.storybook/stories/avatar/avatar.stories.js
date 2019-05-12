@@ -20,13 +20,21 @@ const avatarURLKnob = {
 const main = () => {
   const name = text(nameKnob.label, nameKnob.defaultValue)
   return (
-    <div>
-      <Readme {...{name}} />
+    <article>
+      <h1>Avatar</h1>
       <h2>Preview</h2>
       <div className='avatarContainer'>
         <Avatar name={name} />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>Avatar</code>
+        represents a user in the application.
+      </p>
+      <p>It is typically used together with the user name.</p>
+      <Readme {...{name}} />
+    </article>
   )
 }
 
@@ -34,16 +42,24 @@ const avatarImage = () => {
   const name = text(nameKnob.label, nameKnob.defaultValue)
   const avatarURL = text(avatarURLKnob.label, avatarURLKnob.defaultValue)
   return (
-    <div>
-      <Readme {...{name, avatarURL}} />
+    <article>
+      <h1>Avatar</h1>
       <h2>Preview</h2>
       <div className='avatarContainer'>
-        <Avatar
+      <Avatar
           name={name}
           avatarURL={avatarURL}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>Avatar</code>
+        represents a user in the application.
+      </p>
+      <p>It is typically used together with the user name.</p>
+      <Readme {...{name, avatarURL}} />
+    </article>
   )
 }
 

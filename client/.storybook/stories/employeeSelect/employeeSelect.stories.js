@@ -54,7 +54,7 @@ const main = () => {
   }
   return (
     <div>
-      <Readme {...props} />
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -64,6 +64,13 @@ const main = () => {
           onSelectEmployee={() => {}}
         />
       </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
     </div>
   )
 }
@@ -87,8 +94,8 @@ const fetching = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -98,7 +105,14 @@ const fetching = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 
@@ -121,8 +135,8 @@ const receivedSuggestions = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -132,7 +146,14 @@ const receivedSuggestions = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 
@@ -155,8 +176,8 @@ const fetchingNextPage = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -166,7 +187,14 @@ const fetchingNextPage = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 
@@ -193,8 +221,8 @@ const selectedEmployee = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -204,7 +232,14 @@ const selectedEmployee = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 
@@ -227,8 +262,8 @@ const noResults = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -238,7 +273,14 @@ const noResults = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 
@@ -261,8 +303,8 @@ const networkError = () => {
     width
   }
   return (
-    <div>
-      <Readme {...props} />
+    <article>
+      <h1>EmployeeSelect</h1>
       <h2>Preview</h2>
       <div className='employeeSelectContainer'>
         <EmployeeSelect
@@ -272,7 +314,14 @@ const networkError = () => {
           onSelectEmployee={() => {}}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>EmployeeSelect</code>
+        lets the user select an employee from a list of employees.
+      </p>
+      <Readme {...props} />
+    </article>
   )
 }
 

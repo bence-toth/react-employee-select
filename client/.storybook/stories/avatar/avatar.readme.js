@@ -5,15 +5,7 @@ const Readme = ({
   name,
   avatarURL
 }) => (
-  <article>
-    <h1>Avatar</h1>
-    <p>
-      The
-      <code>Avatar</code>
-      represents a user in the application.
-    </p>
-    <p>It is typically used together with the user name.</p>
-
+  <>
     <h2>Props</h2>
 
     <h3><code>name</code></h3>
@@ -33,7 +25,7 @@ const Readme = ({
       <code>{avatarURL || 'undefined'}</code>
       . In some of the stories you can change that using the knobs.
     </p>
-  </article>
+  </>
 )
 
 Readme.propTypes = {

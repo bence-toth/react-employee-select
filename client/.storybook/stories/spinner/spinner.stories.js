@@ -32,8 +32,8 @@ const main = () => {
   const size = select(sizeKnob.label, sizeKnob.options, sizeKnob.defaultValue)
   const thickness = select(thicknessKnob.label, thicknessKnob.options, thicknessKnob.defaultValue)
   return (
-    <div>
-      <Readme {...{size, thickness}} />
+    <article>
+      <h1>Spinner</h1>
       <h2>Preview</h2>
       <div className='spinnerContainer'>
         <Spinner
@@ -41,7 +41,15 @@ const main = () => {
           thickness={thickness}
         />
       </div>
-    </div>
+      <h2>Introduction</h2>
+      <p>
+        The
+        <code>Spinner</code>
+        suggests that the user must wait for some action in the application.
+      </p>
+      <p>It is typically used when waiting for responses to requests over HTTP.</p>
+      <Readme {...{size, thickness}} />
+    </article>
   )
 }
 

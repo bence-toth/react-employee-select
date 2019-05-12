@@ -5,15 +5,7 @@ const Readme = ({
   size,
   thickness
 }) => (
-  <article>
-    <h1>Spinner</h1>
-    <p>
-      The
-      <code>Spinner</code>
-      suggests that the user must wait for some action in the application.
-    </p>
-    <p>It is typically used when waiting for responses to requests over HTTP.</p>
-
+  <>
     <h2>Props</h2>
 
     <h3><code>size</code></h3>
@@ -61,7 +53,7 @@ const Readme = ({
       <code>normal</code>
       .
     </p>
-  </article>
+  </>
 )
 
 Readme.propTypes = {
