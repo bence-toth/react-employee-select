@@ -18,10 +18,12 @@ const QueryInput = ({
   selectedEmployee,
   uniqueID
 }) => (
-  <div className={classNames(
-    'queryInputWrapper',
-    {disabled: isDisabled}
-  )}>
+  <div
+    className={classNames(
+      'queryInputWrapper',
+      {disabled: isDisabled}
+    )}
+  >
     {selectedEmployee
       ? (
         <Selection

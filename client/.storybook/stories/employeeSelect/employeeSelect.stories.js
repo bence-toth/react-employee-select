@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable sonarjs/no-duplicate-string */
+
 import React from 'react'
 import {boolean, select, text} from '@storybook/addon-knobs'
 

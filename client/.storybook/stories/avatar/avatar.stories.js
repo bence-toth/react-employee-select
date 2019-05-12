@@ -46,7 +46,7 @@ const avatarImage = () => {
       <h1>Avatar</h1>
       <h2>Preview</h2>
       <div className='avatarContainer'>
-      <Avatar
+        <Avatar
           name={name}
           avatarURL={avatarURL}
         />
