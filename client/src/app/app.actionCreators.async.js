@@ -2,7 +2,7 @@ import {addSuggestions, clearSuggestions, setFetchError, setNextPageFetching, se
 import {fetchEmployees} from './app.consumer'
 import {getSuggestions} from './app.utility'
 
-const receiveEmployees = (dispatch => (
+const receiveSuggestions = (dispatch => (
   ({
     data,
     included,
@@ -27,7 +27,7 @@ const receiveEmployees = (dispatch => (
   }
 ))
 
-const handleReceiveEmployees = dispatch => (
+const receiveEmployees = dispatch => (
   ({
     currentFetchID,
     fetchID,
@@ -36,7 +36,7 @@ const handleReceiveEmployees = dispatch => (
   }) => {
     if (fetchID === currentFetchID) {
       if (ok) {
-        payload.then(receiveEmployees(dispatch))
+        payload.then(receiveSuggestions(dispatch))
       }
       else {
         dispatch(setFetchError({hasError: true}))
@@ -60,7 +60,7 @@ const fetchEmployeeData = dispatch => (
       query
     })
       .then(({ok, payload, fetchID}) => {
-        handleReceiveEmployees(dispatch)({
+        receiveEmployees(dispatch)({
           currentFetchID,
           fetchID,
           ok,
@@ -84,7 +84,7 @@ const fetchNextPage = dispatch => (({
       URL: nextPageURL
     })
       .then(({ok, payload, fetchID}) => {
-        handleReceiveEmployees(dispatch)({
+        receiveEmployees(dispatch)({
           currentFetchID,
           fetchID,
           ok,
