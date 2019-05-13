@@ -1,65 +1,39 @@
-import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react'
+import React, {useEffect, useReducer} from 'react'
 
+import {useCounter, useDebounce, useLocale} from './app.hooks'
 import {initialState, reducer} from './app.reducer'
 import {selectEmployee, updateQuery} from './app.actionCreators'
 import {requestEmployeeData, fetchNextPage} from './app.actionCreators.async'
 import MainPresenter from './app.presenter'
-import locale from './app.locale'
-
-// eslint-disable-next-line fp/no-let
-let timeout
-
-const debounce = (functionToDebounce, delay) => (
-  (...args) => {
-    clearTimeout(timeout)
-    timeout = setTimeout(() => {
-      timeout = null
-      functionToDebounce(...args)
-    }, delay)
-  }
-)
+import localeData from './app.locale'
 
 const App = () => {
+  const copy = useLocale({userLocale: 'en-US', localeData})
   const [state, dispatch] = useReducer(reducer, initialState)
+  const [fetchCounter, getNewFetchID] = useCounter()
 
-  const fetchCounter = useRef(0)
-  const getNewFetchID = () => { // Track the last fetch
-    const newFetchID = fetchCounter.current + 1
-    fetchCounter.current = newFetchID
-    return newFetchID
+  // TODO: Async action creator
+  const fetchEmployeeData = () => {
+    requestEmployeeData(dispatch)({
+      fetchCounter,
+      getNewFetchID,
+      query: state.query
+    })
   }
 
-  // This would probably come from some context provider
-  const [userLocale] = useState('en-US')
-  const copy = locale[userLocale]
-
-  const fetchEmployeeDataCallback = useCallback(
-    () => {
-      debounce(
-        () => {
-          requestEmployeeData(dispatch)({
-            fetchCounter,
-            getNewFetchID,
-            query: state.query
-          })
-        },
-        350
-      )()
-    },
-    [state.query]
-  )
-
-  useEffect(() => { // Fetch data as the user types
-    fetchEmployeeDataCallback()
-  }, [state.query, fetchEmployeeDataCallback])
+  const fetchEmployeeDataCallback = useDebounce({
+    functionToDebounce: fetchEmployeeData,
+    delay: 150
+  }, [state.query])
 
   useEffect(() => { // Fetch when removing selection
-    if (state.selectedEmployee === null) {
+    if ((state.selectedEmployee === null) && (state.query === null)) {
       fetchEmployeeDataCallback()
     }
-  }, [state.selectedEmployee, fetchEmployeeDataCallback])
+  }, [state.selectedEmployee, state.query, fetchEmployeeDataCallback])
 
-  const fetchNextPageIfNeeded = () => {
+  // TODO: Async action creator
+  const fetchNextPageIfNeeded = () => { // Fetch when scrolled to bottom in drop down
     const {suggestions, totalSuggestionsForQuery, nextPageURL} = state
     const canFetchMore = suggestions.length < totalSuggestionsForQuery
     if (canFetchMore) {
