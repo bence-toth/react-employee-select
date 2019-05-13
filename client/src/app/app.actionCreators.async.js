@@ -71,23 +71,22 @@ const fetchEmployeeData = dispatch => (
 )
 
 const fetchNextPage = dispatch => (({
-  currentFetchID,
   getNewFetchID,
   nextPageURL,
   suggestions,
   totalSuggestionsForQuery
 }) => {
   if (suggestions && (suggestions.length < totalSuggestionsForQuery)) {
-    const newFetchID = getNewFetchID()
+    const currentFetchID = getNewFetchID()
     dispatch(setNextPageFetching({isFetching: true}))
     fetchEmployees({
-      fetchID: newFetchID,
+      fetchID: currentFetchID,
       URL: nextPageURL
     })
-      .then(({ok, payload}) => {
+      .then(({ok, payload, fetchID}) => {
         handleReceiveEmployees(dispatch)({
           currentFetchID,
-          fetchID: newFetchID,
+          fetchID,
           ok,
           payload
         })
