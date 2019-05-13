@@ -78,8 +78,12 @@ const App = () => {
       isNextPageFetching={state.isNextPageFetching}
       isQueryFetching={state.isQueryFetching}
       onFetchNextPage={fetchNextPageIfNeeded}
-      onQueryChange={({target: {value}}) => dispatch(updateQuery({query: value}))}
-      onSelectEmployee={employee => dispatch(selectEmployee(employee))}
+      onQueryChange={
+        ({target: {value}}) => dispatch(updateQuery({query: value}))
+      }
+      onSelectEmployee={
+        employee => dispatch(selectEmployee(employee))
+      }
       query={state.query}
       selectedEmployee={state.selectedEmployee}
       suggestions={state.suggestions}
