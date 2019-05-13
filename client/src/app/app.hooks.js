@@ -21,7 +21,7 @@ const useDebounce = (functionToDebounce, delay, dependencies) => {
   }
   const fetchEmployeeDataCallback = useCallback(
     () => debounce(),
-    // eslint-disable-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     dependencies
   )
   useEffect(() => {
