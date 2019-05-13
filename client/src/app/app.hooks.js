@@ -7,10 +7,10 @@ const useCounter = () => {
     counterRef.current = newCounterValue
     return newCounterValue
   }
-  return [counterRef, increaseCounter]
+  return [counterRef.current, increaseCounter]
 }
 
-const useDebounce = ({functionToDebounce, delay}, dependencies) => {
+const useDebounce = (functionToDebounce, delay, dependencies) => {
   const debounceTimeoutHandle = useRef(null)
   const debounce = (...args) => {
     clearTimeout(debounceTimeoutHandle.current)
@@ -21,10 +21,12 @@ const useDebounce = ({functionToDebounce, delay}, dependencies) => {
   }
   const fetchEmployeeDataCallback = useCallback(
     () => debounce(),
+    // eslint-disable-line react-hooks/exhaustive-deps
     dependencies
   )
   useEffect(() => {
     fetchEmployeeDataCallback()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [...dependencies, fetchEmployeeDataCallback])
   return fetchEmployeeDataCallback
 }

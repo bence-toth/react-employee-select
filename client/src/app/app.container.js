@@ -3,64 +3,66 @@ import React, {useEffect, useReducer} from 'react'
 import {useCounter, useDebounce, useLocale} from './app.hooks'
 import {initialState, reducer} from './app.reducer'
 import {selectEmployee, updateQuery} from './app.actionCreators'
-import {requestEmployeeData, fetchNextPage} from './app.actionCreators.async'
+import {fetchEmployeeData, fetchNextPage} from './app.actionCreators.async'
 import MainPresenter from './app.presenter'
 import localeData from './app.locale'
 
 const App = () => {
-  const copy = useLocale({userLocale: 'en-US', localeData})
+  // Application state
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [fetchCounter, getNewFetchID] = useCounter()
+  const {
+    hasFetchError,
+    isNextPageFetching,
+    isQueryFetching,
+    nextPageURL,
+    query,
+    selectedEmployee,
+    suggestions,
+    totalSuggestionsForQuery
+  } = state
 
-  // TODO: Async action creator
-  const fetchEmployeeData = () => {
-    requestEmployeeData(dispatch)({
-      fetchCounter,
+  // Handle data fetching
+  const [currentFetchID, getNewFetchID] = useCounter()
+
+  const fetchEmployees = useDebounce(() => { // Fetch as the user types
+    fetchEmployeeData(dispatch)({
+      currentFetchID,
       getNewFetchID,
-      query: state.query
+      query
     })
-  }
-
-  const fetchEmployeeDataCallback = useDebounce({
-    functionToDebounce: fetchEmployeeData,
-    delay: 150
-  }, [state.query])
+  }, 150, [query])
 
   useEffect(() => { // Fetch when removing selection
-    if ((state.selectedEmployee === null) && (state.query === null)) {
-      fetchEmployeeDataCallback()
+    if ((selectedEmployee === null) && (query === null)) {
+      fetchEmployees()
     }
-  }, [state.selectedEmployee, state.query, fetchEmployeeDataCallback])
+  }, [selectedEmployee, query, fetchEmployees])
 
-  // TODO: Async action creator
-  const fetchNextPageIfNeeded = () => { // Fetch when scrolled to bottom in drop down
-    const {suggestions, totalSuggestionsForQuery, nextPageURL} = state
-    const canFetchMore = suggestions.length < totalSuggestionsForQuery
-    if (canFetchMore) {
-      fetchNextPage(dispatch)({
-        fetchCounter,
-        getNewFetchID,
-        nextPageURL
-      })
-    }
-  }
+  // Load microcopy
+  const copy = useLocale({userLocale: 'en-US', localeData})
 
   return (
     <MainPresenter
       copy={copy}
-      hasFetchError={state.hasFetchError}
-      isNextPageFetching={state.isNextPageFetching}
-      isQueryFetching={state.isQueryFetching}
-      onFetchNextPage={fetchNextPageIfNeeded}
+      hasFetchError={hasFetchError}
+      isNextPageFetching={isNextPageFetching}
+      isQueryFetching={isQueryFetching}
+      onFetchNextPage={() => fetchNextPage(dispatch)({
+        suggestions,
+        totalSuggestionsForQuery,
+        nextPageURL,
+        currentFetchID,
+        getNewFetchID
+      })}
       onQueryChange={
         ({target: {value}}) => dispatch(updateQuery({query: value}))
       }
       onSelectEmployee={
         employee => dispatch(selectEmployee(employee))
       }
-      query={state.query}
-      selectedEmployee={state.selectedEmployee}
-      suggestions={state.suggestions}
+      query={query}
+      selectedEmployee={selectedEmployee}
+      suggestions={suggestions}
     />
   )
 }

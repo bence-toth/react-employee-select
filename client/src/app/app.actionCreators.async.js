@@ -2,7 +2,7 @@ import {addSuggestions, clearSuggestions, setFetchError, setNextPageFetching, se
 import {fetchEmployees} from './app.consumer'
 import {getSuggestions} from './app.utility'
 
-const receiveEmployeeData = dispatch => (
+const receiveEmployees = (dispatch => (
   ({
     data,
     included,
@@ -25,18 +25,18 @@ const receiveEmployeeData = dispatch => (
     dispatch(setNextPageFetching({isFetching: false}))
     dispatch(setFetchError({hasError: false}))
   }
-)
+))
 
-const receiveEmployees = dispatch => (
+const handleReceiveEmployees = dispatch => (
   ({
-    payload,
+    currentFetchID,
     fetchID,
     ok,
-    fetchCounter
+    payload
   }) => {
-    if (fetchID === fetchCounter.current) {
+    if (fetchID === currentFetchID) {
       if (ok) {
-        payload.then(receiveEmployeeData(dispatch))
+        payload.then(receiveEmployees(dispatch))
       }
       else {
         dispatch(setFetchError({hasError: true}))
@@ -45,24 +45,23 @@ const receiveEmployees = dispatch => (
   }
 )
 
-const requestEmployeeData = dispatch => (
+const fetchEmployeeData = dispatch => (
   ({
-    fetchCounter,
     getNewFetchID,
     query
   }) => {
-    const fetchID = getNewFetchID()
     dispatch(setQueryFetching({isFetching: true}))
     dispatch(clearSuggestions())
+    const currentFetchID = getNewFetchID()
     fetchEmployees({
-      fetchID,
+      fetchID: currentFetchID,
       pageLength: 6,
       pageNumber: 1,
       query
     })
-      .then(({ok, payload}) => {
-        receiveEmployees(dispatch)({
-          fetchCounter,
+      .then(({ok, payload, fetchID}) => {
+        handleReceiveEmployees(dispatch)({
+          currentFetchID,
           fetchID,
           ok,
           payload
@@ -72,24 +71,29 @@ const requestEmployeeData = dispatch => (
 )
 
 const fetchNextPage = dispatch => (({
-  fetchCounter,
+  currentFetchID,
   getNewFetchID,
-  nextPageURL
-}) => { // Fetch next page when scrolled to bottom
-  const newFetchID = getNewFetchID()
-  dispatch(setNextPageFetching({isFetching: true}))
-  fetchEmployees({
-    fetchID: newFetchID,
-    URL: nextPageURL
-  })
-    .then(({ok, payload}) => {
-      receiveEmployees(dispatch)({
-        fetchCounter,
-        fetchID: newFetchID,
-        ok,
-        payload
-      })
+  nextPageURL,
+  suggestions,
+  totalSuggestionsForQuery
+}) => {
+  if (suggestions && (suggestions.length < totalSuggestionsForQuery)) {
+    const newFetchID = getNewFetchID()
+    dispatch(setNextPageFetching({isFetching: true}))
+    fetchEmployees({
+      fetchID: newFetchID,
+      URL: nextPageURL
     })
+      .then(({ok, payload}) => {
+        handleReceiveEmployees(dispatch)({
+          currentFetchID,
+          fetchID: newFetchID,
+          ok,
+          payload
+        })
+      })
+  }
 })
 
-export {requestEmployeeData, fetchNextPage}
+
+export {fetchEmployeeData, fetchNextPage}

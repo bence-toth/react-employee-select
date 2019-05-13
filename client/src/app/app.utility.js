@@ -8,4 +8,5 @@ const getSuggestions = ({data, included}) => data.map(dataItem => ({
   }
 }))
 
+// eslint-disable-next-line import/prefer-default-export
 export {getSuggestions}
