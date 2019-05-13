@@ -4,7 +4,7 @@ A possible solution to a Peakon technical assignment.
 
 ## General introduction
 
-I was trying to apply a functional programming approach (which I love so much) as much as it was possible. The project mostly consists of pure functions, the only control structure being used is `if`, there is only one variable declared with `let`, and I was even leaving a comment there that it should be moved within a more declarative environment, e.g. some React component state.
+I was trying to apply a functional programming approach (which I love so much) as much as it was possible. The project mostly consists of pure functions, the only control structure being used is `if`, there is no variable declared with `let`, and very few mutations in general.
 
 I was trying to build the project as close to production-ready as possible.
 Therefore I was concentrating a lot on:
