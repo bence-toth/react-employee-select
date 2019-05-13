@@ -4,8 +4,20 @@ import {initialState, reducer} from './app.reducer'
 import {selectEmployee, updateQuery} from './app.actionCreators'
 import {requestEmployeeData, fetchNextPage} from './app.actionCreators.async'
 import MainPresenter from './app.presenter'
-import {debounce} from './app.utility'
 import locale from './app.locale'
+
+// eslint-disable-next-line fp/no-let
+let timeout
+
+const debounce = (functionToDebounce, delay) => (
+  (...args) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => {
+      timeout = null
+      functionToDebounce(...args)
+    }, delay)
+  }
+)
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
