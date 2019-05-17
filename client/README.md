@@ -35,11 +35,11 @@ Routing is done via `reach-router`.
 
 The application is bootstrapped at `/src/index.js`, which imports `/src/app/app.container.js` which is where all the magic starts. The container is a React function component using hooks for state management (and more).
 
-I decided not to introduce an external state manager like Redux or MobX, instead, I used the `useReducer` and `useState` hooks and stored all the data I needed in the React component itself. Nonetheless I decided to keep the _consumer_, _reducer_, and _action creator_ patterns familiar from the Redux world, even if I managed to build a slightly unconventional (but switch-case-free) setup.
+I decided not to introduce an external state manager like Redux or MobX, instead, I used the `useReducer` and `useRef` hooks (and built a few custom ones, too), and stored all the data I needed in the React component itself. Nonetheless I decided to keep the _consumer_, _reducer_, and _action creator_ patterns familiar from the Redux world, even if I managed to build a slightly unconventional (but switch-case-free) setup.
 
 The app fetches data from the server and keeps track of the state. It renders an EmployeeSelect component on both routes, although the select is disabled on `/disabled`.
 
-The container handles all microcopy necessary for rendering EmployeeSelect. It is made in a way that it would be extremely simple to support (some) other languages. The default language selection (`en_US`) is hard-coded in the container.
+The container handles all microcopy necessary for rendering EmployeeSelect. It is made in a way that it would be extremely simple to support (some) other languages. The default language selection (`en-US`) is hard-coded in the container.
 
 ## Run the application
 
