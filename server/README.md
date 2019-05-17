@@ -21,53 +21,87 @@ In order to query “the database” and get one page of results, you must suppl
 
 So a request URL could for example look like:
 ```
-http://localhost:3001/?q=jo+a&page=1&per_page=10
+http://localhost:3001/?q=jo+a&page=1&per_page=5
 ```
 And it would let’s say generate the following output:
 ```json
 {
   "data": [
     {
+      "id": "73",
       "attributes": {
-        "id": "73",
         "name": "Anahi Joseph",
-        "email": "anahi.joseph@peakon.com",
-        "avatar":null
+        "avatar": null
       }
     },
     {
+      "id": "102",
       "attributes": {
-        "id": "102",
         "name": "Ariel Johnston",
-        "email": "ariel.johnston@peakon.com",
         "avatar": null
       }
     },
     {
+      "id": "362",
       "attributes": {
-        "id": "362",
         "name": "Francisco Joseph",
-        "email": "francisco.joseph@peakon.com",
         "avatar": null
       }
     },
     {
+      "id": "420",
       "attributes": {
-        "id": "506",
+        "name": "Irene Johnson",
+        "avatar": null
+      }
+    },
+    {
+      "id": "506",
+      "attributes": {
         "name": "Joel Castro",
-        "email": "joel.castro@peakon.com",
         "avatar": null
       }
     }
   ],
+  "included": [
+    {
+      "id": "73",
+      "attributes": {
+        "email": "anahi.joseph@peakon.com"
+      }
+    },
+    {
+      "id": "102",
+      "attributes": {
+        "email": "ariel.johnston@peakon.com"
+      }
+    },
+    {
+      "id": "362",
+      "attributes": {
+        "email": "francisco.joseph@peakon.com"
+      }
+    },
+    {
+      "id": "420",
+      "attributes": {
+        "email": "irene.johnson@peakon.com"
+      }
+    },
+    {
+      "id": "506",
+      "attributes": {
+        "email": "joel.castro@peakon.com"
+      }
+    }
+  ],
   "meta": {
-    "page":{
-      "total": 22
+    "page": {
+      "total": 30
     }
   },
-  "links":{
-    "self":"http://localhost:3001/?per_page=10&page=1&q=jo a",
-    "next":"http://localhost:3001/?per_page=10&page=2&q=jo a"}
+  "links": {
+    "next": "http://localhost:3001/?per_page=5&page=2&q=jo"
   }
 }
 ```
@@ -76,14 +110,14 @@ In case there are no results, the response payload would look like this:
 ```json
 {
   "data": [],
+  "included": [],
   "meta": {
     "page": {
       "total": 0
     }
   },
   "links": {
-    "self": "http://localhost:3001/?per_page=10&page=1&q=jo a",
-    "next": "http://localhost:3001/?per_page=10&page=2&q=jo a"
+    "next": "http://localhost:3001/?per_page=5&page=2&q=joasd"
   }
 }
 ```
