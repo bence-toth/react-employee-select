@@ -83,6 +83,7 @@ const fetchNextPage = dispatch => (({
       fetchID: currentFetchID,
       URL: nextPageURL
     })
+      // eslint-disable-next-line sonarjs/no-identical-functions
       .then(({ok, payload, fetchID}) => {
         receiveEmployees(dispatch)({
           currentFetchID,
