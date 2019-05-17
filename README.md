@@ -48,7 +48,7 @@ Check the commit history. My commit messages are sometimes almost as hilarious a
 
 MIT, I guess.
 
-Even though I haven't published it anywhere.
+Even though I haven’t published it anywhere.
 
 ## Contact
 
