@@ -139,7 +139,7 @@ You can also squeeze out a [nasty 418 error](https://developer.mozilla.org/en-US
 
 Start the server:
 ```bash
-node index.js
+node .
 ```
 This will make the server listen closely on port `:3001`.
 
