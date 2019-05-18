@@ -12,23 +12,23 @@ const useCounter = () => {
 
 const useDebounce = (functionToDebounce, delay, dependencies) => {
   const debounceTimeoutHandle = useRef(null)
-  const debounce = (...args) => {
+  const debounce = () => {
     clearTimeout(debounceTimeoutHandle.current)
     debounceTimeoutHandle.current = setTimeout(() => {
       debounceTimeoutHandle.current = null
-      functionToDebounce(...args)
+      functionToDebounce()
     }, delay)
   }
-  const fetchEmployeeDataCallback = useCallback(
+  const callback = useCallback(
     () => debounce(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     dependencies
   )
   useEffect(() => {
-    fetchEmployeeDataCallback()
+    callback()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [...dependencies, fetchEmployeeDataCallback])
-  return fetchEmployeeDataCallback
+  }, [...dependencies, callback])
+  return callback
 }
 
 const useLocale = ({localeData, userLocale}) => {
