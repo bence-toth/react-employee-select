@@ -126,6 +126,3 @@ describe('App utility tests_', () => {
     expect(actualOutput).toEqual(expectedOutput)
   })
 })
-
-// eslint-disable-next-line import/prefer-default-export
-export {getSuggestions}
