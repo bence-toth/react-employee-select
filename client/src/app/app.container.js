@@ -1,7 +1,7 @@
 import React, {useEffect, useReducer} from 'react'
 
 import {useCounter, useDebounce, useLocale} from './app.hooks'
-import {initialState, reducer} from './app.reducer'
+import {createReducer, actionHandlers, initialState} from './app.reducer'
 import {selectEmployee, updateQuery} from './app.actionCreators'
 import {fetchEmployeeData, fetchNextPage} from './app.actionCreators.async'
 import MainPresenter from './app.presenter'
@@ -9,7 +9,7 @@ import localeData from './app.locale'
 
 const App = () => {
   // Application state
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(createReducer(actionHandlers), initialState)
   const {
     hasFetchError,
     isNextPageFetching,

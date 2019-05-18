@@ -10,10 +10,75 @@ import {
   setQueryFetching,
   updateQuery
 } from './app.actionCreators'
-import {reducer, initialState} from './app.reducer'
+import {createReducer, initialState, actionHandlers} from './app.reducer'
+
+describe('reducer helper_', () => {
+  it('createReducer() - should reduce single action correctly', () => {
+    const actionHandlersMock = {
+      increaseCounter: ({state: {counter}}) => ({counter: counter + 1}),
+      increaseCounterBy: ({state: {counter}, action: {by}}) => ({counter: counter + by})
+    }
+    const initialStateMock = {counter: 0, text: 'I must stay here'}
+    const actionMock = {
+      type: 'increaseCounterBy',
+      by: 3
+    }
+    const actualEndState = createReducer(actionHandlersMock)(initialStateMock, actionMock)
+    const expectedEndState = {counter: 3, text: 'I must stay here'}
+    expect(actualEndState).toEqual(expectedEndState)
+  })
+
+  it('createReducer() - should reduce unknown action correctly', () => {
+    const actionHandlersMock = {
+      increaseCounter: ({state: {counter}}) => ({counter: counter + 1}),
+      increaseCounterBy: ({state: {counter}, action: {by}}) => ({counter: counter + by})
+    }
+    const initialStateMock = {counter: 0, text: 'I must stay here'}
+    const actionMock = {
+      type: 'decreaseCounterBy', // not an actual action
+      by: 3
+    }
+    const actualEndState = createReducer(actionHandlersMock)(initialStateMock, actionMock)
+    const expectedEndState = {counter: 0, text: 'I must stay here'}
+    expect(actualEndState).toEqual(expectedEndState)
+  })
+
+  it('createReducer() - should reduce multiple actions correctly', () => {
+    const actionHandlersMock = {
+      increaseCounter: ({state: {counter}}) => ({counter: counter + 1}),
+      increaseCounterBy: ({state: {counter}, action: {by}}) => ({counter: counter + by})
+    }
+    const initialStateMock = {counter: 0, text: 'I must stay here'}
+    const actionMocks = [
+      {
+        type: 'increaseCounterBy',
+        by: 3
+      },
+      {
+        type: 'decreaseCounterBy', // not an actual action
+        by: 3
+      },
+      {
+        type: 'increaseCounter'
+      },
+      {
+        type: 'increaseCounterBy',
+        by: 6
+      }
+    ]
+    const reducer = createReducer(actionHandlersMock)
+    const actualEndState = actionMocks.reduce(
+      (state, action) => reducer(state, action),
+      initialStateMock
+    )
+    const expectedEndState = {counter: 10, text: 'I must stay here'}
+    expect(actualEndState).toEqual(expectedEndState)
+  })
+})
 
 const runTests = ({startState, actions, expectedEndState}) => {
   const actionList = Array.isArray(actions) ? actions : [actions]
+  const reducer = createReducer(actionHandlers)
   const endState = actionList.reduce(
     (state, action) => reducer(state, action),
     startState

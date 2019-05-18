@@ -30,13 +30,13 @@ const actionHandlers = {
   [actions.updateQuery]: updateQuery
 }
 
-const reducer = (state, action) => ({
+const createReducer = actionsToReduce => ((state, action) => ({
   ...state,
   ...(
-    actionHandlers[action.type]
-      ? (actionHandlers[action.type])({state, action})
+    actionsToReduce[action.type]
+      ? (actionsToReduce[action.type])({state, action})
       : {}
   )
-})
+}))
 
-export {reducer, initialState}
+export {createReducer, initialState, actionHandlers}
