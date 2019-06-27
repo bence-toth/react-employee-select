@@ -1,4 +1,4 @@
-# EmployeeSelect
+# React Employee Select
 
 A possible solution to a technical assignment.
 
