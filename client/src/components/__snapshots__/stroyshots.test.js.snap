@@ -1152,7 +1152,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
                 <address
                   className="email"
                 >
-                  iris.fernandez@peakon.com
+                  iris.fernandez@example.com
                 </address>
               </div>
             </button>
@@ -1198,7 +1198,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
                 <address
                   className="email"
                 >
-                  ian.robertson@peakon.com
+                  ian.robertson@example.com
                 </address>
               </div>
             </button>
@@ -1248,7 +1248,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
                 <address
                   className="email"
                 >
-                  eileen.marshall@peakon.com
+                  eileen.marshall@example.com
                 </address>
               </div>
             </button>
@@ -1294,7 +1294,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
                 <address
                   className="email"
                 >
-                  claudia.cole@peakon.com
+                  claudia.cole@example.com
                 </address>
               </div>
             </button>
@@ -1340,7 +1340,7 @@ exports[`Storyshots EmployeeSelect Fetching next page 1`] = `
                 <address
                   className="email"
                 >
-                  charlie.woods@peakon.com
+                  charlie.woods@example.com
                 </address>
               </div>
             </button>
@@ -3168,7 +3168,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
                 <address
                   className="email"
                 >
-                  iris.fernandez@peakon.com
+                  iris.fernandez@example.com
                 </address>
               </div>
             </button>
@@ -3214,7 +3214,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
                 <address
                   className="email"
                 >
-                  ian.robertson@peakon.com
+                  ian.robertson@example.com
                 </address>
               </div>
             </button>
@@ -3264,7 +3264,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
                 <address
                   className="email"
                 >
-                  eileen.marshall@peakon.com
+                  eileen.marshall@example.com
                 </address>
               </div>
             </button>
@@ -3310,7 +3310,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
                 <address
                   className="email"
                 >
-                  claudia.cole@peakon.com
+                  claudia.cole@example.com
                 </address>
               </div>
             </button>
@@ -3356,7 +3356,7 @@ exports[`Storyshots EmployeeSelect Suggestions 1`] = `
                 <address
                   className="email"
                 >
-                  charlie.woods@peakon.com
+                  charlie.woods@example.com
                 </address>
               </div>
             </button>

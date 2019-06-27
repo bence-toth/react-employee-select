@@ -38,7 +38,7 @@ const getPage = ({elements, pageLength, pageNumber}) =>
 
 const generateEmail = ({name}) => {
   const [firstName, lastName] = name.toLowerCase().split(' ')
-  return `${firstName}.${lastName}@peakon.com`
+  return `${firstName}.${lastName}@example.com`
 }
 
 module.exports = {generatePayload, getMatches, getPage, generateEmail}

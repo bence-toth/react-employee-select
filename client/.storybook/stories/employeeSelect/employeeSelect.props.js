@@ -11,7 +11,7 @@ const suggestions = [ // Mock and roll ♫ ♪
     id: '2',
     attributes: {
       name: 'Iris Fernandez',
-      email: 'iris.fernandez@peakon.com',
+      email: 'iris.fernandez@example.com',
       avatar: null
     }
   },
@@ -19,7 +19,7 @@ const suggestions = [ // Mock and roll ♫ ♪
     id: '3',
     attributes: {
       name: 'Ian Robertson',
-      email: 'ian.robertson@peakon.com',
+      email: 'ian.robertson@example.com',
       avatar: null
     }
   },
@@ -27,7 +27,7 @@ const suggestions = [ // Mock and roll ♫ ♪
     id: '4',
     attributes: {
       name: 'Eileen Marshall',
-      email: 'eileen.marshall@peakon.com',
+      email: 'eileen.marshall@example.com',
       avatar: 'https://randomuser.me/api/portraits/women/71.jpg'
     }
   },
@@ -35,7 +35,7 @@ const suggestions = [ // Mock and roll ♫ ♪
     id: '5',
     attributes: {
       name: 'Claudia Cole',
-      email: 'claudia.cole@peakon.com',
+      email: 'claudia.cole@example.com',
       avatar: null
     }
   },
@@ -43,7 +43,7 @@ const suggestions = [ // Mock and roll ♫ ♪
     id: '6',
     attributes: {
       name: 'Charlie Woods',
-      email: 'charlie.woods@peakon.com',
+      email: 'charlie.woods@example.com',
       avatar: null
     }
   }

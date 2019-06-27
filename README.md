@@ -1,6 +1,6 @@
 # EmployeeSelect
 
-A possible solution to a Peakon technical assignment.
+A possible solution to a technical assignment.
 
 ## General introduction
 

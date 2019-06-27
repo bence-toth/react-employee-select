@@ -1,6 +1,6 @@
 # “The server”
 
-This is a little mock REST API that works with about a 1000 hard-coded names and responds to network requests with responses that bear a payload which is semantically homomorphic to the one [specified in the gist](https://gist.github.com/daviferreira/41238222ac31fe36348544ee1d4a9a5e). I however cleared away all the clutter, so the server responds with no more data than what is absolutely necessary for [the client application](../client/README.md) to function.
+This is a little mock REST API that works with about a 1000 hard-coded names and responds to network requests with responses that bear a payload which is semantically homomorphic to the one specified in the gist. I however cleared away all the clutter, so the server responds with no more data than what is absolutely necessary for [the client application](../client/README.md) to function.
 
 **Disclaimer:** I did not concentrate a lot on this part of the project, hence the not too neatly organized code, no separation of concerns, lack of tests etc.
 
@@ -67,31 +67,31 @@ And it would let’s say generate the following output:
     {
       "id": "73",
       "attributes": {
-        "email": "anahi.joseph@peakon.com"
+        "email": "anahi.joseph@example.com"
       }
     },
     {
       "id": "102",
       "attributes": {
-        "email": "ariel.johnston@peakon.com"
+        "email": "ariel.johnston@example.com"
       }
     },
     {
       "id": "362",
       "attributes": {
-        "email": "francisco.joseph@peakon.com"
+        "email": "francisco.joseph@example.com"
       }
     },
     {
       "id": "420",
       "attributes": {
-        "email": "irene.johnson@peakon.com"
+        "email": "irene.johnson@example.com"
       }
     },
     {
       "id": "506",
       "attributes": {
-        "email": "joel.castro@peakon.com"
+        "email": "joel.castro@example.com"
       }
     }
   ],

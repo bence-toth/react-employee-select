@@ -43,31 +43,31 @@ describe('App utility tests_', () => {
     {
       id: '102',
       attributes: {
-        email: 'ariel.johnston@peakon.com'
+        email: 'ariel.johnston@example.com'
       }
     },
     {
       id: '420',
       attributes: {
-        email: 'irene.johnson@peakon.com'
+        email: 'irene.johnson@example.com'
       }
     },
     {
       id: '509',
       attributes: {
-        email: 'john.madden@peakon.com'
+        email: 'john.madden@example.com'
       }
     },
     {
       id: '510',
       attributes: {
-        email: 'johnathon.haas@peakon.com'
+        email: 'johnathon.haas@example.com'
       }
     },
     {
       id: '511',
       attributes: {
-        email: 'johnny.moyer@peakon.com'
+        email: 'johnny.moyer@example.com'
       }
     }
   ]
@@ -77,7 +77,7 @@ describe('App utility tests_', () => {
       attributes: {
         name: 'Ariel Johnston',
         avatar: null,
-        email: 'ariel.johnston@peakon.com'
+        email: 'ariel.johnston@example.com'
       }
     },
     {
@@ -85,7 +85,7 @@ describe('App utility tests_', () => {
       attributes: {
         name: 'Irene Johnson',
         avatar: null,
-        email: 'irene.johnson@peakon.com'
+        email: 'irene.johnson@example.com'
       }
     },
     {
@@ -93,7 +93,7 @@ describe('App utility tests_', () => {
       attributes: {
         name: 'John Madden',
         avatar: null,
-        email: 'john.madden@peakon.com'
+        email: 'john.madden@example.com'
       }
     },
     {
@@ -101,7 +101,7 @@ describe('App utility tests_', () => {
       attributes: {
         name: 'Johnathon Haas',
         avatar: null,
-        email: 'johnathon.haas@peakon.com'
+        email: 'johnathon.haas@example.com'
       }
     },
     {
@@ -109,7 +109,7 @@ describe('App utility tests_', () => {
       attributes: {
         name: 'Johnny Moyer',
         avatar: null,
-        email: 'johnny.moyer@peakon.com'
+        email: 'johnny.moyer@example.com'
       }
     }
   ]
