@@ -47,9 +47,7 @@ Check the commit history. My commit messages are sometimes almost as hilarious a
 
 ## License
 
-MIT, I guess.
-
-Even though I haven’t published it anywhere.
+MIT, have fun!
 
 ## Contact
 
