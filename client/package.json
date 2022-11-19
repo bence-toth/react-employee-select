@@ -19,7 +19,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0"
+    "react-scripts": "5.0.1"
   },
   "devDependencies": {
     "@agillic/eslint-config": "0.0.4",
@@ -27,7 +27,7 @@
     "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-storyshots": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@storybook/react": "^5.0.11",
+    "@storybook/react": "^6.5.13",
     "babel-loader": "^8.0.5",
     "cypress": "^3.2.0",
     "mocha-each": "^1.2.0",
